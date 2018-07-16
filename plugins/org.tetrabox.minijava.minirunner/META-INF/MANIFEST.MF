@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Minirunner
+Bundle-SymbolicName: org.tetrabox.minijava.minirunner
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: org.tetrabox.minijava.minirunner
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.xtext.xbase.lib,
+ org.eclipse.xtend.lib,
+ org.eclipse.xtend.lib.macro,
+ com.google.inject;bundle-version="3.0.0",
+ org.tetrabox.minijava.xtext;bundle-version="1.0.0",
+ org.eclipse.xtext.testing;bundle-version="2.14.0",
+ org.tetrabox.minijava.semantics;bundle-version="1.0.0",
+ org.tetrabox.minijava.semantics.modelstate;bundle-version="0.1.0"
+
