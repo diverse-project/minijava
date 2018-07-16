@@ -417,4 +417,38 @@
 				project="true">
 		</wizard>
 	</extension>
+ <extension point="org.eclipse.debug.ui.launchShortcuts">
+ 	<shortcut label="MiniJava Application" icon="/icons/launch_shortcut_icon.gif" helpContextId="minijava.launch" modes="run,debug" class="org.tetrabox.minijava.xtext.ui.launch.MiniJavaLaunchShortcut" description="Launch a MiniJava model" id="minijava.launchShortcut">
+			<description description="Run Minijava model" mode="run">
+			</description>
+			<description description="Debug Minijava model" mode="debug">
+			</description>
+			<contextualLaunch>
+				<enablement>
+					<with variable="selection">
+						<count value="1">
+						</count>
+						<iterate>
+							<test property="minijava.isLaunchable">
+							</test>
+						</iterate>
+					</with>
+				</enablement>
+			</contextualLaunch>
+			<configurationType id="org.tetrabox.minijava.xtext.ui.launchConfigurationType">
+			</configurationType>
+	</shortcut>
+ </extension>
+ <extension point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+ 	<launchConfigurationTabGroup type="org.tetrabox.minijava.xtext.ui.launchConfigurationType" class="org.tetrabox.minijava.xtext.ui.launch.RobotLaunchConfigurationTabGroup" id="minijava.launchConfigurationTabGroup" helpContextId="minijava.launchConfigHelpContext">
+			<launchMode mode="debug" perspective="org.eclipse.debug.ui.DebugPerspective" description="Debug minijava model.">
+			</launchMode>
+			<launchMode mode="run" description="Run minijava model.">
+			</launchMode>
+	</launchConfigurationTabGroup>
+ </extension>
+ <extension point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+		<launchConfigurationTypeImage icon="/icons/launch_type_icon.gif" configTypeID="org.tetrabox.minijava.xtext.ui.launchConfigurationType" id="minijava.launchImage">
+		</launchConfigurationTypeImage>
+</extension>
 </plugin>

@@ -14,8 +14,7 @@ Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version
  org.eclipse.emf.ecore;bundle-version="2.8.0";visibility:=reexport,
  org.eclipse.emf.common;bundle-version="2.8.0";visibility:=reexport,
  org.tetrabox.minijava.xtext;bundle-version="0.0.0";visibility:=reexport,
- org.tetrabox.minijava.semantics.modelstate;bundle-version="0.1.0",
- fr.inria.diverse.melange;bundle-version="0.2.1"
+ org.tetrabox.minijava.semantics.modelstate;bundle-version="0.1.0"
 Bundle-ActivationPolicy: lazy
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

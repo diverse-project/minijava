@@ -13,12 +13,10 @@ import java.util.List
 import org.tetrabox.minijava.xtext.miniJava.ArrayTypeRef
 import org.tetrabox.minijava.xtext.miniJava.StringTypeRef
 import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
-import fr.inria.diverse.melange.annotation.Containment
 
 @Aspect(className=Program)
 class ProgramAspect {
 
-	@Containment
 	public State state
 
 	@Main
