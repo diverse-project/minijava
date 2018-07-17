@@ -10,9 +10,11 @@ class MiniJavaTypeConformance {
 
 	@Inject extension MiniJavaModelUtil
 
-	def isConformant(TypeDeclaration c1, TypeDeclaration c2) {
+	def isConformant(TypeDeclaration c1, TypeDeclaration c2) {	
 		c1 === NULL_TYPE || // null can be assigned to everything
-		c1 === c2 || c1.isSubclassOf(c2)
+		c2 === NULL_TYPE || // null can be assigned to everything
+		(c1 === c2) ||
+		c1.classHierarchy.contains(c2)
 	}
 
 	def isSubclassOf(TypeDeclaration c1, TypeDeclaration c2) {

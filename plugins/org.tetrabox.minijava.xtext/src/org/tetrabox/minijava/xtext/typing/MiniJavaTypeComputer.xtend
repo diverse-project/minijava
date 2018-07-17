@@ -34,7 +34,6 @@ import org.tetrabox.minijava.xtext.miniJava.And
 import org.tetrabox.minijava.xtext.miniJava.Equality
 import org.tetrabox.minijava.xtext.miniJava.SuperiorOrEqual
 import org.tetrabox.minijava.xtext.miniJava.InferiorOrEqual
-import org.tetrabox.minijava.xtext.services.MiniJavaGrammarAccess.PlusOrMinusElements
 import org.tetrabox.minijava.xtext.miniJava.Plus
 import org.tetrabox.minijava.xtext.miniJava.Minus
 import org.tetrabox.minijava.xtext.miniJava.Multiplication
@@ -42,15 +41,17 @@ import org.tetrabox.minijava.xtext.miniJava.Division
 import org.tetrabox.minijava.xtext.miniJava.ArrayAccess
 import org.tetrabox.minijava.xtext.miniJava.ArrayLength
 import org.tetrabox.minijava.xtext.miniJava.NewArray
+import org.tetrabox.minijava.xtext.miniJava.Field
 
 class MiniJavaTypeComputer {
-	private static val factory = MiniJavaFactory.eINSTANCE
+	protected static val factory = MiniJavaFactory.eINSTANCE
+	
 	public static val STRING_TYPE = factory.createClass => [name = 'stringType']
 	public static val INT_TYPE = factory.createClass => [name = 'intType']
 	public static val BOOLEAN_TYPE = factory.createClass => [name = 'booleanType']
 	public static val NULL_TYPE = factory.createClass => [name = 'nullType']
 
-	static val ep = MiniJavaPackage.eINSTANCE
+	protected static val ep = MiniJavaPackage.eINSTANCE
 
 	def TypeDeclaration getType(TypeRef r) {
 		switch r {
@@ -80,7 +81,7 @@ class MiniJavaTypeComputer {
 				NULL_TYPE
 			StringConstant:
 				STRING_TYPE
-			IntConstant:
+			IntConstant: 
 				INT_TYPE
 			BoolConstant:
 				BOOLEAN_TYPE
@@ -110,6 +111,7 @@ class MiniJavaTypeComputer {
 				typeFor(e.array)
 			NewArray:
 				getType(e.type)
+				
 		}
 	}
 	
@@ -153,6 +155,9 @@ class MiniJavaTypeComputer {
 			}
 			NewObject case f == ep.newObject_Args: {
 				c.type.members.filter(Method).findFirst[it.name === null && it.params.size === c.args.size].params.get(c.args.indexOf(e)).typeRef.type
+			}
+			Field: {
+				c.typeRef.type
 			}
 		}
 	}

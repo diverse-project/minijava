@@ -492,7 +492,7 @@ class IntConstantAspect extends ExpressionAspect {
 	@OverrideAspectMethod
 	def Value evaluateExpression(State state) {
 		return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [
-			value = _self.value
+			value = (_self.value as int)
 		]
 	}
 }

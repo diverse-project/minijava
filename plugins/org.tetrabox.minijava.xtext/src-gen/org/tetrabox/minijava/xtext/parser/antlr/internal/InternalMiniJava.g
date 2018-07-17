@@ -2910,9 +2910,9 @@ ruleTerminalExpression returns [EObject current=null]
 			)
 			(
 				(
-					lv_value_3_0=RULE_INT
+					lv_value_3_0=RULE_DOUBLE
 					{
-						newLeafNode(lv_value_3_0, grammarAccess.getTerminalExpressionAccess().getValueINTTerminalRuleCall_1_1_0());
+						newLeafNode(lv_value_3_0, grammarAccess.getTerminalExpressionAccess().getValueDOUBLETerminalRuleCall_1_1_0());
 					}
 					{
 						if ($current==null) {
@@ -2922,7 +2922,7 @@ ruleTerminalExpression returns [EObject current=null]
 							$current,
 							"value",
 							lv_value_3_0,
-							"org.eclipse.xtext.common.Terminals.INT");
+							"org.tetrabox.minijava.xtext.MiniJava.DOUBLE");
 					}
 				)
 			)
@@ -3213,6 +3213,8 @@ ruleAccessLevel returns [Enumerator current=null]
 		)
 	)
 ;
+
+RULE_DOUBLE : (('0'..'9')+ ('.' ('0'..'9')*)?|'.' ('0'..'9')+);
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

@@ -9250,9 +9250,9 @@ rule__TerminalExpression__ValueAssignment_1_1
 	}
 :
 	(
-		{ before(grammarAccess.getTerminalExpressionAccess().getValueINTTerminalRuleCall_1_1_0()); }
-		RULE_INT
-		{ after(grammarAccess.getTerminalExpressionAccess().getValueINTTerminalRuleCall_1_1_0()); }
+		{ before(grammarAccess.getTerminalExpressionAccess().getValueDOUBLETerminalRuleCall_1_1_0()); }
+		RULE_DOUBLE
+		{ after(grammarAccess.getTerminalExpressionAccess().getValueDOUBLETerminalRuleCall_1_1_0()); }
 	)
 ;
 finally {
@@ -9371,6 +9371,8 @@ rule__TerminalExpression__SymbolAssignment_8_1
 finally {
 	restoreStackSize(stackSize);
 }
+
+RULE_DOUBLE : (('0'..'9')+ ('.' ('0'..'9')*)?|'.' ('0'..'9')+);
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 

@@ -1832,7 +1832,7 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Action cIntConstantAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cValueINTTerminalRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
+		private final RuleCall cValueDOUBLETerminalRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
 		private final Action cBoolConstantAction_2_0 = (Action)cGroup_2.eContents().get(0);
 		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
@@ -1879,12 +1879,12 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSymbolSymbolIDTerminalRuleCall_8_1_0_1 = (RuleCall)cSymbolSymbolCrossReference_8_1_0.eContents().get(1);
 		
 		//TerminalExpression Expression:
-		//	{StringConstant} value=STRING | {IntConstant} value=INT | {BoolConstant} value=('true' | 'false') | {This} 'this' |
+		//	{StringConstant} value=STRING | {IntConstant} value=DOUBLE | {BoolConstant} value=('true' | 'false') | {This} 'this' |
 		//	{Super} 'super' | {Null} 'null' | {NewObject} 'new' type=[Class] => '(' (args+=Expression (',' args+=Expression)*)?
 		//	')' | {NewArray} 'new' type=TypeRef => '[' size=Expression ']' | {SymbolRef} symbol=[Symbol];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{StringConstant} value=STRING | {IntConstant} value=INT | {BoolConstant} value=('true' | 'false') | {This} 'this' |
+		//{StringConstant} value=STRING | {IntConstant} value=DOUBLE | {BoolConstant} value=('true' | 'false') | {This} 'this' |
 		//{Super} 'super' | {Null} 'null' | {NewObject} 'new' type=[Class] => '(' (args+=Expression (',' args+=Expression)*)? ')'
 		//| {NewArray} 'new' type=TypeRef => '[' size=Expression ']' | {SymbolRef} symbol=[Symbol]
 		public Alternatives getAlternatives() { return cAlternatives; }
@@ -1901,17 +1901,17 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getValueSTRINGTerminalRuleCall_0_1_0() { return cValueSTRINGTerminalRuleCall_0_1_0; }
 		
-		//{IntConstant} value=INT
+		//{IntConstant} value=DOUBLE
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{IntConstant}
 		public Action getIntConstantAction_1_0() { return cIntConstantAction_1_0; }
 		
-		//value=INT
+		//value=DOUBLE
 		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
 		
-		//INT
-		public RuleCall getValueINTTerminalRuleCall_1_1_0() { return cValueINTTerminalRuleCall_1_1_0; }
+		//DOUBLE
+		public RuleCall getValueDOUBLETerminalRuleCall_1_1_0() { return cValueDOUBLETerminalRuleCall_1_1_0; }
 		
 		//{BoolConstant} value=('true' | 'false')
 		public Group getGroup_2() { return cGroup_2; }
@@ -2083,6 +2083,7 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	private final ProgramElements pProgram;
+	private final TerminalRule tDOUBLE;
 	private final ImportElements pImport;
 	private final QualifiedNameElements pQualifiedName;
 	private final QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
@@ -2133,6 +2134,7 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pProgram = new ProgramElements();
+		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.tetrabox.minijava.xtext.MiniJava.DOUBLE");
 		this.pImport = new ImportElements();
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pQualifiedNameWithWildcard = new QualifiedNameWithWildcardElements();
@@ -2211,6 +2213,12 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getProgramRule() {
 		return getProgramAccess().getRule();
+	}
+	
+	//terminal DOUBLE returns ecore::EDouble:
+	//	'0'..'9'+ ('.' '0'..'9'*)? | '.' '0'..'9'+;
+	public TerminalRule getDOUBLERule() {
+		return tDOUBLE;
 	}
 	
 	//Import:
@@ -2609,7 +2617,7 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TerminalExpression Expression:
-	//	{StringConstant} value=STRING | {IntConstant} value=INT | {BoolConstant} value=('true' | 'false') | {This} 'this' |
+	//	{StringConstant} value=STRING | {IntConstant} value=DOUBLE | {BoolConstant} value=('true' | 'false') | {This} 'this' |
 	//	{Super} 'super' | {Null} 'null' | {NewObject} 'new' type=[Class] => '(' (args+=Expression (',' args+=Expression)*)?
 	//	')' | {NewArray} 'new' type=TypeRef => '[' size=Expression ']' | {SymbolRef} symbol=[Symbol];
 	public TerminalExpressionElements getTerminalExpressionAccess() {
