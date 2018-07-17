@@ -26,9 +26,22 @@ import org.tetrabox.minijava.xtext.miniJava.FieldAccess
 import org.tetrabox.minijava.xtext.miniJava.MethodCall
 import org.tetrabox.minijava.xtext.miniJava.VoidTypeRef
 import org.tetrabox.minijava.xtext.miniJava.TypeDeclaration
-import org.tetrabox.minijava.xtext.miniJava.Interface
-import org.tetrabox.minijava.xtext.miniJava.TypedDeclaration
 import org.tetrabox.minijava.xtext.miniJava.NewObject
+import org.tetrabox.minijava.xtext.miniJava.Not
+import org.tetrabox.minijava.xtext.miniJava.Neg
+import org.tetrabox.minijava.xtext.miniJava.Or
+import org.tetrabox.minijava.xtext.miniJava.And
+import org.tetrabox.minijava.xtext.miniJava.Equality
+import org.tetrabox.minijava.xtext.miniJava.SuperiorOrEqual
+import org.tetrabox.minijava.xtext.miniJava.InferiorOrEqual
+import org.tetrabox.minijava.xtext.services.MiniJavaGrammarAccess.PlusOrMinusElements
+import org.tetrabox.minijava.xtext.miniJava.Plus
+import org.tetrabox.minijava.xtext.miniJava.Minus
+import org.tetrabox.minijava.xtext.miniJava.Multiplication
+import org.tetrabox.minijava.xtext.miniJava.Division
+import org.tetrabox.minijava.xtext.miniJava.ArrayAccess
+import org.tetrabox.minijava.xtext.miniJava.ArrayLength
+import org.tetrabox.minijava.xtext.miniJava.NewArray
 
 class MiniJavaTypeComputer {
 	private static val factory = MiniJavaFactory.eINSTANCE
@@ -49,7 +62,7 @@ class MiniJavaTypeComputer {
 		}
 	}
 
-	def TypeDeclaration typeFor(Expression e) {
+	def dispatch TypeDeclaration typeFor(Expression e) {
 		switch (e) {
 			SymbolRef:
 				e.symbol.typeRef.type
@@ -71,7 +84,43 @@ class MiniJavaTypeComputer {
 				INT_TYPE
 			BoolConstant:
 				BOOLEAN_TYPE
+			Not:
+				BOOLEAN_TYPE
+			Neg:
+				INT_TYPE
+			Or:
+				BOOLEAN_TYPE
+			And:
+				BOOLEAN_TYPE
+			Equality:
+				BOOLEAN_TYPE
+			SuperiorOrEqual:
+				BOOLEAN_TYPE
+			InferiorOrEqual:
+				BOOLEAN_TYPE
+			Minus:
+				INT_TYPE
+			Multiplication:
+				INT_TYPE
+			Division:
+				INT_TYPE
+			ArrayAccess:
+				typeFor(e.object)
+			ArrayLength:
+				typeFor(e.array)
+			NewArray:
+				getType(e.type)
 		}
+	}
+	
+	def dispatch TypeDeclaration typeFor(Plus e) {
+		val leftType = e.left.typeFor
+		val rightType = e.right.typeFor
+		
+		if(leftType === STRING_TYPE || rightType === STRING_TYPE) {
+			return STRING_TYPE
+		}
+		return INT_TYPE
 	}
 
 

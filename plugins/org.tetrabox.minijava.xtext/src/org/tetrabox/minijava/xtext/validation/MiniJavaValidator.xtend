@@ -34,6 +34,13 @@ import java.util.HashSet
 import java.util.Set
 import org.tetrabox.minijava.xtext.miniJava.NewObject
 
+import static org.tetrabox.minijava.xtext.typing.MiniJavaTypeComputer.*
+import org.eclipse.emf.ecore.EReference
+import org.tetrabox.minijava.xtext.miniJava.Plus
+import org.tetrabox.minijava.xtext.miniJava.Minus
+import org.tetrabox.minijava.xtext.miniJava.Multiplication
+import org.tetrabox.minijava.xtext.miniJava.Division
+
 /**
  * This class contains custom validation rules. 
  * 
@@ -186,6 +193,7 @@ class MiniJavaValidator extends AbstractMiniJavaValidator {
 	@Check def void checkConformance(Expression exp) {
 		val actualType = exp.typeFor
 		val expectedType = exp.expectedType
+		
 		if (expectedType === null || actualType === null)
 			return; // nothing to check
 		if (!actualType.isConformant(expectedType)) {
@@ -334,5 +342,54 @@ class MiniJavaValidator extends AbstractMiniJavaValidator {
 						DUPLICATE_ELEMENT)
 			}
 		}
+	}
+	
+	
+	
+	def private checkNotBoolean(Expression exp, EReference ref) {
+		if(exp.typeFor === BOOLEAN_TYPE) {
+			error("Cannot be boolean", ref, INCOMPATIBLE_TYPES)
+		}
+	}
+	
+	def private checkNotString(Expression exp, EReference ref) {
+		if(exp.typeFor === STRING_TYPE) {
+			error("Cannot be string", ref, INCOMPATIBLE_TYPES)
+		}
+	}
+	
+	@Check
+	def dispatch checkType(Plus plus) {
+		val leftType= plus.left.typeFor
+		val rightType= plus.right.typeFor
+		
+		if(leftType !== STRING_TYPE && rightType !== STRING_TYPE) {
+			checkNotBoolean(plus.left, MiniJavaPackage.eINSTANCE.plus_Left)
+			checkNotBoolean(plus.right, MiniJavaPackage.eINSTANCE.plus_Right)
+		} 
+	}
+	
+	@Check
+	def dispatch checkType(Minus minus) {
+		checkNotBoolean(minus.left, MiniJavaPackage.eINSTANCE.minus_Left)
+		checkNotBoolean(minus.right, MiniJavaPackage.eINSTANCE.minus_Right)
+		checkNotString(minus.left, MiniJavaPackage.eINSTANCE.minus_Left)
+		checkNotString(minus.right, MiniJavaPackage.eINSTANCE.minus_Right)
+	}
+	
+	@Check
+	def dispatch checkType(Multiplication mult) {
+		checkNotBoolean(mult.left, MiniJavaPackage.eINSTANCE.multiplication_Left)
+		checkNotBoolean(mult.right, MiniJavaPackage.eINSTANCE.multiplication_Right)
+		checkNotString(mult.left, MiniJavaPackage.eINSTANCE.multiplication_Left)
+		checkNotString(mult.right, MiniJavaPackage.eINSTANCE.multiplication_Right)
+	}
+	
+	@Check
+	def dispatch checkType(Division div) {
+		checkNotBoolean(div.left, MiniJavaPackage.eINSTANCE.division_Left)
+		checkNotBoolean(div.right, MiniJavaPackage.eINSTANCE.division_Right)
+		checkNotString(div.left, MiniJavaPackage.eINSTANCE.division_Left)
+		checkNotString(div.right, MiniJavaPackage.eINSTANCE.division_Right)
 	}
 }
