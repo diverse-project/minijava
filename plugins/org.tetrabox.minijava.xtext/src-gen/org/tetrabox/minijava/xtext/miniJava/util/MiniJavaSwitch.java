@@ -17,12 +17,16 @@ import org.tetrabox.minijava.xtext.miniJava.Assignment;
 import org.tetrabox.minijava.xtext.miniJava.Block;
 import org.tetrabox.minijava.xtext.miniJava.BoolConstant;
 import org.tetrabox.minijava.xtext.miniJava.BooleanTypeRef;
+import org.tetrabox.minijava.xtext.miniJava.ByteTypeRef;
+import org.tetrabox.minijava.xtext.miniJava.CharTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.ClassRef;
 import org.tetrabox.minijava.xtext.miniJava.Division;
+import org.tetrabox.minijava.xtext.miniJava.DoubleTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Equality;
 import org.tetrabox.minijava.xtext.miniJava.Expression;
 import org.tetrabox.minijava.xtext.miniJava.Field;
 import org.tetrabox.minijava.xtext.miniJava.FieldAccess;
+import org.tetrabox.minijava.xtext.miniJava.FloatTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.ForStatement;
 import org.tetrabox.minijava.xtext.miniJava.IfStatement;
 import org.tetrabox.minijava.xtext.miniJava.Import;
@@ -32,6 +36,7 @@ import org.tetrabox.minijava.xtext.miniJava.InferiorOrEqual;
 import org.tetrabox.minijava.xtext.miniJava.IntConstant;
 import org.tetrabox.minijava.xtext.miniJava.IntegerTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Interface;
+import org.tetrabox.minijava.xtext.miniJava.LongTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Member;
 import org.tetrabox.minijava.xtext.miniJava.Method;
 import org.tetrabox.minijava.xtext.miniJava.MethodCall;
@@ -50,6 +55,7 @@ import org.tetrabox.minijava.xtext.miniJava.Plus;
 import org.tetrabox.minijava.xtext.miniJava.PrintStatement;
 import org.tetrabox.minijava.xtext.miniJava.Program;
 import org.tetrabox.minijava.xtext.miniJava.Return;
+import org.tetrabox.minijava.xtext.miniJava.ShortTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.SingleTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Statement;
 import org.tetrabox.minijava.xtext.miniJava.StringConstant;
@@ -355,12 +361,66 @@ public class MiniJavaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MiniJavaPackage.BYTE_TYPE_REF:
+      {
+        ByteTypeRef byteTypeRef = (ByteTypeRef)theEObject;
+        T result = caseByteTypeRef(byteTypeRef);
+        if (result == null) result = caseSingleTypeRef(byteTypeRef);
+        if (result == null) result = caseTypeRef(byteTypeRef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MiniJavaPackage.INTEGER_TYPE_REF:
       {
         IntegerTypeRef integerTypeRef = (IntegerTypeRef)theEObject;
         T result = caseIntegerTypeRef(integerTypeRef);
         if (result == null) result = caseSingleTypeRef(integerTypeRef);
         if (result == null) result = caseTypeRef(integerTypeRef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MiniJavaPackage.LONG_TYPE_REF:
+      {
+        LongTypeRef longTypeRef = (LongTypeRef)theEObject;
+        T result = caseLongTypeRef(longTypeRef);
+        if (result == null) result = caseSingleTypeRef(longTypeRef);
+        if (result == null) result = caseTypeRef(longTypeRef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MiniJavaPackage.FLOAT_TYPE_REF:
+      {
+        FloatTypeRef floatTypeRef = (FloatTypeRef)theEObject;
+        T result = caseFloatTypeRef(floatTypeRef);
+        if (result == null) result = caseSingleTypeRef(floatTypeRef);
+        if (result == null) result = caseTypeRef(floatTypeRef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MiniJavaPackage.DOUBLE_TYPE_REF:
+      {
+        DoubleTypeRef doubleTypeRef = (DoubleTypeRef)theEObject;
+        T result = caseDoubleTypeRef(doubleTypeRef);
+        if (result == null) result = caseSingleTypeRef(doubleTypeRef);
+        if (result == null) result = caseTypeRef(doubleTypeRef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MiniJavaPackage.SHORT_TYPE_REF:
+      {
+        ShortTypeRef shortTypeRef = (ShortTypeRef)theEObject;
+        T result = caseShortTypeRef(shortTypeRef);
+        if (result == null) result = caseSingleTypeRef(shortTypeRef);
+        if (result == null) result = caseTypeRef(shortTypeRef);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MiniJavaPackage.CHAR_TYPE_REF:
+      {
+        CharTypeRef charTypeRef = (CharTypeRef)theEObject;
+        T result = caseCharTypeRef(charTypeRef);
+        if (result == null) result = caseSingleTypeRef(charTypeRef);
+        if (result == null) result = caseTypeRef(charTypeRef);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1098,6 +1158,22 @@ public class MiniJavaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Byte Type Ref</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Byte Type Ref</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseByteTypeRef(ByteTypeRef object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Integer Type Ref</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1109,6 +1185,86 @@ public class MiniJavaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseIntegerTypeRef(IntegerTypeRef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Long Type Ref</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Long Type Ref</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLongTypeRef(LongTypeRef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Float Type Ref</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Float Type Ref</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFloatTypeRef(FloatTypeRef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Double Type Ref</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Double Type Ref</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDoubleTypeRef(DoubleTypeRef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Short Type Ref</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Short Type Ref</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseShortTypeRef(ShortTypeRef object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Char Type Ref</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Char Type Ref</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCharTypeRef(CharTypeRef object)
   {
     return null;
   }

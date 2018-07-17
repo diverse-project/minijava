@@ -81,7 +81,13 @@ TypeRef:
 
 SingleTypeRef:
 	ClassRef |
+	{ByteTypeRef} 'byte' |
 	{IntegerTypeRef} 'int' |
+	{LongTypeRef} 'long' |
+	{FloatTypeRef} 'float' |
+	{DoubleTypeRef} 'double' |
+	{ShortTypeRef} 'short' |
+	{CharTypeRef} 'char' |
 	{BooleanTypeRef} 'boolean' |
 	{StringTypeRef} 'String' |
 	{VoidTypeRef} 'void';

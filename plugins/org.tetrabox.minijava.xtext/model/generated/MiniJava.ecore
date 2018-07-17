@@ -107,7 +107,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="typeRef" eType="#//SingleTypeRef"
         containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ByteTypeRef" eSuperTypes="#//SingleTypeRef"/>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerTypeRef" eSuperTypes="#//SingleTypeRef"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LongTypeRef" eSuperTypes="#//SingleTypeRef"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FloatTypeRef" eSuperTypes="#//SingleTypeRef"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DoubleTypeRef" eSuperTypes="#//SingleTypeRef"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ShortTypeRef" eSuperTypes="#//SingleTypeRef"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CharTypeRef" eSuperTypes="#//SingleTypeRef"/>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanTypeRef" eSuperTypes="#//SingleTypeRef"/>
   <eClassifiers xsi:type="ecore:EClass" name="StringTypeRef" eSuperTypes="#//SingleTypeRef"/>
   <eClassifiers xsi:type="ecore:EClass" name="VoidTypeRef" eSuperTypes="#//SingleTypeRef"/>

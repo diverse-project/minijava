@@ -89,7 +89,13 @@
     <genClasses ecoreClass="MiniJava.ecore#//ArrayTypeRef">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MiniJava.ecore#//ArrayTypeRef/typeRef"/>
     </genClasses>
+    <genClasses ecoreClass="MiniJava.ecore#//ByteTypeRef"/>
     <genClasses ecoreClass="MiniJava.ecore#//IntegerTypeRef"/>
+    <genClasses ecoreClass="MiniJava.ecore#//LongTypeRef"/>
+    <genClasses ecoreClass="MiniJava.ecore#//FloatTypeRef"/>
+    <genClasses ecoreClass="MiniJava.ecore#//DoubleTypeRef"/>
+    <genClasses ecoreClass="MiniJava.ecore#//ShortTypeRef"/>
+    <genClasses ecoreClass="MiniJava.ecore#//CharTypeRef"/>
     <genClasses ecoreClass="MiniJava.ecore#//BooleanTypeRef"/>
     <genClasses ecoreClass="MiniJava.ecore#//StringTypeRef"/>
     <genClasses ecoreClass="MiniJava.ecore#//VoidTypeRef"/>

@@ -19,12 +19,16 @@ import org.tetrabox.minijava.xtext.miniJava.Assignment;
 import org.tetrabox.minijava.xtext.miniJava.Block;
 import org.tetrabox.minijava.xtext.miniJava.BoolConstant;
 import org.tetrabox.minijava.xtext.miniJava.BooleanTypeRef;
+import org.tetrabox.minijava.xtext.miniJava.ByteTypeRef;
+import org.tetrabox.minijava.xtext.miniJava.CharTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.ClassRef;
 import org.tetrabox.minijava.xtext.miniJava.Division;
+import org.tetrabox.minijava.xtext.miniJava.DoubleTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Equality;
 import org.tetrabox.minijava.xtext.miniJava.Expression;
 import org.tetrabox.minijava.xtext.miniJava.Field;
 import org.tetrabox.minijava.xtext.miniJava.FieldAccess;
+import org.tetrabox.minijava.xtext.miniJava.FloatTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.ForStatement;
 import org.tetrabox.minijava.xtext.miniJava.IfStatement;
 import org.tetrabox.minijava.xtext.miniJava.Import;
@@ -34,6 +38,7 @@ import org.tetrabox.minijava.xtext.miniJava.InferiorOrEqual;
 import org.tetrabox.minijava.xtext.miniJava.IntConstant;
 import org.tetrabox.minijava.xtext.miniJava.IntegerTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Interface;
+import org.tetrabox.minijava.xtext.miniJava.LongTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Member;
 import org.tetrabox.minijava.xtext.miniJava.Method;
 import org.tetrabox.minijava.xtext.miniJava.MethodCall;
@@ -52,6 +57,7 @@ import org.tetrabox.minijava.xtext.miniJava.Plus;
 import org.tetrabox.minijava.xtext.miniJava.PrintStatement;
 import org.tetrabox.minijava.xtext.miniJava.Program;
 import org.tetrabox.minijava.xtext.miniJava.Return;
+import org.tetrabox.minijava.xtext.miniJava.ShortTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.SingleTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Statement;
 import org.tetrabox.minijava.xtext.miniJava.StringConstant;
@@ -268,9 +274,39 @@ public class MiniJavaAdapterFactory extends AdapterFactoryImpl
         return createArrayTypeRefAdapter();
       }
       @Override
+      public Adapter caseByteTypeRef(ByteTypeRef object)
+      {
+        return createByteTypeRefAdapter();
+      }
+      @Override
       public Adapter caseIntegerTypeRef(IntegerTypeRef object)
       {
         return createIntegerTypeRefAdapter();
+      }
+      @Override
+      public Adapter caseLongTypeRef(LongTypeRef object)
+      {
+        return createLongTypeRefAdapter();
+      }
+      @Override
+      public Adapter caseFloatTypeRef(FloatTypeRef object)
+      {
+        return createFloatTypeRefAdapter();
+      }
+      @Override
+      public Adapter caseDoubleTypeRef(DoubleTypeRef object)
+      {
+        return createDoubleTypeRefAdapter();
+      }
+      @Override
+      public Adapter caseShortTypeRef(ShortTypeRef object)
+      {
+        return createShortTypeRefAdapter();
+      }
+      @Override
+      public Adapter caseCharTypeRef(CharTypeRef object)
+      {
+        return createCharTypeRefAdapter();
       }
       @Override
       public Adapter caseBooleanTypeRef(BooleanTypeRef object)
@@ -850,6 +886,21 @@ public class MiniJavaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.xtext.miniJava.ByteTypeRef <em>Byte Type Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.tetrabox.minijava.xtext.miniJava.ByteTypeRef
+   * @generated
+   */
+  public Adapter createByteTypeRefAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.xtext.miniJava.IntegerTypeRef <em>Integer Type Ref</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -860,6 +911,81 @@ public class MiniJavaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createIntegerTypeRefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.xtext.miniJava.LongTypeRef <em>Long Type Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.tetrabox.minijava.xtext.miniJava.LongTypeRef
+   * @generated
+   */
+  public Adapter createLongTypeRefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.xtext.miniJava.FloatTypeRef <em>Float Type Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.tetrabox.minijava.xtext.miniJava.FloatTypeRef
+   * @generated
+   */
+  public Adapter createFloatTypeRefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.xtext.miniJava.DoubleTypeRef <em>Double Type Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.tetrabox.minijava.xtext.miniJava.DoubleTypeRef
+   * @generated
+   */
+  public Adapter createDoubleTypeRefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.xtext.miniJava.ShortTypeRef <em>Short Type Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.tetrabox.minijava.xtext.miniJava.ShortTypeRef
+   * @generated
+   */
+  public Adapter createShortTypeRefAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.xtext.miniJava.CharTypeRef <em>Char Type Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.tetrabox.minijava.xtext.miniJava.CharTypeRef
+   * @generated
+   */
+  public Adapter createCharTypeRefAdapter()
   {
     return null;
   }

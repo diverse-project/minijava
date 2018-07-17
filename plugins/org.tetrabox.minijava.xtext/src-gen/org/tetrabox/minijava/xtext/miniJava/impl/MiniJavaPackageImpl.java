@@ -21,12 +21,16 @@ import org.tetrabox.minijava.xtext.miniJava.Assignment;
 import org.tetrabox.minijava.xtext.miniJava.Block;
 import org.tetrabox.minijava.xtext.miniJava.BoolConstant;
 import org.tetrabox.minijava.xtext.miniJava.BooleanTypeRef;
+import org.tetrabox.minijava.xtext.miniJava.ByteTypeRef;
+import org.tetrabox.minijava.xtext.miniJava.CharTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.ClassRef;
 import org.tetrabox.minijava.xtext.miniJava.Division;
+import org.tetrabox.minijava.xtext.miniJava.DoubleTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Equality;
 import org.tetrabox.minijava.xtext.miniJava.Expression;
 import org.tetrabox.minijava.xtext.miniJava.Field;
 import org.tetrabox.minijava.xtext.miniJava.FieldAccess;
+import org.tetrabox.minijava.xtext.miniJava.FloatTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.ForStatement;
 import org.tetrabox.minijava.xtext.miniJava.IfStatement;
 import org.tetrabox.minijava.xtext.miniJava.Import;
@@ -36,6 +40,7 @@ import org.tetrabox.minijava.xtext.miniJava.InferiorOrEqual;
 import org.tetrabox.minijava.xtext.miniJava.IntConstant;
 import org.tetrabox.minijava.xtext.miniJava.IntegerTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Interface;
+import org.tetrabox.minijava.xtext.miniJava.LongTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Member;
 import org.tetrabox.minijava.xtext.miniJava.Method;
 import org.tetrabox.minijava.xtext.miniJava.MethodCall;
@@ -55,6 +60,7 @@ import org.tetrabox.minijava.xtext.miniJava.Plus;
 import org.tetrabox.minijava.xtext.miniJava.PrintStatement;
 import org.tetrabox.minijava.xtext.miniJava.Program;
 import org.tetrabox.minijava.xtext.miniJava.Return;
+import org.tetrabox.minijava.xtext.miniJava.ShortTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.SingleTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Statement;
 import org.tetrabox.minijava.xtext.miniJava.StringConstant;
@@ -274,7 +280,49 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass byteTypeRefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass integerTypeRefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass longTypeRefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass floatTypeRefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass doubleTypeRefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass shortTypeRefEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass charTypeRefEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1161,9 +1209,69 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getByteTypeRef()
+  {
+    return byteTypeRefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getIntegerTypeRef()
   {
     return integerTypeRefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLongTypeRef()
+  {
+    return longTypeRefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFloatTypeRef()
+  {
+    return floatTypeRefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDoubleTypeRef()
+  {
+    return doubleTypeRefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getShortTypeRef()
+  {
+    return shortTypeRefEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCharTypeRef()
+  {
+    return charTypeRefEClass;
   }
 
   /**
@@ -2013,7 +2121,19 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
     arrayTypeRefEClass = createEClass(ARRAY_TYPE_REF);
     createEReference(arrayTypeRefEClass, ARRAY_TYPE_REF__TYPE_REF);
 
+    byteTypeRefEClass = createEClass(BYTE_TYPE_REF);
+
     integerTypeRefEClass = createEClass(INTEGER_TYPE_REF);
+
+    longTypeRefEClass = createEClass(LONG_TYPE_REF);
+
+    floatTypeRefEClass = createEClass(FLOAT_TYPE_REF);
+
+    doubleTypeRefEClass = createEClass(DOUBLE_TYPE_REF);
+
+    shortTypeRefEClass = createEClass(SHORT_TYPE_REF);
+
+    charTypeRefEClass = createEClass(CHAR_TYPE_REF);
 
     booleanTypeRefEClass = createEClass(BOOLEAN_TYPE_REF);
 
@@ -2173,7 +2293,13 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
     expressionEClass.getESuperTypes().add(this.getStatement());
     expressionEClass.getESuperTypes().add(this.getAssignee());
     arrayTypeRefEClass.getESuperTypes().add(this.getTypeRef());
+    byteTypeRefEClass.getESuperTypes().add(this.getSingleTypeRef());
     integerTypeRefEClass.getESuperTypes().add(this.getSingleTypeRef());
+    longTypeRefEClass.getESuperTypes().add(this.getSingleTypeRef());
+    floatTypeRefEClass.getESuperTypes().add(this.getSingleTypeRef());
+    doubleTypeRefEClass.getESuperTypes().add(this.getSingleTypeRef());
+    shortTypeRefEClass.getESuperTypes().add(this.getSingleTypeRef());
+    charTypeRefEClass.getESuperTypes().add(this.getSingleTypeRef());
     booleanTypeRefEClass.getESuperTypes().add(this.getSingleTypeRef());
     stringTypeRefEClass.getESuperTypes().add(this.getSingleTypeRef());
     voidTypeRefEClass.getESuperTypes().add(this.getSingleTypeRef());
@@ -2293,7 +2419,19 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
     initEClass(arrayTypeRefEClass, ArrayTypeRef.class, "ArrayTypeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getArrayTypeRef_TypeRef(), this.getSingleTypeRef(), null, "typeRef", null, 0, 1, ArrayTypeRef.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(byteTypeRefEClass, ByteTypeRef.class, "ByteTypeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(integerTypeRefEClass, IntegerTypeRef.class, "IntegerTypeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(longTypeRefEClass, LongTypeRef.class, "LongTypeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(floatTypeRefEClass, FloatTypeRef.class, "FloatTypeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(doubleTypeRefEClass, DoubleTypeRef.class, "DoubleTypeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(shortTypeRefEClass, ShortTypeRef.class, "ShortTypeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(charTypeRefEClass, CharTypeRef.class, "CharTypeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(booleanTypeRefEClass, BooleanTypeRef.class, "BooleanTypeRef", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

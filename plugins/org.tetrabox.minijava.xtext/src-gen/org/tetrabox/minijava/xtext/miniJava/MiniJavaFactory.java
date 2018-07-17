@@ -267,6 +267,15 @@ public interface MiniJavaFactory extends EFactory
   ArrayTypeRef createArrayTypeRef();
 
   /**
+   * Returns a new object of class '<em>Byte Type Ref</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Byte Type Ref</em>'.
+   * @generated
+   */
+  ByteTypeRef createByteTypeRef();
+
+  /**
    * Returns a new object of class '<em>Integer Type Ref</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -274,6 +283,51 @@ public interface MiniJavaFactory extends EFactory
    * @generated
    */
   IntegerTypeRef createIntegerTypeRef();
+
+  /**
+   * Returns a new object of class '<em>Long Type Ref</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Long Type Ref</em>'.
+   * @generated
+   */
+  LongTypeRef createLongTypeRef();
+
+  /**
+   * Returns a new object of class '<em>Float Type Ref</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Float Type Ref</em>'.
+   * @generated
+   */
+  FloatTypeRef createFloatTypeRef();
+
+  /**
+   * Returns a new object of class '<em>Double Type Ref</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Double Type Ref</em>'.
+   * @generated
+   */
+  DoubleTypeRef createDoubleTypeRef();
+
+  /**
+   * Returns a new object of class '<em>Short Type Ref</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Short Type Ref</em>'.
+   * @generated
+   */
+  ShortTypeRef createShortTypeRef();
+
+  /**
+   * Returns a new object of class '<em>Char Type Ref</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Char Type Ref</em>'.
+   * @generated
+   */
+  CharTypeRef createCharTypeRef();
 
   /**
    * Returns a new object of class '<em>Boolean Type Ref</em>'.

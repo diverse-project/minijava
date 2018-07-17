@@ -957,63 +957,139 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cClassRefParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cIntegerTypeRefAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cIntKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Action cByteTypeRefAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cByteKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cBooleanTypeRefAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final Keyword cBooleanKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Action cIntegerTypeRefAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Keyword cIntKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Action cStringTypeRefAction_3_0 = (Action)cGroup_3.eContents().get(0);
-		private final Keyword cStringKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Action cLongTypeRefAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Keyword cLongKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Action cVoidTypeRefAction_4_0 = (Action)cGroup_4.eContents().get(0);
-		private final Keyword cVoidKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Action cFloatTypeRefAction_4_0 = (Action)cGroup_4.eContents().get(0);
+		private final Keyword cFloatKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
+		private final Action cDoubleTypeRefAction_5_0 = (Action)cGroup_5.eContents().get(0);
+		private final Keyword cDoubleKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
+		private final Action cShortTypeRefAction_6_0 = (Action)cGroup_6.eContents().get(0);
+		private final Keyword cShortKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
+		private final Action cCharTypeRefAction_7_0 = (Action)cGroup_7.eContents().get(0);
+		private final Keyword cCharKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
+		private final Action cBooleanTypeRefAction_8_0 = (Action)cGroup_8.eContents().get(0);
+		private final Keyword cBooleanKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
+		private final Action cStringTypeRefAction_9_0 = (Action)cGroup_9.eContents().get(0);
+		private final Keyword cStringKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Group cGroup_10 = (Group)cAlternatives.eContents().get(10);
+		private final Action cVoidTypeRefAction_10_0 = (Action)cGroup_10.eContents().get(0);
+		private final Keyword cVoidKeyword_10_1 = (Keyword)cGroup_10.eContents().get(1);
 		
 		//SingleTypeRef:
-		//	ClassRef | {IntegerTypeRef} 'int' | {BooleanTypeRef} 'boolean' | {StringTypeRef} 'String' | {VoidTypeRef} 'void';
+		//	ClassRef | {ByteTypeRef} 'byte' | {IntegerTypeRef} 'int' | {LongTypeRef} 'long' | {FloatTypeRef} 'float' |
+		//	{DoubleTypeRef} 'double' | {ShortTypeRef} 'short' | {CharTypeRef} 'char' | {BooleanTypeRef} 'boolean' |
+		//	{StringTypeRef} 'String' | {VoidTypeRef} 'void';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//ClassRef | {IntegerTypeRef} 'int' | {BooleanTypeRef} 'boolean' | {StringTypeRef} 'String' | {VoidTypeRef} 'void'
+		//ClassRef | {ByteTypeRef} 'byte' | {IntegerTypeRef} 'int' | {LongTypeRef} 'long' | {FloatTypeRef} 'float' |
+		//{DoubleTypeRef} 'double' | {ShortTypeRef} 'short' | {CharTypeRef} 'char' | {BooleanTypeRef} 'boolean' | {StringTypeRef}
+		//'String' | {VoidTypeRef} 'void'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//ClassRef
 		public RuleCall getClassRefParserRuleCall_0() { return cClassRefParserRuleCall_0; }
 		
-		//{IntegerTypeRef} 'int'
+		//{ByteTypeRef} 'byte'
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//{IntegerTypeRef}
-		public Action getIntegerTypeRefAction_1_0() { return cIntegerTypeRefAction_1_0; }
+		//{ByteTypeRef}
+		public Action getByteTypeRefAction_1_0() { return cByteTypeRefAction_1_0; }
 		
-		//'int'
-		public Keyword getIntKeyword_1_1() { return cIntKeyword_1_1; }
+		//'byte'
+		public Keyword getByteKeyword_1_1() { return cByteKeyword_1_1; }
 		
-		//{BooleanTypeRef} 'boolean'
+		//{IntegerTypeRef} 'int'
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//{BooleanTypeRef}
-		public Action getBooleanTypeRefAction_2_0() { return cBooleanTypeRefAction_2_0; }
+		//{IntegerTypeRef}
+		public Action getIntegerTypeRefAction_2_0() { return cIntegerTypeRefAction_2_0; }
 		
-		//'boolean'
-		public Keyword getBooleanKeyword_2_1() { return cBooleanKeyword_2_1; }
+		//'int'
+		public Keyword getIntKeyword_2_1() { return cIntKeyword_2_1; }
 		
-		//{StringTypeRef} 'String'
+		//{LongTypeRef} 'long'
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//{StringTypeRef}
-		public Action getStringTypeRefAction_3_0() { return cStringTypeRefAction_3_0; }
+		//{LongTypeRef}
+		public Action getLongTypeRefAction_3_0() { return cLongTypeRefAction_3_0; }
 		
-		//'String'
-		public Keyword getStringKeyword_3_1() { return cStringKeyword_3_1; }
+		//'long'
+		public Keyword getLongKeyword_3_1() { return cLongKeyword_3_1; }
 		
-		//{VoidTypeRef} 'void'
+		//{FloatTypeRef} 'float'
 		public Group getGroup_4() { return cGroup_4; }
 		
+		//{FloatTypeRef}
+		public Action getFloatTypeRefAction_4_0() { return cFloatTypeRefAction_4_0; }
+		
+		//'float'
+		public Keyword getFloatKeyword_4_1() { return cFloatKeyword_4_1; }
+		
+		//{DoubleTypeRef} 'double'
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//{DoubleTypeRef}
+		public Action getDoubleTypeRefAction_5_0() { return cDoubleTypeRefAction_5_0; }
+		
+		//'double'
+		public Keyword getDoubleKeyword_5_1() { return cDoubleKeyword_5_1; }
+		
+		//{ShortTypeRef} 'short'
+		public Group getGroup_6() { return cGroup_6; }
+		
+		//{ShortTypeRef}
+		public Action getShortTypeRefAction_6_0() { return cShortTypeRefAction_6_0; }
+		
+		//'short'
+		public Keyword getShortKeyword_6_1() { return cShortKeyword_6_1; }
+		
+		//{CharTypeRef} 'char'
+		public Group getGroup_7() { return cGroup_7; }
+		
+		//{CharTypeRef}
+		public Action getCharTypeRefAction_7_0() { return cCharTypeRefAction_7_0; }
+		
+		//'char'
+		public Keyword getCharKeyword_7_1() { return cCharKeyword_7_1; }
+		
+		//{BooleanTypeRef} 'boolean'
+		public Group getGroup_8() { return cGroup_8; }
+		
+		//{BooleanTypeRef}
+		public Action getBooleanTypeRefAction_8_0() { return cBooleanTypeRefAction_8_0; }
+		
+		//'boolean'
+		public Keyword getBooleanKeyword_8_1() { return cBooleanKeyword_8_1; }
+		
+		//{StringTypeRef} 'String'
+		public Group getGroup_9() { return cGroup_9; }
+		
+		//{StringTypeRef}
+		public Action getStringTypeRefAction_9_0() { return cStringTypeRefAction_9_0; }
+		
+		//'String'
+		public Keyword getStringKeyword_9_1() { return cStringKeyword_9_1; }
+		
+		//{VoidTypeRef} 'void'
+		public Group getGroup_10() { return cGroup_10; }
+		
 		//{VoidTypeRef}
-		public Action getVoidTypeRefAction_4_0() { return cVoidTypeRefAction_4_0; }
+		public Action getVoidTypeRefAction_10_0() { return cVoidTypeRefAction_10_0; }
 		
 		//'void'
-		public Keyword getVoidKeyword_4_1() { return cVoidKeyword_4_1; }
+		public Keyword getVoidKeyword_10_1() { return cVoidKeyword_10_1; }
 	}
 	public class ClassRefElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.tetrabox.minijava.xtext.MiniJava.ClassRef");
@@ -2337,7 +2413,9 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SingleTypeRef:
-	//	ClassRef | {IntegerTypeRef} 'int' | {BooleanTypeRef} 'boolean' | {StringTypeRef} 'String' | {VoidTypeRef} 'void';
+	//	ClassRef | {ByteTypeRef} 'byte' | {IntegerTypeRef} 'int' | {LongTypeRef} 'long' | {FloatTypeRef} 'float' |
+	//	{DoubleTypeRef} 'double' | {ShortTypeRef} 'short' | {CharTypeRef} 'char' | {BooleanTypeRef} 'boolean' |
+	//	{StringTypeRef} 'String' | {VoidTypeRef} 'void';
 	public SingleTypeRefElements getSingleTypeRefAccess() {
 		return pSingleTypeRef;
 	}

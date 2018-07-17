@@ -1614,13 +1614,13 @@ ruleSingleTypeRef returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getSingleTypeRefAccess().getIntegerTypeRefAction_1_0(),
+						grammarAccess.getSingleTypeRefAccess().getByteTypeRefAction_1_0(),
 						$current);
 				}
 			)
-			otherlv_2='int'
+			otherlv_2='byte'
 			{
-				newLeafNode(otherlv_2, grammarAccess.getSingleTypeRefAccess().getIntKeyword_1_1());
+				newLeafNode(otherlv_2, grammarAccess.getSingleTypeRefAccess().getByteKeyword_1_1());
 			}
 		)
 		    |
@@ -1628,13 +1628,13 @@ ruleSingleTypeRef returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getSingleTypeRefAccess().getBooleanTypeRefAction_2_0(),
+						grammarAccess.getSingleTypeRefAccess().getIntegerTypeRefAction_2_0(),
 						$current);
 				}
 			)
-			otherlv_4='boolean'
+			otherlv_4='int'
 			{
-				newLeafNode(otherlv_4, grammarAccess.getSingleTypeRefAccess().getBooleanKeyword_2_1());
+				newLeafNode(otherlv_4, grammarAccess.getSingleTypeRefAccess().getIntKeyword_2_1());
 			}
 		)
 		    |
@@ -1642,13 +1642,13 @@ ruleSingleTypeRef returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getSingleTypeRefAccess().getStringTypeRefAction_3_0(),
+						grammarAccess.getSingleTypeRefAccess().getLongTypeRefAction_3_0(),
 						$current);
 				}
 			)
-			otherlv_6='String'
+			otherlv_6='long'
 			{
-				newLeafNode(otherlv_6, grammarAccess.getSingleTypeRefAccess().getStringKeyword_3_1());
+				newLeafNode(otherlv_6, grammarAccess.getSingleTypeRefAccess().getLongKeyword_3_1());
 			}
 		)
 		    |
@@ -1656,13 +1656,97 @@ ruleSingleTypeRef returns [EObject current=null]
 			(
 				{
 					$current = forceCreateModelElement(
-						grammarAccess.getSingleTypeRefAccess().getVoidTypeRefAction_4_0(),
+						grammarAccess.getSingleTypeRefAccess().getFloatTypeRefAction_4_0(),
 						$current);
 				}
 			)
-			otherlv_8='void'
+			otherlv_8='float'
 			{
-				newLeafNode(otherlv_8, grammarAccess.getSingleTypeRefAccess().getVoidKeyword_4_1());
+				newLeafNode(otherlv_8, grammarAccess.getSingleTypeRefAccess().getFloatKeyword_4_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getSingleTypeRefAccess().getDoubleTypeRefAction_5_0(),
+						$current);
+				}
+			)
+			otherlv_10='double'
+			{
+				newLeafNode(otherlv_10, grammarAccess.getSingleTypeRefAccess().getDoubleKeyword_5_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getSingleTypeRefAccess().getShortTypeRefAction_6_0(),
+						$current);
+				}
+			)
+			otherlv_12='short'
+			{
+				newLeafNode(otherlv_12, grammarAccess.getSingleTypeRefAccess().getShortKeyword_6_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getSingleTypeRefAccess().getCharTypeRefAction_7_0(),
+						$current);
+				}
+			)
+			otherlv_14='char'
+			{
+				newLeafNode(otherlv_14, grammarAccess.getSingleTypeRefAccess().getCharKeyword_7_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getSingleTypeRefAccess().getBooleanTypeRefAction_8_0(),
+						$current);
+				}
+			)
+			otherlv_16='boolean'
+			{
+				newLeafNode(otherlv_16, grammarAccess.getSingleTypeRefAccess().getBooleanKeyword_8_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getSingleTypeRefAccess().getStringTypeRefAction_9_0(),
+						$current);
+				}
+			)
+			otherlv_18='String'
+			{
+				newLeafNode(otherlv_18, grammarAccess.getSingleTypeRefAccess().getStringKeyword_9_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getSingleTypeRefAccess().getVoidTypeRefAction_10_0(),
+						$current);
+				}
+			)
+			otherlv_20='void'
+			{
+				newLeafNode(otherlv_20, grammarAccess.getSingleTypeRefAccess().getVoidKeyword_10_1());
 			}
 		)
 	)

@@ -22,12 +22,16 @@ import org.tetrabox.minijava.xtext.miniJava.Assignment;
 import org.tetrabox.minijava.xtext.miniJava.Block;
 import org.tetrabox.minijava.xtext.miniJava.BoolConstant;
 import org.tetrabox.minijava.xtext.miniJava.BooleanTypeRef;
+import org.tetrabox.minijava.xtext.miniJava.ByteTypeRef;
+import org.tetrabox.minijava.xtext.miniJava.CharTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.ClassRef;
 import org.tetrabox.minijava.xtext.miniJava.Division;
+import org.tetrabox.minijava.xtext.miniJava.DoubleTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Equality;
 import org.tetrabox.minijava.xtext.miniJava.Expression;
 import org.tetrabox.minijava.xtext.miniJava.Field;
 import org.tetrabox.minijava.xtext.miniJava.FieldAccess;
+import org.tetrabox.minijava.xtext.miniJava.FloatTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.ForStatement;
 import org.tetrabox.minijava.xtext.miniJava.IfStatement;
 import org.tetrabox.minijava.xtext.miniJava.Import;
@@ -37,6 +41,7 @@ import org.tetrabox.minijava.xtext.miniJava.InferiorOrEqual;
 import org.tetrabox.minijava.xtext.miniJava.IntConstant;
 import org.tetrabox.minijava.xtext.miniJava.IntegerTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Interface;
+import org.tetrabox.minijava.xtext.miniJava.LongTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Member;
 import org.tetrabox.minijava.xtext.miniJava.Method;
 import org.tetrabox.minijava.xtext.miniJava.MethodCall;
@@ -56,6 +61,7 @@ import org.tetrabox.minijava.xtext.miniJava.Plus;
 import org.tetrabox.minijava.xtext.miniJava.PrintStatement;
 import org.tetrabox.minijava.xtext.miniJava.Program;
 import org.tetrabox.minijava.xtext.miniJava.Return;
+import org.tetrabox.minijava.xtext.miniJava.ShortTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.SingleTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Statement;
 import org.tetrabox.minijava.xtext.miniJava.StringConstant;
@@ -152,7 +158,13 @@ public class MiniJavaFactoryImpl extends EFactoryImpl implements MiniJavaFactory
       case MiniJavaPackage.ASSIGNEE: return createAssignee();
       case MiniJavaPackage.EXPRESSION: return createExpression();
       case MiniJavaPackage.ARRAY_TYPE_REF: return createArrayTypeRef();
+      case MiniJavaPackage.BYTE_TYPE_REF: return createByteTypeRef();
       case MiniJavaPackage.INTEGER_TYPE_REF: return createIntegerTypeRef();
+      case MiniJavaPackage.LONG_TYPE_REF: return createLongTypeRef();
+      case MiniJavaPackage.FLOAT_TYPE_REF: return createFloatTypeRef();
+      case MiniJavaPackage.DOUBLE_TYPE_REF: return createDoubleTypeRef();
+      case MiniJavaPackage.SHORT_TYPE_REF: return createShortTypeRef();
+      case MiniJavaPackage.CHAR_TYPE_REF: return createCharTypeRef();
       case MiniJavaPackage.BOOLEAN_TYPE_REF: return createBooleanTypeRef();
       case MiniJavaPackage.STRING_TYPE_REF: return createStringTypeRef();
       case MiniJavaPackage.VOID_TYPE_REF: return createVoidTypeRef();
@@ -524,10 +536,76 @@ public class MiniJavaFactoryImpl extends EFactoryImpl implements MiniJavaFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public ByteTypeRef createByteTypeRef()
+  {
+    ByteTypeRefImpl byteTypeRef = new ByteTypeRefImpl();
+    return byteTypeRef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public IntegerTypeRef createIntegerTypeRef()
   {
     IntegerTypeRefImpl integerTypeRef = new IntegerTypeRefImpl();
     return integerTypeRef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LongTypeRef createLongTypeRef()
+  {
+    LongTypeRefImpl longTypeRef = new LongTypeRefImpl();
+    return longTypeRef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FloatTypeRef createFloatTypeRef()
+  {
+    FloatTypeRefImpl floatTypeRef = new FloatTypeRefImpl();
+    return floatTypeRef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DoubleTypeRef createDoubleTypeRef()
+  {
+    DoubleTypeRefImpl doubleTypeRef = new DoubleTypeRefImpl();
+    return doubleTypeRef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ShortTypeRef createShortTypeRef()
+  {
+    ShortTypeRefImpl shortTypeRef = new ShortTypeRefImpl();
+    return shortTypeRef;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CharTypeRef createCharTypeRef()
+  {
+    CharTypeRefImpl charTypeRef = new CharTypeRefImpl();
+    return charTypeRef;
   }
 
   /**

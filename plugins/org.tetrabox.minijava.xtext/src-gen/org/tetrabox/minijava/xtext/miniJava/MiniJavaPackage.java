@@ -1085,6 +1085,25 @@ public interface MiniJavaPackage extends EPackage
   int ARRAY_TYPE_REF_FEATURE_COUNT = TYPE_REF_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.ByteTypeRefImpl <em>Byte Type Ref</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.ByteTypeRefImpl
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getByteTypeRef()
+   * @generated
+   */
+  int BYTE_TYPE_REF = 27;
+
+  /**
+   * The number of structural features of the '<em>Byte Type Ref</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BYTE_TYPE_REF_FEATURE_COUNT = SINGLE_TYPE_REF_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.IntegerTypeRefImpl <em>Integer Type Ref</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1092,7 +1111,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getIntegerTypeRef()
    * @generated
    */
-  int INTEGER_TYPE_REF = 27;
+  int INTEGER_TYPE_REF = 28;
 
   /**
    * The number of structural features of the '<em>Integer Type Ref</em>' class.
@@ -1104,6 +1123,101 @@ public interface MiniJavaPackage extends EPackage
   int INTEGER_TYPE_REF_FEATURE_COUNT = SINGLE_TYPE_REF_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.LongTypeRefImpl <em>Long Type Ref</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.LongTypeRefImpl
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getLongTypeRef()
+   * @generated
+   */
+  int LONG_TYPE_REF = 29;
+
+  /**
+   * The number of structural features of the '<em>Long Type Ref</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_TYPE_REF_FEATURE_COUNT = SINGLE_TYPE_REF_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.FloatTypeRefImpl <em>Float Type Ref</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.FloatTypeRefImpl
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getFloatTypeRef()
+   * @generated
+   */
+  int FLOAT_TYPE_REF = 30;
+
+  /**
+   * The number of structural features of the '<em>Float Type Ref</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FLOAT_TYPE_REF_FEATURE_COUNT = SINGLE_TYPE_REF_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.DoubleTypeRefImpl <em>Double Type Ref</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.DoubleTypeRefImpl
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getDoubleTypeRef()
+   * @generated
+   */
+  int DOUBLE_TYPE_REF = 31;
+
+  /**
+   * The number of structural features of the '<em>Double Type Ref</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOUBLE_TYPE_REF_FEATURE_COUNT = SINGLE_TYPE_REF_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.ShortTypeRefImpl <em>Short Type Ref</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.ShortTypeRefImpl
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getShortTypeRef()
+   * @generated
+   */
+  int SHORT_TYPE_REF = 32;
+
+  /**
+   * The number of structural features of the '<em>Short Type Ref</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SHORT_TYPE_REF_FEATURE_COUNT = SINGLE_TYPE_REF_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.CharTypeRefImpl <em>Char Type Ref</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.CharTypeRefImpl
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getCharTypeRef()
+   * @generated
+   */
+  int CHAR_TYPE_REF = 33;
+
+  /**
+   * The number of structural features of the '<em>Char Type Ref</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHAR_TYPE_REF_FEATURE_COUNT = SINGLE_TYPE_REF_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.BooleanTypeRefImpl <em>Boolean Type Ref</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1111,7 +1225,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getBooleanTypeRef()
    * @generated
    */
-  int BOOLEAN_TYPE_REF = 28;
+  int BOOLEAN_TYPE_REF = 34;
 
   /**
    * The number of structural features of the '<em>Boolean Type Ref</em>' class.
@@ -1130,7 +1244,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getStringTypeRef()
    * @generated
    */
-  int STRING_TYPE_REF = 29;
+  int STRING_TYPE_REF = 35;
 
   /**
    * The number of structural features of the '<em>String Type Ref</em>' class.
@@ -1149,7 +1263,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getVoidTypeRef()
    * @generated
    */
-  int VOID_TYPE_REF = 30;
+  int VOID_TYPE_REF = 36;
 
   /**
    * The number of structural features of the '<em>Void Type Ref</em>' class.
@@ -1168,7 +1282,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getOr()
    * @generated
    */
-  int OR = 31;
+  int OR = 37;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1205,7 +1319,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getAnd()
    * @generated
    */
-  int AND = 32;
+  int AND = 38;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1242,7 +1356,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getEquality()
    * @generated
    */
-  int EQUALITY = 33;
+  int EQUALITY = 39;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1279,7 +1393,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getInequality()
    * @generated
    */
-  int INEQUALITY = 34;
+  int INEQUALITY = 40;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1316,7 +1430,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getSuperiorOrEqual()
    * @generated
    */
-  int SUPERIOR_OR_EQUAL = 35;
+  int SUPERIOR_OR_EQUAL = 41;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1353,7 +1467,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getInferiorOrEqual()
    * @generated
    */
-  int INFERIOR_OR_EQUAL = 36;
+  int INFERIOR_OR_EQUAL = 42;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1390,7 +1504,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getSuperior()
    * @generated
    */
-  int SUPERIOR = 37;
+  int SUPERIOR = 43;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1427,7 +1541,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getInferior()
    * @generated
    */
-  int INFERIOR = 38;
+  int INFERIOR = 44;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1464,7 +1578,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getPlus()
    * @generated
    */
-  int PLUS = 39;
+  int PLUS = 45;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1501,7 +1615,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getMinus()
    * @generated
    */
-  int MINUS = 40;
+  int MINUS = 46;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1538,7 +1652,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getMultiplication()
    * @generated
    */
-  int MULTIPLICATION = 41;
+  int MULTIPLICATION = 47;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1575,7 +1689,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getDivision()
    * @generated
    */
-  int DIVISION = 42;
+  int DIVISION = 48;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1612,7 +1726,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getArrayAccess()
    * @generated
    */
-  int ARRAY_ACCESS = 43;
+  int ARRAY_ACCESS = 49;
 
   /**
    * The feature id for the '<em><b>Object</b></em>' containment reference.
@@ -1649,7 +1763,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getArrayLength()
    * @generated
    */
-  int ARRAY_LENGTH = 44;
+  int ARRAY_LENGTH = 50;
 
   /**
    * The feature id for the '<em><b>Array</b></em>' containment reference.
@@ -1677,7 +1791,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getNot()
    * @generated
    */
-  int NOT = 45;
+  int NOT = 51;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1705,7 +1819,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getNeg()
    * @generated
    */
-  int NEG = 46;
+  int NEG = 52;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1733,7 +1847,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getFieldAccess()
    * @generated
    */
-  int FIELD_ACCESS = 47;
+  int FIELD_ACCESS = 53;
 
   /**
    * The feature id for the '<em><b>Receiver</b></em>' containment reference.
@@ -1770,7 +1884,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getMethodCall()
    * @generated
    */
-  int METHOD_CALL = 48;
+  int METHOD_CALL = 54;
 
   /**
    * The feature id for the '<em><b>Receiver</b></em>' containment reference.
@@ -1816,7 +1930,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getStringConstant()
    * @generated
    */
-  int STRING_CONSTANT = 49;
+  int STRING_CONSTANT = 55;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1844,7 +1958,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getIntConstant()
    * @generated
    */
-  int INT_CONSTANT = 50;
+  int INT_CONSTANT = 56;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1872,7 +1986,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getBoolConstant()
    * @generated
    */
-  int BOOL_CONSTANT = 51;
+  int BOOL_CONSTANT = 57;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1900,7 +2014,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getThis()
    * @generated
    */
-  int THIS = 52;
+  int THIS = 58;
 
   /**
    * The number of structural features of the '<em>This</em>' class.
@@ -1919,7 +2033,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getSuper()
    * @generated
    */
-  int SUPER = 53;
+  int SUPER = 59;
 
   /**
    * The number of structural features of the '<em>Super</em>' class.
@@ -1938,7 +2052,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getNull()
    * @generated
    */
-  int NULL = 54;
+  int NULL = 60;
 
   /**
    * The number of structural features of the '<em>Null</em>' class.
@@ -1957,7 +2071,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getNewObject()
    * @generated
    */
-  int NEW_OBJECT = 55;
+  int NEW_OBJECT = 61;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -1994,7 +2108,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getNewArray()
    * @generated
    */
-  int NEW_ARRAY = 56;
+  int NEW_ARRAY = 62;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2031,7 +2145,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getSymbolRef()
    * @generated
    */
-  int SYMBOL_REF = 57;
+  int SYMBOL_REF = 63;
 
   /**
    * The feature id for the '<em><b>Symbol</b></em>' reference.
@@ -2059,7 +2173,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getAccessLevel()
    * @generated
    */
-  int ACCESS_LEVEL = 58;
+  int ACCESS_LEVEL = 64;
 
 
   /**
@@ -2696,6 +2810,16 @@ public interface MiniJavaPackage extends EPackage
   EReference getArrayTypeRef_TypeRef();
 
   /**
+   * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.ByteTypeRef <em>Byte Type Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Byte Type Ref</em>'.
+   * @see org.tetrabox.minijava.xtext.miniJava.ByteTypeRef
+   * @generated
+   */
+  EClass getByteTypeRef();
+
+  /**
    * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.IntegerTypeRef <em>Integer Type Ref</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2704,6 +2828,56 @@ public interface MiniJavaPackage extends EPackage
    * @generated
    */
   EClass getIntegerTypeRef();
+
+  /**
+   * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.LongTypeRef <em>Long Type Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Long Type Ref</em>'.
+   * @see org.tetrabox.minijava.xtext.miniJava.LongTypeRef
+   * @generated
+   */
+  EClass getLongTypeRef();
+
+  /**
+   * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.FloatTypeRef <em>Float Type Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Float Type Ref</em>'.
+   * @see org.tetrabox.minijava.xtext.miniJava.FloatTypeRef
+   * @generated
+   */
+  EClass getFloatTypeRef();
+
+  /**
+   * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.DoubleTypeRef <em>Double Type Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Double Type Ref</em>'.
+   * @see org.tetrabox.minijava.xtext.miniJava.DoubleTypeRef
+   * @generated
+   */
+  EClass getDoubleTypeRef();
+
+  /**
+   * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.ShortTypeRef <em>Short Type Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Short Type Ref</em>'.
+   * @see org.tetrabox.minijava.xtext.miniJava.ShortTypeRef
+   * @generated
+   */
+  EClass getShortTypeRef();
+
+  /**
+   * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.CharTypeRef <em>Char Type Ref</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Char Type Ref</em>'.
+   * @see org.tetrabox.minijava.xtext.miniJava.CharTypeRef
+   * @generated
+   */
+  EClass getCharTypeRef();
 
   /**
    * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.BooleanTypeRef <em>Boolean Type Ref</em>}'.
@@ -4035,6 +4209,16 @@ public interface MiniJavaPackage extends EPackage
     EReference ARRAY_TYPE_REF__TYPE_REF = eINSTANCE.getArrayTypeRef_TypeRef();
 
     /**
+     * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.ByteTypeRefImpl <em>Byte Type Ref</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.ByteTypeRefImpl
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getByteTypeRef()
+     * @generated
+     */
+    EClass BYTE_TYPE_REF = eINSTANCE.getByteTypeRef();
+
+    /**
      * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.IntegerTypeRefImpl <em>Integer Type Ref</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4043,6 +4227,56 @@ public interface MiniJavaPackage extends EPackage
      * @generated
      */
     EClass INTEGER_TYPE_REF = eINSTANCE.getIntegerTypeRef();
+
+    /**
+     * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.LongTypeRefImpl <em>Long Type Ref</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.LongTypeRefImpl
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getLongTypeRef()
+     * @generated
+     */
+    EClass LONG_TYPE_REF = eINSTANCE.getLongTypeRef();
+
+    /**
+     * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.FloatTypeRefImpl <em>Float Type Ref</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.FloatTypeRefImpl
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getFloatTypeRef()
+     * @generated
+     */
+    EClass FLOAT_TYPE_REF = eINSTANCE.getFloatTypeRef();
+
+    /**
+     * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.DoubleTypeRefImpl <em>Double Type Ref</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.DoubleTypeRefImpl
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getDoubleTypeRef()
+     * @generated
+     */
+    EClass DOUBLE_TYPE_REF = eINSTANCE.getDoubleTypeRef();
+
+    /**
+     * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.ShortTypeRefImpl <em>Short Type Ref</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.ShortTypeRefImpl
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getShortTypeRef()
+     * @generated
+     */
+    EClass SHORT_TYPE_REF = eINSTANCE.getShortTypeRef();
+
+    /**
+     * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.CharTypeRefImpl <em>Char Type Ref</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.CharTypeRefImpl
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getCharTypeRef()
+     * @generated
+     */
+    EClass CHAR_TYPE_REF = eINSTANCE.getCharTypeRef();
 
     /**
      * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.BooleanTypeRefImpl <em>Boolean Type Ref</em>}' class.
