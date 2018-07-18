@@ -42,6 +42,10 @@ import org.tetrabox.minijava.xtext.miniJava.ArrayAccess
 import org.tetrabox.minijava.xtext.miniJava.ArrayLength
 import org.tetrabox.minijava.xtext.miniJava.NewArray
 import org.tetrabox.minijava.xtext.miniJava.Field
+import org.tetrabox.minijava.xtext.miniJava.Inequality
+import org.tetrabox.minijava.xtext.miniJava.ArrayTypeRef
+import java.util.HashMap
+import java.util.Map
 
 class MiniJavaTypeComputer {
 	protected static val factory = MiniJavaFactory.eINSTANCE
@@ -49,7 +53,18 @@ class MiniJavaTypeComputer {
 	public static val STRING_TYPE = factory.createClass => [name = 'stringType']
 	public static val INT_TYPE = factory.createClass => [name = 'intType']
 	public static val BOOLEAN_TYPE = factory.createClass => [name = 'booleanType']
+	
+	public static val STRING_ARRAY_TYPE = factory.createClass => [name = 'stringArrayType']
+	public static val INT_ARRAY_TYPE = factory.createClass => [name = 'intArrayType']
+	public static val BOOLEAN_ARRAY_TYPE = factory.createClass => [name = 'booleanArrayType']
+	
 	public static val NULL_TYPE = factory.createClass => [name = 'nullType']
+	
+	// class name -> class array type
+	public static val Map<String, Class> CLASS_ARRAY_TYPE = new HashMap
+	
+	// class array type name -> class
+	public static val Map<String, TypeDeclaration> CLASS_ARRAY_TYPE_REVERSE = new HashMap
 
 	protected static val ep = MiniJavaPackage.eINSTANCE
 
@@ -60,6 +75,24 @@ class MiniJavaTypeComputer {
 			BooleanTypeRef: BOOLEAN_TYPE
 			StringTypeRef: STRING_TYPE
 			VoidTypeRef : NULL_TYPE
+			ArrayTypeRef:{
+				switch(r.typeRef) {
+					IntegerTypeRef: INT_ARRAY_TYPE
+					BooleanTypeRef: BOOLEAN_ARRAY_TYPE
+					StringTypeRef: STRING_ARRAY_TYPE
+					ClassRef: {
+						val ClassRef classRef = r.typeRef as ClassRef
+						val className = classRef.referencedClass.name
+						var res = CLASS_ARRAY_TYPE.get(className)
+						if(res === null) {
+							res = factory.createClass => [name = '''«className»ArrayType''']
+							CLASS_ARRAY_TYPE.put(className, res)
+							CLASS_ARRAY_TYPE_REVERSE.put('''«className»ArrayType''', classRef.referencedClass)
+						}
+						return res
+					}
+				}
+			}
 		}
 	}
 
@@ -95,6 +128,8 @@ class MiniJavaTypeComputer {
 				BOOLEAN_TYPE
 			Equality:
 				BOOLEAN_TYPE
+			Inequality:
+				BOOLEAN_TYPE
 			SuperiorOrEqual:
 				BOOLEAN_TYPE
 			InferiorOrEqual:
@@ -105,12 +140,32 @@ class MiniJavaTypeComputer {
 				INT_TYPE
 			Division:
 				INT_TYPE
-			ArrayAccess:
-				typeFor(e.object)
+			ArrayAccess: {
+				val name = e.object.typeFor.name
+				if(name === "stringArrayType") return STRING_TYPE
+				if(name === "intArrayType") return INT_TYPE
+				if(name === "booleanArrayType") return BOOLEAN_TYPE
+				else return CLASS_ARRAY_TYPE_REVERSE.get(name)
+			}
 			ArrayLength:
-				typeFor(e.array)
+				INT_TYPE
 			NewArray:
-				getType(e.type)
+				switch(e.type) {
+					IntegerTypeRef: INT_ARRAY_TYPE
+					BooleanTypeRef: BOOLEAN_ARRAY_TYPE
+					StringTypeRef: STRING_ARRAY_TYPE
+					ClassRef: {
+						val ClassRef classRef = e.type as ClassRef
+						val className = classRef.referencedClass.name
+						var res = CLASS_ARRAY_TYPE.get(className)
+						if(res === null) {
+							res = factory.createClass => [name = '''«className»ArrayType''']
+							CLASS_ARRAY_TYPE.put(className, res)
+							CLASS_ARRAY_TYPE_REVERSE.put('''«className»ArrayType''', classRef.referencedClass)
+						}
+						return res
+					}
+				}
 				
 		}
 	}
@@ -133,13 +188,18 @@ class MiniJavaTypeComputer {
 	def TypeDeclaration expectedType(Expression e) {
 		val c = e.eContainer
 		val f = e.eContainingFeature
+		
 		switch (c) {
 			VariableDeclaration:
 				c.typeRef.type
 			Assignment case f == ep.assignment_Value: {
 				val assignee = c.assignee
 				switch (assignee) {
-					VariableDeclaration: assignee.typeRef.type
+					VariableDeclaration: {
+						println('''    Assigne: «assignee.typeRef.type»''')
+						assignee.typeRef.type
+						
+					}
 					FieldAccess: assignee.typeFor
 				}
 			}
@@ -160,5 +220,12 @@ class MiniJavaTypeComputer {
 				c.typeRef.type
 			}
 		}
+	}
+	
+	def boolean isArray(TypeDeclaration typeDcl) {
+		typeDcl === STRING_ARRAY_TYPE || 
+		typeDcl === BOOLEAN_ARRAY_TYPE || 
+		typeDcl === INT_ARRAY_TYPE ||
+		CLASS_ARRAY_TYPE_REVERSE.containsKey(typeDcl.name)
 	}
 }

@@ -40,6 +40,11 @@ import org.tetrabox.minijava.xtext.miniJava.Plus
 import org.tetrabox.minijava.xtext.miniJava.Minus
 import org.tetrabox.minijava.xtext.miniJava.Multiplication
 import org.tetrabox.minijava.xtext.miniJava.Division
+import org.tetrabox.minijava.xtext.miniJava.Or
+import org.tetrabox.minijava.xtext.miniJava.And
+import org.tetrabox.minijava.xtext.miniJava.Not
+import org.tetrabox.minijava.xtext.miniJava.Neg
+import org.tetrabox.minijava.xtext.miniJava.ArrayAccess
 
 /**
  * This class contains custom validation rules. 
@@ -196,7 +201,8 @@ class MiniJavaValidator extends AbstractMiniJavaValidator {
 		
 		if (expectedType === null || actualType === null)
 			return; // nothing to check
-		if (!actualType.isConformant(expectedType)) {
+			
+		if (!actualType.isConformant(expectedType)) {	     
 			error("Incompatible types. Expected '" + expectedType.name + "' but was '" + actualType.name + "'", null,
 				INCOMPATIBLE_TYPES);
 		}
@@ -352,6 +358,12 @@ class MiniJavaValidator extends AbstractMiniJavaValidator {
 		}
 	}
 	
+	def private checkBoolean(Expression exp, EReference ref) {
+		if(exp.typeFor !== BOOLEAN_TYPE) {
+			error("Should be boolean", ref, INCOMPATIBLE_TYPES)
+		}
+	}
+	
 	def private checkNotString(Expression exp, EReference ref) {
 		if(exp.typeFor === STRING_TYPE) {
 			error("Cannot be string", ref, INCOMPATIBLE_TYPES)
@@ -392,4 +404,36 @@ class MiniJavaValidator extends AbstractMiniJavaValidator {
 		checkNotString(div.left, MiniJavaPackage.eINSTANCE.division_Left)
 		checkNotString(div.right, MiniJavaPackage.eINSTANCE.division_Right)
 	}
+	
+	@Check
+	def dispatch checkType(Neg neg) {
+		checkNotBoolean(neg.expression, MiniJavaPackage.eINSTANCE.and_Left)
+		checkNotString(neg.expression, MiniJavaPackage.eINSTANCE.and_Left)
+	}
+	
+	@Check
+	def dispatch checkType(Or or) {
+		checkBoolean(or.left, MiniJavaPackage.eINSTANCE.or_Left)
+		checkBoolean(or.right, MiniJavaPackage.eINSTANCE.or_Right)
+	}
+	
+	@Check
+	def dispatch checkType(And and) {
+		checkBoolean(and.left, MiniJavaPackage.eINSTANCE.and_Left)
+		checkBoolean(and.right, MiniJavaPackage.eINSTANCE.and_Right)
+	}
+	
+	@Check
+	def dispatch checkType(Not not) {
+		checkBoolean(not.expression, MiniJavaPackage.eINSTANCE.and_Left)
+	}
+	
+	@Check
+	def dispatch checkType(ArrayAccess arrayAccess) {
+		val TypeDeclaration objectType = arrayAccess.object.typeFor
+		if(!objectType.isArray) {
+			error('''Should be an array. Actual type: «objectType»''', MiniJavaPackage.eINSTANCE.arrayAccess_Object)
+		}
+	}
+	
 }

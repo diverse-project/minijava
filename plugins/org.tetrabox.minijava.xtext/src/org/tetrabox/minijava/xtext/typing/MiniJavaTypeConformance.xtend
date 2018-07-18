@@ -14,7 +14,8 @@ class MiniJavaTypeConformance {
 		c1 === NULL_TYPE || // null can be assigned to everything
 		c2 === NULL_TYPE || // null can be assigned to everything
 		(c1 === c2) ||
-		c1.classHierarchy.contains(c2)
+		(c1.name == c2.name) ||
+		c1.isSubclassOf(c2)
 	}
 
 	def isSubclassOf(TypeDeclaration c1, TypeDeclaration c2) {
