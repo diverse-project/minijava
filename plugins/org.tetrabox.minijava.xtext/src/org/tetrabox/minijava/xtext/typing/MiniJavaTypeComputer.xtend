@@ -60,6 +60,8 @@ class MiniJavaTypeComputer {
 	
 	public static val NULL_TYPE = factory.createClass => [name = 'nullType']
 	
+	public static val UNRECOGNIZED_TYPE = factory.createClass => [name = 'unrecognizedType']
+	
 	// class name -> class array type
 	public static val Map<String, Class> CLASS_ARRAY_TYPE = new HashMap
 	
@@ -83,6 +85,7 @@ class MiniJavaTypeComputer {
 					ClassRef: getOrCreateClassRefType(r.typeRef as ClassRef)
 				}
 			}
+			default: UNRECOGNIZED_TYPE
 		}
 	}
 	
@@ -158,6 +161,7 @@ class MiniJavaTypeComputer {
 					StringTypeRef: STRING_ARRAY_TYPE
 					ClassRef: getOrCreateClassRefType(e.type as ClassRef)
 				}
+			default: UNRECOGNIZED_TYPE
 				
 		}
 	}
