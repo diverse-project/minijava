@@ -89,7 +89,7 @@ class MiniJavaTypeComputer {
 		}
 	}
 	
-	private def getOrCreateClassRefType(ClassRef classRef) {
+	protected def getOrCreateClassRefType(ClassRef classRef) {
 		val className = classRef.referencedClass.name
 		var res = CLASS_ARRAY_TYPE.get(className)
 		if(res === null) {
@@ -191,7 +191,10 @@ class MiniJavaTypeComputer {
 			Assignment case f == ep.assignment_Value: {
 				val assignee = c.assignee
 				switch (assignee) {
-					VariableDeclaration: assignee.typeRef.type
+					VariableDeclaration: {
+						println('''        «assignee»  ///  «assignee.typeRef»''')
+						assignee.typeRef.type
+					}
 					FieldAccess: assignee.typeFor
 				}
 			}
