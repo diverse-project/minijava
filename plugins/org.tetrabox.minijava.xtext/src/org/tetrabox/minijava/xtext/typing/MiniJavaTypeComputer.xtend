@@ -80,20 +80,21 @@ class MiniJavaTypeComputer {
 					IntegerTypeRef: INT_ARRAY_TYPE
 					BooleanTypeRef: BOOLEAN_ARRAY_TYPE
 					StringTypeRef: STRING_ARRAY_TYPE
-					ClassRef: {
-						val ClassRef classRef = r.typeRef as ClassRef
-						val className = classRef.referencedClass.name
-						var res = CLASS_ARRAY_TYPE.get(className)
-						if(res === null) {
-							res = factory.createClass => [name = '''«className»ArrayType''']
-							CLASS_ARRAY_TYPE.put(className, res)
-							CLASS_ARRAY_TYPE_REVERSE.put('''«className»ArrayType''', classRef.referencedClass)
-						}
-						return res
-					}
+					ClassRef: getOrCreateClassRefType(r.typeRef as ClassRef)
 				}
 			}
 		}
+	}
+	
+	private def getOrCreateClassRefType(ClassRef classRef) {
+		val className = classRef.referencedClass.name
+		var res = CLASS_ARRAY_TYPE.get(className)
+		if(res === null) {
+			res = factory.createClass => [name = '''«className»ArrayType''']
+			CLASS_ARRAY_TYPE.put(className, res)
+			CLASS_ARRAY_TYPE_REVERSE.put('''«className»ArrayType''', classRef.referencedClass)
+		}
+		return res
 	}
 
 	def dispatch TypeDeclaration typeFor(Expression e) {
@@ -141,11 +142,12 @@ class MiniJavaTypeComputer {
 			Division:
 				INT_TYPE
 			ArrayAccess: {
-				val name = e.object.typeFor.name
-				if(name === "stringArrayType") return STRING_TYPE
-				if(name === "intArrayType") return INT_TYPE
-				if(name === "booleanArrayType") return BOOLEAN_TYPE
-				else return CLASS_ARRAY_TYPE_REVERSE.get(name)
+				switch name: e.object.typeFor.name {
+					case "stringArrayType": STRING_TYPE
+					case "intArrayType": INT_TYPE
+					case "booleanArrayType": BOOLEAN_TYPE
+					default: CLASS_ARRAY_TYPE_REVERSE.get(name)
+				}	
 			}
 			ArrayLength:
 				INT_TYPE
@@ -154,17 +156,7 @@ class MiniJavaTypeComputer {
 					IntegerTypeRef: INT_ARRAY_TYPE
 					BooleanTypeRef: BOOLEAN_ARRAY_TYPE
 					StringTypeRef: STRING_ARRAY_TYPE
-					ClassRef: {
-						val ClassRef classRef = e.type as ClassRef
-						val className = classRef.referencedClass.name
-						var res = CLASS_ARRAY_TYPE.get(className)
-						if(res === null) {
-							res = factory.createClass => [name = '''«className»ArrayType''']
-							CLASS_ARRAY_TYPE.put(className, res)
-							CLASS_ARRAY_TYPE_REVERSE.put('''«className»ArrayType''', classRef.referencedClass)
-						}
-						return res
-					}
+					ClassRef: getOrCreateClassRefType(e.type as ClassRef)
 				}
 				
 		}
@@ -195,11 +187,7 @@ class MiniJavaTypeComputer {
 			Assignment case f == ep.assignment_Value: {
 				val assignee = c.assignee
 				switch (assignee) {
-					VariableDeclaration: {
-						println('''    Assigne: «assignee.typeRef.type»''')
-						assignee.typeRef.type
-						
-					}
+					VariableDeclaration: assignee.typeRef.type
 					FieldAccess: assignee.typeFor
 				}
 			}
