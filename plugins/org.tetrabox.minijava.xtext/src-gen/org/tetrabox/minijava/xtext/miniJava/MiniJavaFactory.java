@@ -519,15 +519,6 @@ public interface MiniJavaFactory extends EFactory
   MethodCall createMethodCall();
 
   /**
-   * Returns a new object of class '<em>String Constant</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>String Constant</em>'.
-   * @generated
-   */
-  StringConstant createStringConstant();
-
-  /**
    * Returns a new object of class '<em>Int Constant</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -537,6 +528,24 @@ public interface MiniJavaFactory extends EFactory
   IntConstant createIntConstant();
 
   /**
+   * Returns a new object of class '<em>Double Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Double Constant</em>'.
+   * @generated
+   */
+  DoubleConstant createDoubleConstant();
+
+  /**
+   * Returns a new object of class '<em>Long Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Long Constant</em>'.
+   * @generated
+   */
+  LongConstant createLongConstant();
+
+  /**
    * Returns a new object of class '<em>Bool Constant</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -544,6 +553,15 @@ public interface MiniJavaFactory extends EFactory
    * @generated
    */
   BoolConstant createBoolConstant();
+
+  /**
+   * Returns a new object of class '<em>String Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Constant</em>'.
+   * @generated
+   */
+  StringConstant createStringConstant();
 
   /**
    * Returns a new object of class '<em>This</em>'.

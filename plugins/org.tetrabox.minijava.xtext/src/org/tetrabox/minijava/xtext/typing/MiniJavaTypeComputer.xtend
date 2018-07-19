@@ -46,17 +46,52 @@ import org.tetrabox.minijava.xtext.miniJava.Inequality
 import org.tetrabox.minijava.xtext.miniJava.ArrayTypeRef
 import java.util.HashMap
 import java.util.Map
+import org.tetrabox.minijava.xtext.miniJava.FloatTypeRef
+import org.tetrabox.minijava.xtext.miniJava.CharTypeRef
+import org.tetrabox.minijava.xtext.miniJava.ShortTypeRef
+import org.tetrabox.minijava.xtext.miniJava.DoubleTypeRef
+import org.tetrabox.minijava.xtext.miniJava.ByteTypeRef
+import org.tetrabox.minijava.xtext.miniJava.LongTypeRef
+import org.tetrabox.minijava.xtext.miniJava.LongConstant
+import org.tetrabox.minijava.xtext.miniJava.DoubleConstant
 
 class MiniJavaTypeComputer {
 	protected static val factory = MiniJavaFactory.eINSTANCE
 	
 	public static val STRING_TYPE = factory.createClass => [name = 'stringType']
-	public static val INT_TYPE = factory.createClass => [name = 'intType']
+	public static val CHAR_TYPE = factory.createClass => [name = 'charType']
 	public static val BOOLEAN_TYPE = factory.createClass => [name = 'booleanType']
+	
+	public static val LONG_TYPE = factory.createClass => [name = 'longType']
+	public static val INT_TYPE = factory.createClass => [
+		name = 'intType'
+		superClass = LONG_TYPE
+	]
+	public static val SHORT_TYPE = factory.createClass => [
+		name = 'shortType'
+		superClass = INT_TYPE
+	]
+	public static val BYTE_TYPE = factory.createClass => [
+		name = 'byteType'
+		superClass = SHORT_TYPE
+	]
+	
+	public static val DOUBLE_TYPE = factory.createClass => [name = 'doubleType']
+	public static val FLOAT_TYPE = factory.createClass => [
+		name = 'floatType'
+		superClass = DOUBLE_TYPE
+	]
+	
 	
 	public static val STRING_ARRAY_TYPE = factory.createClass => [name = 'stringArrayType']
 	public static val INT_ARRAY_TYPE = factory.createClass => [name = 'intArrayType']
 	public static val BOOLEAN_ARRAY_TYPE = factory.createClass => [name = 'booleanArrayType']
+	public static val BYTE_ARRAY_TYPE = factory.createClass => [name = 'byteArrayType']
+	public static val LONG_ARRAY_TYPE = factory.createClass => [name = 'longArrayType']
+	public static val DOUBLE_ARRAY_TYPE = factory.createClass => [name = 'doubleArrayType']
+	public static val SHORT_ARRAY_TYPE = factory.createClass => [name = 'shortArrayType']
+	public static val FLOAT_ARRAY_TYPE = factory.createClass => [name = 'floatArrayType']
+	public static val CHAR_ARRAY_TYPE = factory.createClass => [name = 'charArrayType']
 	
 	public static val NULL_TYPE = factory.createClass => [name = 'nullType']
 	
@@ -77,11 +112,23 @@ class MiniJavaTypeComputer {
 			BooleanTypeRef: BOOLEAN_TYPE
 			StringTypeRef: STRING_TYPE
 			VoidTypeRef : NULL_TYPE
+			FloatTypeRef: FLOAT_TYPE
+			CharTypeRef: CHAR_TYPE
+			ShortTypeRef: SHORT_TYPE
+			DoubleTypeRef: DOUBLE_TYPE
+			ByteTypeRef: BYTE_TYPE
+			LongTypeRef: LONG_TYPE
 			ArrayTypeRef:{
 				switch(r.typeRef) {
 					IntegerTypeRef: INT_ARRAY_TYPE
 					BooleanTypeRef: BOOLEAN_ARRAY_TYPE
 					StringTypeRef: STRING_ARRAY_TYPE
+					FloatTypeRef: FLOAT_ARRAY_TYPE
+					CharTypeRef: CHAR_ARRAY_TYPE
+					ShortTypeRef: SHORT_ARRAY_TYPE
+					DoubleTypeRef: DOUBLE_ARRAY_TYPE
+					ByteTypeRef: BYTE_ARRAY_TYPE
+					LongTypeRef: LONG_ARRAY_TYPE
 					ClassRef: getOrCreateClassRefType(r.typeRef as ClassRef)
 				}
 			}
@@ -118,8 +165,26 @@ class MiniJavaTypeComputer {
 				NULL_TYPE
 			StringConstant:
 				STRING_TYPE
-			IntConstant: 
-				INT_TYPE
+			IntConstant: {
+				if(e.value >= Byte.MIN_VALUE && e.value <= Byte.MAX_VALUE) {
+					return BYTE_TYPE
+				}
+				if(e.value >= Short.MIN_VALUE && e.value <= Short.MAX_VALUE) {
+					return SHORT_TYPE
+				}
+				if(e.value >= Integer.MIN_VALUE && e.value <= Integer.MAX_VALUE) {
+					return INT_TYPE
+				}
+				return LONG_TYPE
+			}
+			LongConstant:
+				LONG_TYPE
+			DoubleConstant: {
+				if(e.value >= Float.MIN_VALUE && e.value <= Float.MAX_VALUE) {
+					return FLOAT_TYPE
+				}
+				return DOUBLE_TYPE
+			}
 			BoolConstant:
 				BOOLEAN_TYPE
 			Not:
@@ -172,8 +237,29 @@ class MiniJavaTypeComputer {
 		
 		if(leftType === STRING_TYPE || rightType === STRING_TYPE) {
 			return STRING_TYPE
+		} 
+			
+		if(leftType === DOUBLE_TYPE || rightType === DOUBLE_TYPE) {
+			return DOUBLE_TYPE
 		}
-		return INT_TYPE
+		
+		if(leftType === FLOAT_TYPE || rightType === FLOAT_TYPE) {
+			return FLOAT_TYPE
+		}
+		
+		if(leftType === LONG_TYPE || rightType === LONG_TYPE) {
+			return LONG_TYPE
+		}
+		
+		if(leftType === INT_TYPE || rightType === INT_TYPE) {
+			return INT_TYPE
+		}
+		
+		if(leftType === SHORT_TYPE || rightType === SHORT_TYPE) {
+			return SHORT_TYPE
+		}
+		
+		return BYTE_TYPE
 	}
 
 

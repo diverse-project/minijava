@@ -26,6 +26,7 @@ import org.tetrabox.minijava.xtext.miniJava.ByteTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.CharTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.ClassRef;
 import org.tetrabox.minijava.xtext.miniJava.Division;
+import org.tetrabox.minijava.xtext.miniJava.DoubleConstant;
 import org.tetrabox.minijava.xtext.miniJava.DoubleTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Equality;
 import org.tetrabox.minijava.xtext.miniJava.Expression;
@@ -41,6 +42,7 @@ import org.tetrabox.minijava.xtext.miniJava.InferiorOrEqual;
 import org.tetrabox.minijava.xtext.miniJava.IntConstant;
 import org.tetrabox.minijava.xtext.miniJava.IntegerTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Interface;
+import org.tetrabox.minijava.xtext.miniJava.LongConstant;
 import org.tetrabox.minijava.xtext.miniJava.LongTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Member;
 import org.tetrabox.minijava.xtext.miniJava.Method;
@@ -186,9 +188,11 @@ public class MiniJavaFactoryImpl extends EFactoryImpl implements MiniJavaFactory
       case MiniJavaPackage.NEG: return createNeg();
       case MiniJavaPackage.FIELD_ACCESS: return createFieldAccess();
       case MiniJavaPackage.METHOD_CALL: return createMethodCall();
-      case MiniJavaPackage.STRING_CONSTANT: return createStringConstant();
       case MiniJavaPackage.INT_CONSTANT: return createIntConstant();
+      case MiniJavaPackage.DOUBLE_CONSTANT: return createDoubleConstant();
+      case MiniJavaPackage.LONG_CONSTANT: return createLongConstant();
       case MiniJavaPackage.BOOL_CONSTANT: return createBoolConstant();
+      case MiniJavaPackage.STRING_CONSTANT: return createStringConstant();
       case MiniJavaPackage.THIS: return createThis();
       case MiniJavaPackage.SUPER: return createSuper();
       case MiniJavaPackage.NULL: return createNull();
@@ -844,17 +848,6 @@ public class MiniJavaFactoryImpl extends EFactoryImpl implements MiniJavaFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public StringConstant createStringConstant()
-  {
-    StringConstantImpl stringConstant = new StringConstantImpl();
-    return stringConstant;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public IntConstant createIntConstant()
   {
     IntConstantImpl intConstant = new IntConstantImpl();
@@ -866,10 +859,43 @@ public class MiniJavaFactoryImpl extends EFactoryImpl implements MiniJavaFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public DoubleConstant createDoubleConstant()
+  {
+    DoubleConstantImpl doubleConstant = new DoubleConstantImpl();
+    return doubleConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LongConstant createLongConstant()
+  {
+    LongConstantImpl longConstant = new LongConstantImpl();
+    return longConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public BoolConstant createBoolConstant()
   {
     BoolConstantImpl boolConstant = new BoolConstantImpl();
     return boolConstant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public StringConstant createStringConstant()
+  {
+    StringConstantImpl stringConstant = new StringConstantImpl();
+    return stringConstant;
   }
 
   /**

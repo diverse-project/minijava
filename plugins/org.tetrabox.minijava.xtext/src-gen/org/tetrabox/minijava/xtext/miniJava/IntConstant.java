@@ -31,12 +31,12 @@ public interface IntConstant extends Expression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(double)
+   * @see #setValue(int)
    * @see org.tetrabox.minijava.xtext.miniJava.MiniJavaPackage#getIntConstant_Value()
    * @model
    * @generated
    */
-  double getValue();
+  int getValue();
 
   /**
    * Sets the value of the '{@link org.tetrabox.minijava.xtext.miniJava.IntConstant#getValue <em>Value</em>}' attribute.
@@ -46,6 +46,6 @@ public interface IntConstant extends Expression
    * @see #getValue()
    * @generated
    */
-  void setValue(double value);
+  void setValue(int value);
 
 } // IntConstant

@@ -23,6 +23,7 @@ import org.tetrabox.minijava.xtext.miniJava.ByteTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.CharTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.ClassRef;
 import org.tetrabox.minijava.xtext.miniJava.Division;
+import org.tetrabox.minijava.xtext.miniJava.DoubleConstant;
 import org.tetrabox.minijava.xtext.miniJava.DoubleTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Equality;
 import org.tetrabox.minijava.xtext.miniJava.Expression;
@@ -38,6 +39,7 @@ import org.tetrabox.minijava.xtext.miniJava.InferiorOrEqual;
 import org.tetrabox.minijava.xtext.miniJava.IntConstant;
 import org.tetrabox.minijava.xtext.miniJava.IntegerTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Interface;
+import org.tetrabox.minijava.xtext.miniJava.LongConstant;
 import org.tetrabox.minijava.xtext.miniJava.LongTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Member;
 import org.tetrabox.minijava.xtext.miniJava.Method;
@@ -414,19 +416,29 @@ public class MiniJavaAdapterFactory extends AdapterFactoryImpl
         return createMethodCallAdapter();
       }
       @Override
-      public Adapter caseStringConstant(StringConstant object)
-      {
-        return createStringConstantAdapter();
-      }
-      @Override
       public Adapter caseIntConstant(IntConstant object)
       {
         return createIntConstantAdapter();
       }
       @Override
+      public Adapter caseDoubleConstant(DoubleConstant object)
+      {
+        return createDoubleConstantAdapter();
+      }
+      @Override
+      public Adapter caseLongConstant(LongConstant object)
+      {
+        return createLongConstantAdapter();
+      }
+      @Override
       public Adapter caseBoolConstant(BoolConstant object)
       {
         return createBoolConstantAdapter();
+      }
+      @Override
+      public Adapter caseStringConstant(StringConstant object)
+      {
+        return createStringConstantAdapter();
       }
       @Override
       public Adapter caseThis(This object)
@@ -1306,21 +1318,6 @@ public class MiniJavaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.xtext.miniJava.StringConstant <em>String Constant</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.tetrabox.minijava.xtext.miniJava.StringConstant
-   * @generated
-   */
-  public Adapter createStringConstantAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.xtext.miniJava.IntConstant <em>Int Constant</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1336,6 +1333,36 @@ public class MiniJavaAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.xtext.miniJava.DoubleConstant <em>Double Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.tetrabox.minijava.xtext.miniJava.DoubleConstant
+   * @generated
+   */
+  public Adapter createDoubleConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.xtext.miniJava.LongConstant <em>Long Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.tetrabox.minijava.xtext.miniJava.LongConstant
+   * @generated
+   */
+  public Adapter createLongConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.xtext.miniJava.BoolConstant <em>Bool Constant</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -1346,6 +1373,21 @@ public class MiniJavaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBoolConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.xtext.miniJava.StringConstant <em>String Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.tetrabox.minijava.xtext.miniJava.StringConstant
+   * @generated
+   */
+  public Adapter createStringConstantAdapter()
   {
     return null;
   }

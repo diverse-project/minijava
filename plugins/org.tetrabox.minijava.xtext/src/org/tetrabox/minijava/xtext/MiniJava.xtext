@@ -9,7 +9,8 @@ Program:
 	imports+=Import*
 	classes+=TypeDeclaration*;
 
-terminal DOUBLE returns ecore::EDouble: (('0'..'9')+ ('.' ('0'..'9')*)?) | (('.') ('0'..'9')+);
+terminal DOUBLE returns ecore::EDouble: (('0'..'9')+ '.' ('0'..'9')*) | (('.') ('0'..'9')+);
+terminal LONG returns ecore::EString: INT ('l' | 'L');
 
 Import:
 	'import' importedNamespace=QualifiedNameWithWildcard ';';
@@ -169,9 +170,11 @@ SelectionExpression returns Expression:
 	'(' (args+=Expression (',' args+=Expression)*)? ')'))*;
 
 TerminalExpression returns Expression:
-	{StringConstant} value=STRING |
-	{IntConstant} value=DOUBLE |
+	{IntConstant} value=INT |
+	{DoubleConstant} value=DOUBLE |
+	{LongConstant} value=LONG |
 	{BoolConstant} value=('true' | 'false') |
+	{StringConstant} value=STRING |
 	{This} 'this' |
 	{Super} 'super' |
 	{Null} 'null' |

@@ -1826,86 +1826,96 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.tetrabox.minijava.xtext.MiniJava.TerminalExpression");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cStringConstantAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Action cIntConstantAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cValueSTRINGTerminalRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
+		private final RuleCall cValueINTTerminalRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cIntConstantAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Action cDoubleConstantAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cValueDOUBLETerminalRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cBoolConstantAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Action cLongConstantAction_2_0 = (Action)cGroup_2.eContents().get(0);
 		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final Alternatives cValueAlternatives_2_1_0 = (Alternatives)cValueAssignment_2_1.eContents().get(0);
-		private final Keyword cValueTrueKeyword_2_1_0_0 = (Keyword)cValueAlternatives_2_1_0.eContents().get(0);
-		private final Keyword cValueFalseKeyword_2_1_0_1 = (Keyword)cValueAlternatives_2_1_0.eContents().get(1);
+		private final RuleCall cValueLONGTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
-		private final Action cThisAction_3_0 = (Action)cGroup_3.eContents().get(0);
-		private final Keyword cThisKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Action cBoolConstantAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Assignment cValueAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final Alternatives cValueAlternatives_3_1_0 = (Alternatives)cValueAssignment_3_1.eContents().get(0);
+		private final Keyword cValueTrueKeyword_3_1_0_0 = (Keyword)cValueAlternatives_3_1_0.eContents().get(0);
+		private final Keyword cValueFalseKeyword_3_1_0_1 = (Keyword)cValueAlternatives_3_1_0.eContents().get(1);
 		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
-		private final Action cSuperAction_4_0 = (Action)cGroup_4.eContents().get(0);
-		private final Keyword cSuperKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Action cStringConstantAction_4_0 = (Action)cGroup_4.eContents().get(0);
+		private final Assignment cValueAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cValueAssignment_4_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cAlternatives.eContents().get(5);
-		private final Action cNullAction_5_0 = (Action)cGroup_5.eContents().get(0);
-		private final Keyword cNullKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
+		private final Action cThisAction_5_0 = (Action)cGroup_5.eContents().get(0);
+		private final Keyword cThisKeyword_5_1 = (Keyword)cGroup_5.eContents().get(1);
 		private final Group cGroup_6 = (Group)cAlternatives.eContents().get(6);
-		private final Action cNewObjectAction_6_0 = (Action)cGroup_6.eContents().get(0);
-		private final Keyword cNewKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Assignment cTypeAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final CrossReference cTypeClassCrossReference_6_2_0 = (CrossReference)cTypeAssignment_6_2.eContents().get(0);
-		private final RuleCall cTypeClassIDTerminalRuleCall_6_2_0_1 = (RuleCall)cTypeClassCrossReference_6_2_0.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_6_3 = (Keyword)cGroup_6.eContents().get(3);
-		private final Group cGroup_6_4 = (Group)cGroup_6.eContents().get(4);
-		private final Assignment cArgsAssignment_6_4_0 = (Assignment)cGroup_6_4.eContents().get(0);
-		private final RuleCall cArgsExpressionParserRuleCall_6_4_0_0 = (RuleCall)cArgsAssignment_6_4_0.eContents().get(0);
-		private final Group cGroup_6_4_1 = (Group)cGroup_6_4.eContents().get(1);
-		private final Keyword cCommaKeyword_6_4_1_0 = (Keyword)cGroup_6_4_1.eContents().get(0);
-		private final Assignment cArgsAssignment_6_4_1_1 = (Assignment)cGroup_6_4_1.eContents().get(1);
-		private final RuleCall cArgsExpressionParserRuleCall_6_4_1_1_0 = (RuleCall)cArgsAssignment_6_4_1_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_6_5 = (Keyword)cGroup_6.eContents().get(5);
+		private final Action cSuperAction_6_0 = (Action)cGroup_6.eContents().get(0);
+		private final Keyword cSuperKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
 		private final Group cGroup_7 = (Group)cAlternatives.eContents().get(7);
-		private final Action cNewArrayAction_7_0 = (Action)cGroup_7.eContents().get(0);
-		private final Keyword cNewKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
-		private final Assignment cTypeAssignment_7_2 = (Assignment)cGroup_7.eContents().get(2);
-		private final RuleCall cTypeTypeRefParserRuleCall_7_2_0 = (RuleCall)cTypeAssignment_7_2.eContents().get(0);
-		private final Keyword cLeftSquareBracketKeyword_7_3 = (Keyword)cGroup_7.eContents().get(3);
-		private final Assignment cSizeAssignment_7_4 = (Assignment)cGroup_7.eContents().get(4);
-		private final RuleCall cSizeExpressionParserRuleCall_7_4_0 = (RuleCall)cSizeAssignment_7_4.eContents().get(0);
-		private final Keyword cRightSquareBracketKeyword_7_5 = (Keyword)cGroup_7.eContents().get(5);
+		private final Action cNullAction_7_0 = (Action)cGroup_7.eContents().get(0);
+		private final Keyword cNullKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
 		private final Group cGroup_8 = (Group)cAlternatives.eContents().get(8);
-		private final Action cSymbolRefAction_8_0 = (Action)cGroup_8.eContents().get(0);
-		private final Assignment cSymbolAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
-		private final CrossReference cSymbolSymbolCrossReference_8_1_0 = (CrossReference)cSymbolAssignment_8_1.eContents().get(0);
-		private final RuleCall cSymbolSymbolIDTerminalRuleCall_8_1_0_1 = (RuleCall)cSymbolSymbolCrossReference_8_1_0.eContents().get(1);
+		private final Action cNewObjectAction_8_0 = (Action)cGroup_8.eContents().get(0);
+		private final Keyword cNewKeyword_8_1 = (Keyword)cGroup_8.eContents().get(1);
+		private final Assignment cTypeAssignment_8_2 = (Assignment)cGroup_8.eContents().get(2);
+		private final CrossReference cTypeClassCrossReference_8_2_0 = (CrossReference)cTypeAssignment_8_2.eContents().get(0);
+		private final RuleCall cTypeClassIDTerminalRuleCall_8_2_0_1 = (RuleCall)cTypeClassCrossReference_8_2_0.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_8_3 = (Keyword)cGroup_8.eContents().get(3);
+		private final Group cGroup_8_4 = (Group)cGroup_8.eContents().get(4);
+		private final Assignment cArgsAssignment_8_4_0 = (Assignment)cGroup_8_4.eContents().get(0);
+		private final RuleCall cArgsExpressionParserRuleCall_8_4_0_0 = (RuleCall)cArgsAssignment_8_4_0.eContents().get(0);
+		private final Group cGroup_8_4_1 = (Group)cGroup_8_4.eContents().get(1);
+		private final Keyword cCommaKeyword_8_4_1_0 = (Keyword)cGroup_8_4_1.eContents().get(0);
+		private final Assignment cArgsAssignment_8_4_1_1 = (Assignment)cGroup_8_4_1.eContents().get(1);
+		private final RuleCall cArgsExpressionParserRuleCall_8_4_1_1_0 = (RuleCall)cArgsAssignment_8_4_1_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_8_5 = (Keyword)cGroup_8.eContents().get(5);
+		private final Group cGroup_9 = (Group)cAlternatives.eContents().get(9);
+		private final Action cNewArrayAction_9_0 = (Action)cGroup_9.eContents().get(0);
+		private final Keyword cNewKeyword_9_1 = (Keyword)cGroup_9.eContents().get(1);
+		private final Assignment cTypeAssignment_9_2 = (Assignment)cGroup_9.eContents().get(2);
+		private final RuleCall cTypeTypeRefParserRuleCall_9_2_0 = (RuleCall)cTypeAssignment_9_2.eContents().get(0);
+		private final Keyword cLeftSquareBracketKeyword_9_3 = (Keyword)cGroup_9.eContents().get(3);
+		private final Assignment cSizeAssignment_9_4 = (Assignment)cGroup_9.eContents().get(4);
+		private final RuleCall cSizeExpressionParserRuleCall_9_4_0 = (RuleCall)cSizeAssignment_9_4.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_9_5 = (Keyword)cGroup_9.eContents().get(5);
+		private final Group cGroup_10 = (Group)cAlternatives.eContents().get(10);
+		private final Action cSymbolRefAction_10_0 = (Action)cGroup_10.eContents().get(0);
+		private final Assignment cSymbolAssignment_10_1 = (Assignment)cGroup_10.eContents().get(1);
+		private final CrossReference cSymbolSymbolCrossReference_10_1_0 = (CrossReference)cSymbolAssignment_10_1.eContents().get(0);
+		private final RuleCall cSymbolSymbolIDTerminalRuleCall_10_1_0_1 = (RuleCall)cSymbolSymbolCrossReference_10_1_0.eContents().get(1);
 		
 		//TerminalExpression Expression:
-		//	{StringConstant} value=STRING | {IntConstant} value=DOUBLE | {BoolConstant} value=('true' | 'false') | {This} 'this' |
-		//	{Super} 'super' | {Null} 'null' | {NewObject} 'new' type=[Class] => '(' (args+=Expression (',' args+=Expression)*)?
-		//	')' | {NewArray} 'new' type=TypeRef => '[' size=Expression ']' | {SymbolRef} symbol=[Symbol];
+		//	{IntConstant} value=INT | {DoubleConstant} value=DOUBLE | {LongConstant} value=LONG | {BoolConstant} value=('true' |
+		//	'false') | {StringConstant} value=STRING | {This} 'this' | {Super} 'super' | {Null} 'null' | {NewObject} 'new'
+		//	type=[Class] => '(' (args+=Expression (',' args+=Expression)*)? ')' | {NewArray} 'new' type=TypeRef => '['
+		//	size=Expression ']' | {SymbolRef} symbol=[Symbol];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{StringConstant} value=STRING | {IntConstant} value=DOUBLE | {BoolConstant} value=('true' | 'false') | {This} 'this' |
-		//{Super} 'super' | {Null} 'null' | {NewObject} 'new' type=[Class] => '(' (args+=Expression (',' args+=Expression)*)? ')'
-		//| {NewArray} 'new' type=TypeRef => '[' size=Expression ']' | {SymbolRef} symbol=[Symbol]
+		//{IntConstant} value=INT | {DoubleConstant} value=DOUBLE | {LongConstant} value=LONG | {BoolConstant} value=('true' |
+		//'false') | {StringConstant} value=STRING | {This} 'this' | {Super} 'super' | {Null} 'null' | {NewObject} 'new'
+		//type=[Class] => '(' (args+=Expression (',' args+=Expression)*)? ')' | {NewArray} 'new' type=TypeRef => '['
+		//size=Expression ']' | {SymbolRef} symbol=[Symbol]
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//{StringConstant} value=STRING
+		//{IntConstant} value=INT
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//{StringConstant}
-		public Action getStringConstantAction_0_0() { return cStringConstantAction_0_0; }
+		//{IntConstant}
+		public Action getIntConstantAction_0_0() { return cIntConstantAction_0_0; }
 		
-		//value=STRING
+		//value=INT
 		public Assignment getValueAssignment_0_1() { return cValueAssignment_0_1; }
 		
-		//STRING
-		public RuleCall getValueSTRINGTerminalRuleCall_0_1_0() { return cValueSTRINGTerminalRuleCall_0_1_0; }
+		//INT
+		public RuleCall getValueINTTerminalRuleCall_0_1_0() { return cValueINTTerminalRuleCall_0_1_0; }
 		
-		//{IntConstant} value=DOUBLE
+		//{DoubleConstant} value=DOUBLE
 		public Group getGroup_1() { return cGroup_1; }
 		
-		//{IntConstant}
-		public Action getIntConstantAction_1_0() { return cIntConstantAction_1_0; }
+		//{DoubleConstant}
+		public Action getDoubleConstantAction_1_0() { return cDoubleConstantAction_1_0; }
 		
 		//value=DOUBLE
 		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
@@ -1913,137 +1923,161 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 		//DOUBLE
 		public RuleCall getValueDOUBLETerminalRuleCall_1_1_0() { return cValueDOUBLETerminalRuleCall_1_1_0; }
 		
-		//{BoolConstant} value=('true' | 'false')
+		//{LongConstant} value=LONG
 		public Group getGroup_2() { return cGroup_2; }
 		
-		//{BoolConstant}
-		public Action getBoolConstantAction_2_0() { return cBoolConstantAction_2_0; }
+		//{LongConstant}
+		public Action getLongConstantAction_2_0() { return cLongConstantAction_2_0; }
 		
-		//value=('true' | 'false')
+		//value=LONG
 		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
 		
-		//('true' | 'false')
-		public Alternatives getValueAlternatives_2_1_0() { return cValueAlternatives_2_1_0; }
+		//LONG
+		public RuleCall getValueLONGTerminalRuleCall_2_1_0() { return cValueLONGTerminalRuleCall_2_1_0; }
 		
-		//'true'
-		public Keyword getValueTrueKeyword_2_1_0_0() { return cValueTrueKeyword_2_1_0_0; }
-		
-		//'false'
-		public Keyword getValueFalseKeyword_2_1_0_1() { return cValueFalseKeyword_2_1_0_1; }
-		
-		//{This} 'this'
+		//{BoolConstant} value=('true' | 'false')
 		public Group getGroup_3() { return cGroup_3; }
 		
-		//{This}
-		public Action getThisAction_3_0() { return cThisAction_3_0; }
+		//{BoolConstant}
+		public Action getBoolConstantAction_3_0() { return cBoolConstantAction_3_0; }
 		
-		//'this'
-		public Keyword getThisKeyword_3_1() { return cThisKeyword_3_1; }
+		//value=('true' | 'false')
+		public Assignment getValueAssignment_3_1() { return cValueAssignment_3_1; }
 		
-		//{Super} 'super'
+		//('true' | 'false')
+		public Alternatives getValueAlternatives_3_1_0() { return cValueAlternatives_3_1_0; }
+		
+		//'true'
+		public Keyword getValueTrueKeyword_3_1_0_0() { return cValueTrueKeyword_3_1_0_0; }
+		
+		//'false'
+		public Keyword getValueFalseKeyword_3_1_0_1() { return cValueFalseKeyword_3_1_0_1; }
+		
+		//{StringConstant} value=STRING
 		public Group getGroup_4() { return cGroup_4; }
 		
-		//{Super}
-		public Action getSuperAction_4_0() { return cSuperAction_4_0; }
+		//{StringConstant}
+		public Action getStringConstantAction_4_0() { return cStringConstantAction_4_0; }
 		
-		//'super'
-		public Keyword getSuperKeyword_4_1() { return cSuperKeyword_4_1; }
+		//value=STRING
+		public Assignment getValueAssignment_4_1() { return cValueAssignment_4_1; }
 		
-		//{Null} 'null'
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_4_1_0() { return cValueSTRINGTerminalRuleCall_4_1_0; }
+		
+		//{This} 'this'
 		public Group getGroup_5() { return cGroup_5; }
 		
-		//{Null}
-		public Action getNullAction_5_0() { return cNullAction_5_0; }
+		//{This}
+		public Action getThisAction_5_0() { return cThisAction_5_0; }
 		
-		//'null'
-		public Keyword getNullKeyword_5_1() { return cNullKeyword_5_1; }
+		//'this'
+		public Keyword getThisKeyword_5_1() { return cThisKeyword_5_1; }
 		
-		//{NewObject} 'new' type=[Class] => '(' (args+=Expression (',' args+=Expression)*)? ')'
+		//{Super} 'super'
 		public Group getGroup_6() { return cGroup_6; }
 		
-		//{NewObject}
-		public Action getNewObjectAction_6_0() { return cNewObjectAction_6_0; }
+		//{Super}
+		public Action getSuperAction_6_0() { return cSuperAction_6_0; }
 		
-		//'new'
-		public Keyword getNewKeyword_6_1() { return cNewKeyword_6_1; }
+		//'super'
+		public Keyword getSuperKeyword_6_1() { return cSuperKeyword_6_1; }
 		
-		//type=[Class]
-		public Assignment getTypeAssignment_6_2() { return cTypeAssignment_6_2; }
-		
-		//[Class]
-		public CrossReference getTypeClassCrossReference_6_2_0() { return cTypeClassCrossReference_6_2_0; }
-		
-		//ID
-		public RuleCall getTypeClassIDTerminalRuleCall_6_2_0_1() { return cTypeClassIDTerminalRuleCall_6_2_0_1; }
-		
-		//=> '('
-		public Keyword getLeftParenthesisKeyword_6_3() { return cLeftParenthesisKeyword_6_3; }
-		
-		//(args+=Expression (',' args+=Expression)*)?
-		public Group getGroup_6_4() { return cGroup_6_4; }
-		
-		//args+=Expression
-		public Assignment getArgsAssignment_6_4_0() { return cArgsAssignment_6_4_0; }
-		
-		//Expression
-		public RuleCall getArgsExpressionParserRuleCall_6_4_0_0() { return cArgsExpressionParserRuleCall_6_4_0_0; }
-		
-		//(',' args+=Expression)*
-		public Group getGroup_6_4_1() { return cGroup_6_4_1; }
-		
-		//','
-		public Keyword getCommaKeyword_6_4_1_0() { return cCommaKeyword_6_4_1_0; }
-		
-		//args+=Expression
-		public Assignment getArgsAssignment_6_4_1_1() { return cArgsAssignment_6_4_1_1; }
-		
-		//Expression
-		public RuleCall getArgsExpressionParserRuleCall_6_4_1_1_0() { return cArgsExpressionParserRuleCall_6_4_1_1_0; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_6_5() { return cRightParenthesisKeyword_6_5; }
-		
-		//{NewArray} 'new' type=TypeRef => '[' size=Expression ']'
+		//{Null} 'null'
 		public Group getGroup_7() { return cGroup_7; }
 		
-		//{NewArray}
-		public Action getNewArrayAction_7_0() { return cNewArrayAction_7_0; }
+		//{Null}
+		public Action getNullAction_7_0() { return cNullAction_7_0; }
 		
-		//'new'
-		public Keyword getNewKeyword_7_1() { return cNewKeyword_7_1; }
+		//'null'
+		public Keyword getNullKeyword_7_1() { return cNullKeyword_7_1; }
 		
-		//type=TypeRef
-		public Assignment getTypeAssignment_7_2() { return cTypeAssignment_7_2; }
-		
-		//TypeRef
-		public RuleCall getTypeTypeRefParserRuleCall_7_2_0() { return cTypeTypeRefParserRuleCall_7_2_0; }
-		
-		//=> '['
-		public Keyword getLeftSquareBracketKeyword_7_3() { return cLeftSquareBracketKeyword_7_3; }
-		
-		//size=Expression
-		public Assignment getSizeAssignment_7_4() { return cSizeAssignment_7_4; }
-		
-		//Expression
-		public RuleCall getSizeExpressionParserRuleCall_7_4_0() { return cSizeExpressionParserRuleCall_7_4_0; }
-		
-		//']'
-		public Keyword getRightSquareBracketKeyword_7_5() { return cRightSquareBracketKeyword_7_5; }
-		
-		//{SymbolRef} symbol=[Symbol]
+		//{NewObject} 'new' type=[Class] => '(' (args+=Expression (',' args+=Expression)*)? ')'
 		public Group getGroup_8() { return cGroup_8; }
 		
-		//{SymbolRef}
-		public Action getSymbolRefAction_8_0() { return cSymbolRefAction_8_0; }
+		//{NewObject}
+		public Action getNewObjectAction_8_0() { return cNewObjectAction_8_0; }
 		
-		//symbol=[Symbol]
-		public Assignment getSymbolAssignment_8_1() { return cSymbolAssignment_8_1; }
+		//'new'
+		public Keyword getNewKeyword_8_1() { return cNewKeyword_8_1; }
 		
-		//[Symbol]
-		public CrossReference getSymbolSymbolCrossReference_8_1_0() { return cSymbolSymbolCrossReference_8_1_0; }
+		//type=[Class]
+		public Assignment getTypeAssignment_8_2() { return cTypeAssignment_8_2; }
+		
+		//[Class]
+		public CrossReference getTypeClassCrossReference_8_2_0() { return cTypeClassCrossReference_8_2_0; }
 		
 		//ID
-		public RuleCall getSymbolSymbolIDTerminalRuleCall_8_1_0_1() { return cSymbolSymbolIDTerminalRuleCall_8_1_0_1; }
+		public RuleCall getTypeClassIDTerminalRuleCall_8_2_0_1() { return cTypeClassIDTerminalRuleCall_8_2_0_1; }
+		
+		//=> '('
+		public Keyword getLeftParenthesisKeyword_8_3() { return cLeftParenthesisKeyword_8_3; }
+		
+		//(args+=Expression (',' args+=Expression)*)?
+		public Group getGroup_8_4() { return cGroup_8_4; }
+		
+		//args+=Expression
+		public Assignment getArgsAssignment_8_4_0() { return cArgsAssignment_8_4_0; }
+		
+		//Expression
+		public RuleCall getArgsExpressionParserRuleCall_8_4_0_0() { return cArgsExpressionParserRuleCall_8_4_0_0; }
+		
+		//(',' args+=Expression)*
+		public Group getGroup_8_4_1() { return cGroup_8_4_1; }
+		
+		//','
+		public Keyword getCommaKeyword_8_4_1_0() { return cCommaKeyword_8_4_1_0; }
+		
+		//args+=Expression
+		public Assignment getArgsAssignment_8_4_1_1() { return cArgsAssignment_8_4_1_1; }
+		
+		//Expression
+		public RuleCall getArgsExpressionParserRuleCall_8_4_1_1_0() { return cArgsExpressionParserRuleCall_8_4_1_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_8_5() { return cRightParenthesisKeyword_8_5; }
+		
+		//{NewArray} 'new' type=TypeRef => '[' size=Expression ']'
+		public Group getGroup_9() { return cGroup_9; }
+		
+		//{NewArray}
+		public Action getNewArrayAction_9_0() { return cNewArrayAction_9_0; }
+		
+		//'new'
+		public Keyword getNewKeyword_9_1() { return cNewKeyword_9_1; }
+		
+		//type=TypeRef
+		public Assignment getTypeAssignment_9_2() { return cTypeAssignment_9_2; }
+		
+		//TypeRef
+		public RuleCall getTypeTypeRefParserRuleCall_9_2_0() { return cTypeTypeRefParserRuleCall_9_2_0; }
+		
+		//=> '['
+		public Keyword getLeftSquareBracketKeyword_9_3() { return cLeftSquareBracketKeyword_9_3; }
+		
+		//size=Expression
+		public Assignment getSizeAssignment_9_4() { return cSizeAssignment_9_4; }
+		
+		//Expression
+		public RuleCall getSizeExpressionParserRuleCall_9_4_0() { return cSizeExpressionParserRuleCall_9_4_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_9_5() { return cRightSquareBracketKeyword_9_5; }
+		
+		//{SymbolRef} symbol=[Symbol]
+		public Group getGroup_10() { return cGroup_10; }
+		
+		//{SymbolRef}
+		public Action getSymbolRefAction_10_0() { return cSymbolRefAction_10_0; }
+		
+		//symbol=[Symbol]
+		public Assignment getSymbolAssignment_10_1() { return cSymbolAssignment_10_1; }
+		
+		//[Symbol]
+		public CrossReference getSymbolSymbolCrossReference_10_1_0() { return cSymbolSymbolCrossReference_10_1_0; }
+		
+		//ID
+		public RuleCall getSymbolSymbolIDTerminalRuleCall_10_1_0_1() { return cSymbolSymbolIDTerminalRuleCall_10_1_0_1; }
 	}
 	
 	public class AccessLevelElements extends AbstractEnumRuleElementFinder {
@@ -2084,6 +2118,7 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final ProgramElements pProgram;
 	private final TerminalRule tDOUBLE;
+	private final TerminalRule tLONG;
 	private final ImportElements pImport;
 	private final QualifiedNameElements pQualifiedName;
 	private final QualifiedNameWithWildcardElements pQualifiedNameWithWildcard;
@@ -2135,6 +2170,7 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pProgram = new ProgramElements();
 		this.tDOUBLE = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.tetrabox.minijava.xtext.MiniJava.DOUBLE");
+		this.tLONG = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.tetrabox.minijava.xtext.MiniJava.LONG");
 		this.pImport = new ImportElements();
 		this.pQualifiedName = new QualifiedNameElements();
 		this.pQualifiedNameWithWildcard = new QualifiedNameWithWildcardElements();
@@ -2216,9 +2252,15 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal DOUBLE returns ecore::EDouble:
-	//	'0'..'9'+ ('.' '0'..'9'*)? | '.' '0'..'9'+;
+	//	'0'..'9'+ '.' '0'..'9'* | '.' '0'..'9'+;
 	public TerminalRule getDOUBLERule() {
 		return tDOUBLE;
+	}
+	
+	//terminal LONG:
+	//	INT ('l' | 'L');
+	public TerminalRule getLONGRule() {
+		return tLONG;
 	}
 	
 	//Import:
@@ -2617,9 +2659,10 @@ public class MiniJavaGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TerminalExpression Expression:
-	//	{StringConstant} value=STRING | {IntConstant} value=DOUBLE | {BoolConstant} value=('true' | 'false') | {This} 'this' |
-	//	{Super} 'super' | {Null} 'null' | {NewObject} 'new' type=[Class] => '(' (args+=Expression (',' args+=Expression)*)?
-	//	')' | {NewArray} 'new' type=TypeRef => '[' size=Expression ']' | {SymbolRef} symbol=[Symbol];
+	//	{IntConstant} value=INT | {DoubleConstant} value=DOUBLE | {LongConstant} value=LONG | {BoolConstant} value=('true' |
+	//	'false') | {StringConstant} value=STRING | {This} 'this' | {Super} 'super' | {Null} 'null' | {NewObject} 'new'
+	//	type=[Class] => '(' (args+=Expression (',' args+=Expression)*)? ')' | {NewArray} 'new' type=TypeRef => '['
+	//	size=Expression ']' | {SymbolRef} symbol=[Symbol];
 	public TerminalExpressionElements getTerminalExpressionAccess() {
 		return pTerminalExpression;
 	}

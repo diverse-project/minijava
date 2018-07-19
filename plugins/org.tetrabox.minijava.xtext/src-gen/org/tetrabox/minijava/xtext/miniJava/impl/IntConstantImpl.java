@@ -35,7 +35,7 @@ public class IntConstantImpl extends ExpressionImpl implements IntConstant
    * @generated
    * @ordered
    */
-  protected static final double VALUE_EDEFAULT = 0.0;
+  protected static final int VALUE_EDEFAULT = 0;
 
   /**
    * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -45,7 +45,7 @@ public class IntConstantImpl extends ExpressionImpl implements IntConstant
    * @generated
    * @ordered
    */
-  protected double value = VALUE_EDEFAULT;
+  protected int value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,7 +73,7 @@ public class IntConstantImpl extends ExpressionImpl implements IntConstant
    * <!-- end-user-doc -->
    * @generated
    */
-  public double getValue()
+  public int getValue()
   {
     return value;
   }
@@ -83,9 +83,9 @@ public class IntConstantImpl extends ExpressionImpl implements IntConstant
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setValue(double newValue)
+  public void setValue(int newValue)
   {
-    double oldValue = value;
+    int oldValue = value;
     value = newValue;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MiniJavaPackage.INT_CONSTANT__VALUE, oldValue, value));
@@ -118,7 +118,7 @@ public class IntConstantImpl extends ExpressionImpl implements IntConstant
     switch (featureID)
     {
       case MiniJavaPackage.INT_CONSTANT__VALUE:
-        setValue((Double)newValue);
+        setValue((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);

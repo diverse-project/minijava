@@ -25,6 +25,7 @@ import org.tetrabox.minijava.xtext.miniJava.ByteTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.CharTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.ClassRef;
 import org.tetrabox.minijava.xtext.miniJava.Division;
+import org.tetrabox.minijava.xtext.miniJava.DoubleConstant;
 import org.tetrabox.minijava.xtext.miniJava.DoubleTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Equality;
 import org.tetrabox.minijava.xtext.miniJava.Expression;
@@ -40,6 +41,7 @@ import org.tetrabox.minijava.xtext.miniJava.InferiorOrEqual;
 import org.tetrabox.minijava.xtext.miniJava.IntConstant;
 import org.tetrabox.minijava.xtext.miniJava.IntegerTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Interface;
+import org.tetrabox.minijava.xtext.miniJava.LongConstant;
 import org.tetrabox.minijava.xtext.miniJava.LongTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Member;
 import org.tetrabox.minijava.xtext.miniJava.Method;
@@ -476,13 +478,6 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass stringConstantEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass intConstantEClass = null;
 
   /**
@@ -490,7 +485,28 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass doubleConstantEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass longConstantEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass boolConstantEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringConstantEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1829,26 +1845,6 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getStringConstant()
-  {
-    return stringConstantEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getStringConstant_Value()
-  {
-    return (EAttribute)stringConstantEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getIntConstant()
   {
     return intConstantEClass;
@@ -1869,6 +1865,46 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getDoubleConstant()
+  {
+    return doubleConstantEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDoubleConstant_Value()
+  {
+    return (EAttribute)doubleConstantEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLongConstant()
+  {
+    return longConstantEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLongConstant_Value()
+  {
+    return (EAttribute)longConstantEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getBoolConstant()
   {
     return boolConstantEClass;
@@ -1882,6 +1918,26 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
   public EAttribute getBoolConstant_Value()
   {
     return (EAttribute)boolConstantEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStringConstant()
+  {
+    return stringConstantEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStringConstant_Value()
+  {
+    return (EAttribute)stringConstantEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -2211,14 +2267,20 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
     createEReference(methodCallEClass, METHOD_CALL__METHOD);
     createEReference(methodCallEClass, METHOD_CALL__ARGS);
 
-    stringConstantEClass = createEClass(STRING_CONSTANT);
-    createEAttribute(stringConstantEClass, STRING_CONSTANT__VALUE);
-
     intConstantEClass = createEClass(INT_CONSTANT);
     createEAttribute(intConstantEClass, INT_CONSTANT__VALUE);
 
+    doubleConstantEClass = createEClass(DOUBLE_CONSTANT);
+    createEAttribute(doubleConstantEClass, DOUBLE_CONSTANT__VALUE);
+
+    longConstantEClass = createEClass(LONG_CONSTANT);
+    createEAttribute(longConstantEClass, LONG_CONSTANT__VALUE);
+
     boolConstantEClass = createEClass(BOOL_CONSTANT);
     createEAttribute(boolConstantEClass, BOOL_CONSTANT__VALUE);
+
+    stringConstantEClass = createEClass(STRING_CONSTANT);
+    createEAttribute(stringConstantEClass, STRING_CONSTANT__VALUE);
 
     thisEClass = createEClass(THIS);
 
@@ -2321,9 +2383,11 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
     negEClass.getESuperTypes().add(this.getExpression());
     fieldAccessEClass.getESuperTypes().add(this.getExpression());
     methodCallEClass.getESuperTypes().add(this.getExpression());
-    stringConstantEClass.getESuperTypes().add(this.getExpression());
     intConstantEClass.getESuperTypes().add(this.getExpression());
+    doubleConstantEClass.getESuperTypes().add(this.getExpression());
+    longConstantEClass.getESuperTypes().add(this.getExpression());
     boolConstantEClass.getESuperTypes().add(this.getExpression());
+    stringConstantEClass.getESuperTypes().add(this.getExpression());
     thisEClass.getESuperTypes().add(this.getExpression());
     superEClass.getESuperTypes().add(this.getExpression());
     nullEClass.getESuperTypes().add(this.getExpression());
@@ -2509,14 +2573,20 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
     initEReference(getMethodCall_Method(), this.getMethod(), null, "method", null, 0, 1, MethodCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMethodCall_Args(), this.getExpression(), null, "args", null, 0, -1, MethodCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(stringConstantEClass, StringConstant.class, "StringConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStringConstant_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(intConstantEClass, IntConstant.class, "IntConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIntConstant_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, IntConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getIntConstant_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IntConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(doubleConstantEClass, DoubleConstant.class, "DoubleConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDoubleConstant_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, DoubleConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(longConstantEClass, LongConstant.class, "LongConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLongConstant_Value(), ecorePackage.getEString(), "value", null, 0, 1, LongConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(boolConstantEClass, BoolConstant.class, "BoolConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBoolConstant_Value(), ecorePackage.getEString(), "value", null, 0, 1, BoolConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringConstantEClass, StringConstant.class, "StringConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStringConstant_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(thisEClass, This.class, "This", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

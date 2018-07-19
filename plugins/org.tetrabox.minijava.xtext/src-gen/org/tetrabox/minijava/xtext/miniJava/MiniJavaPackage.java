@@ -1923,34 +1923,6 @@ public interface MiniJavaPackage extends EPackage
   int METHOD_CALL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
 
   /**
-   * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.StringConstantImpl <em>String Constant</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.tetrabox.minijava.xtext.miniJava.impl.StringConstantImpl
-   * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getStringConstant()
-   * @generated
-   */
-  int STRING_CONSTANT = 55;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_CONSTANT__VALUE = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>String Constant</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int STRING_CONSTANT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.IntConstantImpl <em>Int Constant</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1958,7 +1930,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getIntConstant()
    * @generated
    */
-  int INT_CONSTANT = 56;
+  int INT_CONSTANT = 55;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1979,6 +1951,62 @@ public interface MiniJavaPackage extends EPackage
   int INT_CONSTANT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.DoubleConstantImpl <em>Double Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.DoubleConstantImpl
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getDoubleConstant()
+   * @generated
+   */
+  int DOUBLE_CONSTANT = 56;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOUBLE_CONSTANT__VALUE = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Double Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DOUBLE_CONSTANT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.LongConstantImpl <em>Long Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.LongConstantImpl
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getLongConstant()
+   * @generated
+   */
+  int LONG_CONSTANT = 57;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_CONSTANT__VALUE = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Long Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LONG_CONSTANT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.BoolConstantImpl <em>Bool Constant</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1986,7 +2014,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getBoolConstant()
    * @generated
    */
-  int BOOL_CONSTANT = 57;
+  int BOOL_CONSTANT = 58;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2007,6 +2035,34 @@ public interface MiniJavaPackage extends EPackage
   int BOOL_CONSTANT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.StringConstantImpl <em>String Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.StringConstantImpl
+   * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getStringConstant()
+   * @generated
+   */
+  int STRING_CONSTANT = 59;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_CONSTANT__VALUE = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>String Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_CONSTANT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.ThisImpl <em>This</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2014,7 +2070,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getThis()
    * @generated
    */
-  int THIS = 58;
+  int THIS = 60;
 
   /**
    * The number of structural features of the '<em>This</em>' class.
@@ -2033,7 +2089,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getSuper()
    * @generated
    */
-  int SUPER = 59;
+  int SUPER = 61;
 
   /**
    * The number of structural features of the '<em>Super</em>' class.
@@ -2052,7 +2108,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getNull()
    * @generated
    */
-  int NULL = 60;
+  int NULL = 62;
 
   /**
    * The number of structural features of the '<em>Null</em>' class.
@@ -2071,7 +2127,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getNewObject()
    * @generated
    */
-  int NEW_OBJECT = 61;
+  int NEW_OBJECT = 63;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -2108,7 +2164,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getNewArray()
    * @generated
    */
-  int NEW_ARRAY = 62;
+  int NEW_ARRAY = 64;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -2145,7 +2201,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getSymbolRef()
    * @generated
    */
-  int SYMBOL_REF = 63;
+  int SYMBOL_REF = 65;
 
   /**
    * The feature id for the '<em><b>Symbol</b></em>' reference.
@@ -2173,7 +2229,7 @@ public interface MiniJavaPackage extends EPackage
    * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getAccessLevel()
    * @generated
    */
-  int ACCESS_LEVEL = 64;
+  int ACCESS_LEVEL = 66;
 
 
   /**
@@ -3464,27 +3520,6 @@ public interface MiniJavaPackage extends EPackage
   EReference getMethodCall_Args();
 
   /**
-   * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.StringConstant <em>String Constant</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>String Constant</em>'.
-   * @see org.tetrabox.minijava.xtext.miniJava.StringConstant
-   * @generated
-   */
-  EClass getStringConstant();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.tetrabox.minijava.xtext.miniJava.StringConstant#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see org.tetrabox.minijava.xtext.miniJava.StringConstant#getValue()
-   * @see #getStringConstant()
-   * @generated
-   */
-  EAttribute getStringConstant_Value();
-
-  /**
    * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.IntConstant <em>Int Constant</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3506,6 +3541,48 @@ public interface MiniJavaPackage extends EPackage
   EAttribute getIntConstant_Value();
 
   /**
+   * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.DoubleConstant <em>Double Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Double Constant</em>'.
+   * @see org.tetrabox.minijava.xtext.miniJava.DoubleConstant
+   * @generated
+   */
+  EClass getDoubleConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.tetrabox.minijava.xtext.miniJava.DoubleConstant#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.tetrabox.minijava.xtext.miniJava.DoubleConstant#getValue()
+   * @see #getDoubleConstant()
+   * @generated
+   */
+  EAttribute getDoubleConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.LongConstant <em>Long Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Long Constant</em>'.
+   * @see org.tetrabox.minijava.xtext.miniJava.LongConstant
+   * @generated
+   */
+  EClass getLongConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.tetrabox.minijava.xtext.miniJava.LongConstant#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.tetrabox.minijava.xtext.miniJava.LongConstant#getValue()
+   * @see #getLongConstant()
+   * @generated
+   */
+  EAttribute getLongConstant_Value();
+
+  /**
    * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.BoolConstant <em>Bool Constant</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3525,6 +3602,27 @@ public interface MiniJavaPackage extends EPackage
    * @generated
    */
   EAttribute getBoolConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.StringConstant <em>String Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Constant</em>'.
+   * @see org.tetrabox.minijava.xtext.miniJava.StringConstant
+   * @generated
+   */
+  EClass getStringConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.tetrabox.minijava.xtext.miniJava.StringConstant#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see org.tetrabox.minijava.xtext.miniJava.StringConstant#getValue()
+   * @see #getStringConstant()
+   * @generated
+   */
+  EAttribute getStringConstant_Value();
 
   /**
    * Returns the meta object for class '{@link org.tetrabox.minijava.xtext.miniJava.This <em>This</em>}'.
@@ -4761,24 +4859,6 @@ public interface MiniJavaPackage extends EPackage
     EReference METHOD_CALL__ARGS = eINSTANCE.getMethodCall_Args();
 
     /**
-     * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.StringConstantImpl <em>String Constant</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.tetrabox.minijava.xtext.miniJava.impl.StringConstantImpl
-     * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getStringConstant()
-     * @generated
-     */
-    EClass STRING_CONSTANT = eINSTANCE.getStringConstant();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute STRING_CONSTANT__VALUE = eINSTANCE.getStringConstant_Value();
-
-    /**
      * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.IntConstantImpl <em>Int Constant</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4797,6 +4877,42 @@ public interface MiniJavaPackage extends EPackage
     EAttribute INT_CONSTANT__VALUE = eINSTANCE.getIntConstant_Value();
 
     /**
+     * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.DoubleConstantImpl <em>Double Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.DoubleConstantImpl
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getDoubleConstant()
+     * @generated
+     */
+    EClass DOUBLE_CONSTANT = eINSTANCE.getDoubleConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DOUBLE_CONSTANT__VALUE = eINSTANCE.getDoubleConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.LongConstantImpl <em>Long Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.LongConstantImpl
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getLongConstant()
+     * @generated
+     */
+    EClass LONG_CONSTANT = eINSTANCE.getLongConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LONG_CONSTANT__VALUE = eINSTANCE.getLongConstant_Value();
+
+    /**
      * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.BoolConstantImpl <em>Bool Constant</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4813,6 +4929,24 @@ public interface MiniJavaPackage extends EPackage
      * @generated
      */
     EAttribute BOOL_CONSTANT__VALUE = eINSTANCE.getBoolConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.StringConstantImpl <em>String Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.StringConstantImpl
+     * @see org.tetrabox.minijava.xtext.miniJava.impl.MiniJavaPackageImpl#getStringConstant()
+     * @generated
+     */
+    EClass STRING_CONSTANT = eINSTANCE.getStringConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_CONSTANT__VALUE = eINSTANCE.getStringConstant_Value();
 
     /**
      * The meta object literal for the '{@link org.tetrabox.minijava.xtext.miniJava.impl.ThisImpl <em>This</em>}' class.

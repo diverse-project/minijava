@@ -169,14 +169,20 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference MiniJava.ecore#//MethodCall/method"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MiniJava.ecore#//MethodCall/args"/>
     </genClasses>
-    <genClasses ecoreClass="MiniJava.ecore#//StringConstant">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MiniJava.ecore#//StringConstant/value"/>
-    </genClasses>
     <genClasses ecoreClass="MiniJava.ecore#//IntConstant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MiniJava.ecore#//IntConstant/value"/>
     </genClasses>
+    <genClasses ecoreClass="MiniJava.ecore#//DoubleConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MiniJava.ecore#//DoubleConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MiniJava.ecore#//LongConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MiniJava.ecore#//LongConstant/value"/>
+    </genClasses>
     <genClasses ecoreClass="MiniJava.ecore#//BoolConstant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MiniJava.ecore#//BoolConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MiniJava.ecore#//StringConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MiniJava.ecore#//StringConstant/value"/>
     </genClasses>
     <genClasses ecoreClass="MiniJava.ecore#//This"/>
     <genClasses ecoreClass="MiniJava.ecore#//Super"/>

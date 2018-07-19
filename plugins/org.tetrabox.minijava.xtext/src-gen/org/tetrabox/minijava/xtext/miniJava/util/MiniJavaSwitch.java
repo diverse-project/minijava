@@ -21,6 +21,7 @@ import org.tetrabox.minijava.xtext.miniJava.ByteTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.CharTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.ClassRef;
 import org.tetrabox.minijava.xtext.miniJava.Division;
+import org.tetrabox.minijava.xtext.miniJava.DoubleConstant;
 import org.tetrabox.minijava.xtext.miniJava.DoubleTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Equality;
 import org.tetrabox.minijava.xtext.miniJava.Expression;
@@ -36,6 +37,7 @@ import org.tetrabox.minijava.xtext.miniJava.InferiorOrEqual;
 import org.tetrabox.minijava.xtext.miniJava.IntConstant;
 import org.tetrabox.minijava.xtext.miniJava.IntegerTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Interface;
+import org.tetrabox.minijava.xtext.miniJava.LongConstant;
 import org.tetrabox.minijava.xtext.miniJava.LongTypeRef;
 import org.tetrabox.minijava.xtext.miniJava.Member;
 import org.tetrabox.minijava.xtext.miniJava.Method;
@@ -631,16 +633,6 @@ public class MiniJavaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MiniJavaPackage.STRING_CONSTANT:
-      {
-        StringConstant stringConstant = (StringConstant)theEObject;
-        T result = caseStringConstant(stringConstant);
-        if (result == null) result = caseExpression(stringConstant);
-        if (result == null) result = caseStatement(stringConstant);
-        if (result == null) result = caseAssignee(stringConstant);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MiniJavaPackage.INT_CONSTANT:
       {
         IntConstant intConstant = (IntConstant)theEObject;
@@ -651,6 +643,26 @@ public class MiniJavaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MiniJavaPackage.DOUBLE_CONSTANT:
+      {
+        DoubleConstant doubleConstant = (DoubleConstant)theEObject;
+        T result = caseDoubleConstant(doubleConstant);
+        if (result == null) result = caseExpression(doubleConstant);
+        if (result == null) result = caseStatement(doubleConstant);
+        if (result == null) result = caseAssignee(doubleConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MiniJavaPackage.LONG_CONSTANT:
+      {
+        LongConstant longConstant = (LongConstant)theEObject;
+        T result = caseLongConstant(longConstant);
+        if (result == null) result = caseExpression(longConstant);
+        if (result == null) result = caseStatement(longConstant);
+        if (result == null) result = caseAssignee(longConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MiniJavaPackage.BOOL_CONSTANT:
       {
         BoolConstant boolConstant = (BoolConstant)theEObject;
@@ -658,6 +670,16 @@ public class MiniJavaSwitch<T> extends Switch<T>
         if (result == null) result = caseExpression(boolConstant);
         if (result == null) result = caseStatement(boolConstant);
         if (result == null) result = caseAssignee(boolConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MiniJavaPackage.STRING_CONSTANT:
+      {
+        StringConstant stringConstant = (StringConstant)theEObject;
+        T result = caseStringConstant(stringConstant);
+        if (result == null) result = caseExpression(stringConstant);
+        if (result == null) result = caseStatement(stringConstant);
+        if (result == null) result = caseAssignee(stringConstant);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1606,22 +1628,6 @@ public class MiniJavaSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>String Constant</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>String Constant</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseStringConstant(StringConstant object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Int Constant</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1638,6 +1644,38 @@ public class MiniJavaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Double Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Double Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDoubleConstant(DoubleConstant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Long Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Long Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLongConstant(LongConstant object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Bool Constant</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1649,6 +1687,22 @@ public class MiniJavaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBoolConstant(BoolConstant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringConstant(StringConstant object)
   {
     return null;
   }
