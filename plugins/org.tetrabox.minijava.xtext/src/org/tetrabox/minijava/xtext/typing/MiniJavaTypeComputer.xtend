@@ -54,6 +54,8 @@ import org.tetrabox.minijava.xtext.miniJava.ByteTypeRef
 import org.tetrabox.minijava.xtext.miniJava.LongTypeRef
 import org.tetrabox.minijava.xtext.miniJava.LongConstant
 import org.tetrabox.minijava.xtext.miniJava.DoubleConstant
+import org.tetrabox.minijava.xtext.miniJava.Superior
+import org.tetrabox.minijava.xtext.miniJava.Inferior
 
 class MiniJavaTypeComputer {
 	protected static val factory = MiniJavaFactory.eINSTANCE
@@ -201,6 +203,10 @@ class MiniJavaTypeComputer {
 				BOOLEAN_TYPE
 			SuperiorOrEqual:
 				BOOLEAN_TYPE
+			Superior:
+				BOOLEAN_TYPE
+			Inferior:
+				BOOLEAN_TYPE
 			InferiorOrEqual:
 				BOOLEAN_TYPE
 			Minus:
@@ -226,8 +232,7 @@ class MiniJavaTypeComputer {
 					StringTypeRef: STRING_ARRAY_TYPE
 					ClassRef: getOrCreateClassRefType(e.type as ClassRef)
 				}
-			default: UNRECOGNIZED_TYPE
-				
+			default: UNRECOGNIZED_TYPE	
 		}
 	}
 	
