@@ -432,7 +432,11 @@ class MiniJavaValidator extends AbstractMiniJavaValidator {
 	def dispatch checkType(ArrayAccess arrayAccess) {
 		val TypeDeclaration objectType = arrayAccess.object.typeFor
 		if(!objectType.isArray) {
-			error('''Should be an array. Actual type: «objectType»''', MiniJavaPackage.eINSTANCE.arrayAccess_Object)
+			error('''Should be an array. Actual type: «objectType.name»''', MiniJavaPackage.eINSTANCE.arrayAccess_Object)
+		}
+		
+		if(!arrayAccess.index.typeFor.isConformant(INT_TYPE)) {
+			error('''Should be an int expression. Actual type: «arrayAccess.index.typeFor.name»''', MiniJavaPackage.eINSTANCE.arrayAccess_Index)
 		}
 	}
 	

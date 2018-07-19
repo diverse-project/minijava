@@ -277,10 +277,7 @@ class MiniJavaTypeComputer {
 			Assignment case f == ep.assignment_Value: {
 				val assignee = c.assignee
 				switch (assignee) {
-					VariableDeclaration: {
-						println('''        «assignee»  ///  «assignee.typeRef»''')
-						assignee.typeRef.type
-					}
+					VariableDeclaration:assignee.typeRef.type
 					FieldAccess: assignee.typeFor
 				}
 			}
