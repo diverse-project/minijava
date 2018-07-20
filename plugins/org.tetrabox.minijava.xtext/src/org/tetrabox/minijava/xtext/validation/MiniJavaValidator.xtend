@@ -357,7 +357,7 @@ class MiniJavaValidator extends AbstractMiniJavaValidator {
 	}
 	
 	
-	def private checkNumber(Expression exp, EReference ref) {
+	def protected checkNumber(Expression exp, EReference ref) {
 		if(!exp.typeFor.isNumber) {
 			error('''Should be a numeric expression. Actual type: «exp.typeFor.name»''', ref, INCOMPATIBLE_TYPES)
 		}
