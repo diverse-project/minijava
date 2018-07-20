@@ -6,3 +6,4 @@ xtend-gen
 *.xtendbin
 target
 src-gen
+.antlr-generator-3.2.0-patch.jar
