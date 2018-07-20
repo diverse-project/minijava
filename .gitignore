@@ -4,3 +4,4 @@ xtend-gen
 *.class
 *.xml_gen
 *.xtendbin
+target
