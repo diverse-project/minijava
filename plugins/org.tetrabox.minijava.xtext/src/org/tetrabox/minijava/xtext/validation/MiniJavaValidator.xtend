@@ -350,23 +350,16 @@ class MiniJavaValidator extends AbstractMiniJavaValidator {
 		}
 	}
 	
-	
-	
-	def private checkNotBoolean(Expression exp, EReference ref) {
-		if(exp.typeFor === BOOLEAN_TYPE) {
-			error("Cannot be boolean", ref, INCOMPATIBLE_TYPES)
-		}
-	}
-	
 	def private checkBoolean(Expression exp, EReference ref) {
 		if(exp.typeFor !== BOOLEAN_TYPE) {
 			error("Should be boolean", ref, INCOMPATIBLE_TYPES)
 		}
 	}
 	
-	def private checkNotString(Expression exp, EReference ref) {
-		if(exp.typeFor === STRING_TYPE) {
-			error("Cannot be string", ref, INCOMPATIBLE_TYPES)
+	
+	def private checkNumber(Expression exp, EReference ref) {
+		if(!exp.typeFor.isNumber) {
+			error('''Should be a numeric expression. Actual type: «exp.typeFor.name»''', ref, INCOMPATIBLE_TYPES)
 		}
 	}
 	
@@ -376,39 +369,32 @@ class MiniJavaValidator extends AbstractMiniJavaValidator {
 		val rightType= plus.right.typeFor
 		
 		if(leftType !== STRING_TYPE && rightType !== STRING_TYPE) {
-			checkNotBoolean(plus.left, MiniJavaPackage.eINSTANCE.plus_Left)
-			checkNotBoolean(plus.right, MiniJavaPackage.eINSTANCE.plus_Right)
+			checkNumber(plus.left, MiniJavaPackage.eINSTANCE.plus_Left)
+			checkNumber(plus.right, MiniJavaPackage.eINSTANCE.plus_Right)
 		} 
 	}
 	
 	@Check
 	def dispatch checkType(Minus minus) {
-		checkNotBoolean(minus.left, MiniJavaPackage.eINSTANCE.minus_Left)
-		checkNotBoolean(minus.right, MiniJavaPackage.eINSTANCE.minus_Right)
-		checkNotString(minus.left, MiniJavaPackage.eINSTANCE.minus_Left)
-		checkNotString(minus.right, MiniJavaPackage.eINSTANCE.minus_Right)
+		checkNumber(minus.left, MiniJavaPackage.eINSTANCE.minus_Left)
+		checkNumber(minus.right, MiniJavaPackage.eINSTANCE.minus_Right)
 	}
 	
 	@Check
 	def dispatch checkType(Multiplication mult) {
-		checkNotBoolean(mult.left, MiniJavaPackage.eINSTANCE.multiplication_Left)
-		checkNotBoolean(mult.right, MiniJavaPackage.eINSTANCE.multiplication_Right)
-		checkNotString(mult.left, MiniJavaPackage.eINSTANCE.multiplication_Left)
-		checkNotString(mult.right, MiniJavaPackage.eINSTANCE.multiplication_Right)
+		checkNumber(mult.left, MiniJavaPackage.eINSTANCE.multiplication_Left)
+		checkNumber(mult.right, MiniJavaPackage.eINSTANCE.multiplication_Right)
 	}
 	
 	@Check
 	def dispatch checkType(Division div) {
-		checkNotBoolean(div.left, MiniJavaPackage.eINSTANCE.division_Left)
-		checkNotBoolean(div.right, MiniJavaPackage.eINSTANCE.division_Right)
-		checkNotString(div.left, MiniJavaPackage.eINSTANCE.division_Left)
-		checkNotString(div.right, MiniJavaPackage.eINSTANCE.division_Right)
+		checkNumber(div.left, MiniJavaPackage.eINSTANCE.division_Left)
+		checkNumber(div.right, MiniJavaPackage.eINSTANCE.division_Right)
 	}
 	
 	@Check
 	def dispatch checkType(Neg neg) {
-		checkNotBoolean(neg.expression, MiniJavaPackage.eINSTANCE.and_Left)
-		checkNotString(neg.expression, MiniJavaPackage.eINSTANCE.and_Left)
+		checkNumber(neg.expression, MiniJavaPackage.eINSTANCE.and_Left)
 	}
 	
 	@Check

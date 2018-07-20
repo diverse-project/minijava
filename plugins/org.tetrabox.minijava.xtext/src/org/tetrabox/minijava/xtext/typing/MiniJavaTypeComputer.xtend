@@ -311,4 +311,13 @@ class MiniJavaTypeComputer {
 		typeDcl === INT_ARRAY_TYPE ||
 		CLASS_ARRAY_TYPE_REVERSE.containsKey(typeDcl.name)
 	}
+	
+	def boolean isNumber(TypeDeclaration typeDcdl) {
+		typeDcdl === BYTE_TYPE ||
+		typeDcdl === SHORT_TYPE ||
+		typeDcdl === INT_TYPE ||
+		typeDcdl === LONG_TYPE ||
+		typeDcdl === FLOAT_TYPE ||
+		typeDcdl === DOUBLE_TYPE
+	}
 }
