@@ -31,6 +31,15 @@ import static extension org.tetrabox.minijava.semantics.ExpressionAspect.*
 import static extension org.tetrabox.minijava.semantics.StateAspect.*
 import static extension org.tetrabox.minijava.semantics.ValueToStringAspect.*
 
+
+@Aspect(className=Statement)
+class StatementAspect {
+	@Step
+	def void evaluateStatement(State state) {
+		throw new RuntimeException('''evaluate should be overriden for type «_self.class.name»''')
+	}
+}
+
 @Aspect(className=Block)
 class BlockAspect extends StatementAspect {
 
@@ -47,14 +56,6 @@ class BlockAspect extends StatementAspect {
 	def void evaluateStatement(State state) {
 		_self.evaluateStatementKeepContext(state)
 		state.popCurrentContext
-	}
-}
-
-@Aspect(className=Statement)
-class StatementAspect {
-	@Step
-	def void evaluateStatement(State state) {
-		throw new RuntimeException('''evaluate should be overriden for type «_self.class.name»''')
 	}
 }
 
