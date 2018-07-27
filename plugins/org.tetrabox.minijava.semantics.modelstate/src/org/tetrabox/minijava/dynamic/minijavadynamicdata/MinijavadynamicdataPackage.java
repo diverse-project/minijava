@@ -823,6 +823,44 @@ public interface MinijavadynamicdataPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.DoubleValueImpl <em>Double Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.DoubleValueImpl
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.MinijavadynamicdataPackageImpl#getDoubleValue()
+	 * @generated
+	 */
+	int DOUBLE_VALUE = 18;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOUBLE_VALUE__VALUE = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Double Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOUBLE_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Double Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOUBLE_VALUE_OPERATION_COUNT = VALUE_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.Context <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1322,6 +1360,27 @@ public interface MinijavadynamicdataPackage extends EPackage {
 	EReference getArrayRefValue_Instance();
 
 	/**
+	 * Returns the meta object for class '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.DoubleValue <em>Double Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Double Value</em>'.
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.DoubleValue
+	 * @generated
+	 */
+	EClass getDoubleValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.DoubleValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.DoubleValue#getValue()
+	 * @see #getDoubleValue()
+	 * @generated
+	 */
+	EAttribute getDoubleValue_Value();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1755,6 +1814,24 @@ public interface MinijavadynamicdataPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ARRAY_REF_VALUE__INSTANCE = eINSTANCE.getArrayRefValue_Instance();
+
+		/**
+		 * The meta object literal for the '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.DoubleValueImpl <em>Double Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.DoubleValueImpl
+		 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.MinijavadynamicdataPackageImpl#getDoubleValue()
+		 * @generated
+		 */
+		EClass DOUBLE_VALUE = eINSTANCE.getDoubleValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute DOUBLE_VALUE__VALUE = eINSTANCE.getDoubleValue_Value();
 
 	}
 

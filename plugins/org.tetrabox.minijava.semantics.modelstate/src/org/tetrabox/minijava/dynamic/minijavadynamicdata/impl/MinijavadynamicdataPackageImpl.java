@@ -14,6 +14,7 @@ import org.tetrabox.minijava.dynamic.minijavadynamicdata.ArrayRefValue;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.BooleanValue;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.Call;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.Context;
+import org.tetrabox.minijava.dynamic.minijavadynamicdata.DoubleValue;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.FieldBinding;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.Frame;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.IntegerValue;
@@ -166,6 +167,13 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 	private EClass arrayRefValueEClass = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass doubleValueEClass = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -193,7 +201,7 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link MinijavadynamicdataPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -207,7 +215,8 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 		if (isInited) return (MinijavadynamicdataPackage)EPackage.Registry.INSTANCE.getEPackage(MinijavadynamicdataPackage.eNS_URI);
 
 		// Obtain or create and register package
-		MinijavadynamicdataPackageImpl theMinijavadynamicdataPackage = (MinijavadynamicdataPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof MinijavadynamicdataPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new MinijavadynamicdataPackageImpl());
+		Object registeredMinijavadynamicdataPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		MinijavadynamicdataPackageImpl theMinijavadynamicdataPackage = registeredMinijavadynamicdataPackage instanceof MinijavadynamicdataPackageImpl ? (MinijavadynamicdataPackageImpl)registeredMinijavadynamicdataPackage : new MinijavadynamicdataPackageImpl();
 
 		isInited = true;
 
@@ -223,7 +232,6 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 		// Mark meta-data to indicate it can't be changed
 		theMinijavadynamicdataPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(MinijavadynamicdataPackage.eNS_URI, theMinijavadynamicdataPackage);
 		return theMinijavadynamicdataPackage;
@@ -657,6 +665,24 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getDoubleValue() {
+		return doubleValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getDoubleValue_Value() {
+		return (EAttribute)doubleValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MinijavadynamicdataFactory getMinijavadynamicdataFactory() {
 		return (MinijavadynamicdataFactory)getEFactoryInstance();
 	}
@@ -744,6 +770,9 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 
 		arrayRefValueEClass = createEClass(ARRAY_REF_VALUE);
 		createEReference(arrayRefValueEClass, ARRAY_REF_VALUE__INSTANCE);
+
+		doubleValueEClass = createEClass(DOUBLE_VALUE);
+		createEAttribute(doubleValueEClass, DOUBLE_VALUE__VALUE);
 	}
 
 	/**
@@ -785,6 +814,7 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 		methodCall2EClass.getESuperTypes().add(this.getCall());
 		objectRefValueEClass.getESuperTypes().add(this.getValue());
 		arrayRefValueEClass.getESuperTypes().add(this.getValue());
+		doubleValueEClass.getESuperTypes().add(this.getValue());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(contextEClass, Context.class, "Context", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -852,6 +882,9 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 		initEClass(arrayRefValueEClass, ArrayRefValue.class, "ArrayRefValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getArrayRefValue_Instance(), this.getArrayInstance(), null, "instance", null, 0, 1, ArrayRefValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(doubleValueEClass, DoubleValue.class, "DoubleValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getDoubleValue_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, DoubleValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Create resource
 		createResource(eNS_URI);
 
@@ -867,95 +900,100 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 	 * @generated
 	 */
 	protected void createAspectAnnotations() {
-		String source = "aspect";	
+		String source = "aspect";
 		addAnnotation
-		  (contextEClass, 
-		   source, 
+		  (contextEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (valueEClass, 
-		   source, 
+		  (valueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (integerValueEClass, 
-		   source, 
+		  (integerValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (symbolBindingEClass, 
-		   source, 
+		  (symbolBindingEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (fieldBindingEClass, 
-		   source, 
+		  (fieldBindingEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (stringValueEClass, 
-		   source, 
+		  (stringValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (booleanValueEClass, 
-		   source, 
+		  (booleanValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (outputStreamEClass, 
-		   source, 
+		  (outputStreamEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (stateEClass, 
-		   source, 
+		  (stateEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (frameEClass, 
-		   source, 
+		  (frameEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (nullValueEClass, 
-		   source, 
+		  (nullValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (callEClass, 
-		   source, 
+		  (callEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (newCallEClass, 
-		   source, 
+		  (newCallEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (methodCall2EClass, 
-		   source, 
+		  (methodCall2EClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (objectInstanceEClass, 
-		   source, 
+		  (objectInstanceEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (arrayInstanceEClass, 
-		   source, 
+		  (arrayInstanceEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (objectRefValueEClass, 
-		   source, 
+		  (objectRefValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (arrayRefValueEClass, 
-		   source, 
+		  (arrayRefValueEClass,
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (doubleValueEClass,
+		   source,
 		   new String[] {
 		   });
 	}

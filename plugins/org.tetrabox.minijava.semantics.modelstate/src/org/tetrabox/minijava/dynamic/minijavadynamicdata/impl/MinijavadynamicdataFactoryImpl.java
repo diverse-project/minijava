@@ -73,6 +73,7 @@ public class MinijavadynamicdataFactoryImpl extends EFactoryImpl implements Mini
 			case MinijavadynamicdataPackage.ARRAY_INSTANCE: return createArrayInstance();
 			case MinijavadynamicdataPackage.OBJECT_REF_VALUE: return createObjectRefValue();
 			case MinijavadynamicdataPackage.ARRAY_REF_VALUE: return createArrayRefValue();
+			case MinijavadynamicdataPackage.DOUBLE_VALUE: return createDoubleValue();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -246,6 +247,16 @@ public class MinijavadynamicdataFactoryImpl extends EFactoryImpl implements Mini
 	public ArrayRefValue createArrayRefValue() {
 		ArrayRefValueImpl arrayRefValue = new ArrayRefValueImpl();
 		return arrayRefValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DoubleValue createDoubleValue() {
+		DoubleValueImpl doubleValue = new DoubleValueImpl();
+		return doubleValue;
 	}
 
 	/**
