@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.tetrabox.minijava.feature_1.0.0.qualifier.jar" id="org.tetrabox.minijava.feature" version="1.0.0.qualifier">
+      <category name="minijava"/>
+   </feature>
+   <category-def name="minijava" label="MiniJava"/>
+</site>
