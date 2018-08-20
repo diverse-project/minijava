@@ -12,12 +12,15 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.ArrayInstance;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.ArrayRefValue;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.BooleanValue;
+import org.tetrabox.minijava.dynamic.minijavadynamicdata.ByteValue;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.Call;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.Context;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.DoubleValue;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.FieldBinding;
+import org.tetrabox.minijava.dynamic.minijavadynamicdata.FloatValue;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.Frame;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.IntegerValue;
+import org.tetrabox.minijava.dynamic.minijavadynamicdata.LongValue;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.MethodCall2;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.MinijavadynamicdataFactory;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.MinijavadynamicdataPackage;
@@ -26,6 +29,7 @@ import org.tetrabox.minijava.dynamic.minijavadynamicdata.NullValue;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.ObjectInstance;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.ObjectRefValue;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.OutputStream;
+import org.tetrabox.minijava.dynamic.minijavadynamicdata.ShortValue;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.State;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.StringValue;
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.SymbolBinding;
@@ -172,6 +176,34 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 	 * @generated
 	 */
 	private EClass doubleValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass longValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass shortValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass byteValueEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass floatValueEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -683,6 +715,78 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getLongValue() {
+		return longValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getLongValue_Value() {
+		return (EAttribute)longValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getShortValue() {
+		return shortValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getShortValue_Value() {
+		return (EAttribute)shortValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getByteValue() {
+		return byteValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getByteValue_Value() {
+		return (EAttribute)byteValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getFloatValue() {
+		return floatValueEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getFloatValue_Value() {
+		return (EAttribute)floatValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MinijavadynamicdataFactory getMinijavadynamicdataFactory() {
 		return (MinijavadynamicdataFactory)getEFactoryInstance();
 	}
@@ -773,6 +877,18 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 
 		doubleValueEClass = createEClass(DOUBLE_VALUE);
 		createEAttribute(doubleValueEClass, DOUBLE_VALUE__VALUE);
+
+		longValueEClass = createEClass(LONG_VALUE);
+		createEAttribute(longValueEClass, LONG_VALUE__VALUE);
+
+		shortValueEClass = createEClass(SHORT_VALUE);
+		createEAttribute(shortValueEClass, SHORT_VALUE__VALUE);
+
+		byteValueEClass = createEClass(BYTE_VALUE);
+		createEAttribute(byteValueEClass, BYTE_VALUE__VALUE);
+
+		floatValueEClass = createEClass(FLOAT_VALUE);
+		createEAttribute(floatValueEClass, FLOAT_VALUE__VALUE);
 	}
 
 	/**
@@ -815,6 +931,10 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 		objectRefValueEClass.getESuperTypes().add(this.getValue());
 		arrayRefValueEClass.getESuperTypes().add(this.getValue());
 		doubleValueEClass.getESuperTypes().add(this.getValue());
+		longValueEClass.getESuperTypes().add(this.getValue());
+		shortValueEClass.getESuperTypes().add(this.getValue());
+		byteValueEClass.getESuperTypes().add(this.getValue());
+		floatValueEClass.getESuperTypes().add(this.getValue());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(contextEClass, Context.class, "Context", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -884,6 +1004,18 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 
 		initEClass(doubleValueEClass, DoubleValue.class, "DoubleValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDoubleValue_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, DoubleValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(longValueEClass, LongValue.class, "LongValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLongValue_Value(), ecorePackage.getELong(), "value", null, 0, 1, LongValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(shortValueEClass, ShortValue.class, "ShortValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getShortValue_Value(), ecorePackage.getEShort(), "value", null, 0, 1, ShortValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(byteValueEClass, ByteValue.class, "ByteValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getByteValue_Value(), ecorePackage.getEByte(), "value", null, 0, 1, ByteValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(floatValueEClass, FloatValue.class, "FloatValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getFloatValue_Value(), ecorePackage.getEFloat(), "value", null, 0, 1, FloatValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -993,6 +1125,26 @@ public class MinijavadynamicdataPackageImpl extends EPackageImpl implements Mini
 		   });
 		addAnnotation
 		  (doubleValueEClass,
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (longValueEClass,
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (shortValueEClass,
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (byteValueEClass,
+		   source,
+		   new String[] {
+		   });
+		addAnnotation
+		  (floatValueEClass,
 		   source,
 		   new String[] {
 		   });

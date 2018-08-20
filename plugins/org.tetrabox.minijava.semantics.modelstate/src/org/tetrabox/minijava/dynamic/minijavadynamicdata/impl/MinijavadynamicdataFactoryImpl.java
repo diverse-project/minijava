@@ -74,6 +74,10 @@ public class MinijavadynamicdataFactoryImpl extends EFactoryImpl implements Mini
 			case MinijavadynamicdataPackage.OBJECT_REF_VALUE: return createObjectRefValue();
 			case MinijavadynamicdataPackage.ARRAY_REF_VALUE: return createArrayRefValue();
 			case MinijavadynamicdataPackage.DOUBLE_VALUE: return createDoubleValue();
+			case MinijavadynamicdataPackage.LONG_VALUE: return createLongValue();
+			case MinijavadynamicdataPackage.SHORT_VALUE: return createShortValue();
+			case MinijavadynamicdataPackage.BYTE_VALUE: return createByteValue();
+			case MinijavadynamicdataPackage.FLOAT_VALUE: return createFloatValue();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -257,6 +261,46 @@ public class MinijavadynamicdataFactoryImpl extends EFactoryImpl implements Mini
 	public DoubleValue createDoubleValue() {
 		DoubleValueImpl doubleValue = new DoubleValueImpl();
 		return doubleValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LongValue createLongValue() {
+		LongValueImpl longValue = new LongValueImpl();
+		return longValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ShortValue createShortValue() {
+		ShortValueImpl shortValue = new ShortValueImpl();
+		return shortValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ByteValue createByteValue() {
+		ByteValueImpl byteValue = new ByteValueImpl();
+		return byteValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FloatValue createFloatValue() {
+		FloatValueImpl floatValue = new FloatValueImpl();
+		return floatValue;
 	}
 
 	/**

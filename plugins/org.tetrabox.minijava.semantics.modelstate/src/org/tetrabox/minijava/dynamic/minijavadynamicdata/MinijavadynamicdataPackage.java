@@ -861,6 +861,155 @@ public interface MinijavadynamicdataPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.LongValueImpl <em>Long Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.LongValueImpl
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.MinijavadynamicdataPackageImpl#getLongValue()
+	 * @generated
+	 */
+	int LONG_VALUE = 19;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LONG_VALUE__VALUE = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Long Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LONG_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Long Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LONG_VALUE_OPERATION_COUNT = VALUE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.ShortValueImpl <em>Short Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.ShortValueImpl
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.MinijavadynamicdataPackageImpl#getShortValue()
+	 * @generated
+	 */
+	int SHORT_VALUE = 20;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHORT_VALUE__VALUE = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Short Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHORT_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Short Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SHORT_VALUE_OPERATION_COUNT = VALUE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.ByteValueImpl <em>Byte Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.ByteValueImpl
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.MinijavadynamicdataPackageImpl#getByteValue()
+	 * @generated
+	 */
+	int BYTE_VALUE = 21;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BYTE_VALUE__VALUE = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Byte Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BYTE_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Byte Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BYTE_VALUE_OPERATION_COUNT = VALUE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.FloatValueImpl <em>Float Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.FloatValueImpl
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.MinijavadynamicdataPackageImpl#getFloatValue()
+	 * @generated
+	 */
+	int FLOAT_VALUE = 22;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOAT_VALUE__VALUE = VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Float Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOAT_VALUE_FEATURE_COUNT = VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Float Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FLOAT_VALUE_OPERATION_COUNT = VALUE_OPERATION_COUNT + 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.Context <em>Context</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1381,6 +1530,90 @@ public interface MinijavadynamicdataPackage extends EPackage {
 	EAttribute getDoubleValue_Value();
 
 	/**
+	 * Returns the meta object for class '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.LongValue <em>Long Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Long Value</em>'.
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.LongValue
+	 * @generated
+	 */
+	EClass getLongValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.LongValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.LongValue#getValue()
+	 * @see #getLongValue()
+	 * @generated
+	 */
+	EAttribute getLongValue_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.ShortValue <em>Short Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Short Value</em>'.
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.ShortValue
+	 * @generated
+	 */
+	EClass getShortValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.ShortValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.ShortValue#getValue()
+	 * @see #getShortValue()
+	 * @generated
+	 */
+	EAttribute getShortValue_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.ByteValue <em>Byte Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Byte Value</em>'.
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.ByteValue
+	 * @generated
+	 */
+	EClass getByteValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.ByteValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.ByteValue#getValue()
+	 * @see #getByteValue()
+	 * @generated
+	 */
+	EAttribute getByteValue_Value();
+
+	/**
+	 * Returns the meta object for class '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.FloatValue <em>Float Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Float Value</em>'.
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.FloatValue
+	 * @generated
+	 */
+	EClass getFloatValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.FloatValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.FloatValue#getValue()
+	 * @see #getFloatValue()
+	 * @generated
+	 */
+	EAttribute getFloatValue_Value();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1832,6 +2065,78 @@ public interface MinijavadynamicdataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DOUBLE_VALUE__VALUE = eINSTANCE.getDoubleValue_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.LongValueImpl <em>Long Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.LongValueImpl
+		 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.MinijavadynamicdataPackageImpl#getLongValue()
+		 * @generated
+		 */
+		EClass LONG_VALUE = eINSTANCE.getLongValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LONG_VALUE__VALUE = eINSTANCE.getLongValue_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.ShortValueImpl <em>Short Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.ShortValueImpl
+		 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.MinijavadynamicdataPackageImpl#getShortValue()
+		 * @generated
+		 */
+		EClass SHORT_VALUE = eINSTANCE.getShortValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SHORT_VALUE__VALUE = eINSTANCE.getShortValue_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.ByteValueImpl <em>Byte Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.ByteValueImpl
+		 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.MinijavadynamicdataPackageImpl#getByteValue()
+		 * @generated
+		 */
+		EClass BYTE_VALUE = eINSTANCE.getByteValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BYTE_VALUE__VALUE = eINSTANCE.getByteValue_Value();
+
+		/**
+		 * The meta object literal for the '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.FloatValueImpl <em>Float Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.FloatValueImpl
+		 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.impl.MinijavadynamicdataPackageImpl#getFloatValue()
+		 * @generated
+		 */
+		EClass FLOAT_VALUE = eINSTANCE.getFloatValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FLOAT_VALUE__VALUE = eINSTANCE.getFloatValue_Value();
 
 	}
 

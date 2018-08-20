@@ -144,6 +144,22 @@ public class MinijavadynamicdataAdapterFactory extends AdapterFactoryImpl {
 				return createDoubleValueAdapter();
 			}
 			@Override
+			public Adapter caseLongValue(LongValue object) {
+				return createLongValueAdapter();
+			}
+			@Override
+			public Adapter caseShortValue(ShortValue object) {
+				return createShortValueAdapter();
+			}
+			@Override
+			public Adapter caseByteValue(ByteValue object) {
+				return createByteValueAdapter();
+			}
+			@Override
+			public Adapter caseFloatValue(FloatValue object) {
+				return createFloatValueAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -426,6 +442,62 @@ public class MinijavadynamicdataAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createDoubleValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.LongValue <em>Long Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.LongValue
+	 * @generated
+	 */
+	public Adapter createLongValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.ShortValue <em>Short Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.ShortValue
+	 * @generated
+	 */
+	public Adapter createShortValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.ByteValue <em>Byte Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.ByteValue
+	 * @generated
+	 */
+	public Adapter createByteValueAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.tetrabox.minijava.dynamic.minijavadynamicdata.FloatValue <em>Float Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.tetrabox.minijava.dynamic.minijavadynamicdata.FloatValue
+	 * @generated
+	 */
+	public Adapter createFloatValueAdapter() {
 		return null;
 	}
 

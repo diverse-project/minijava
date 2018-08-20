@@ -60,6 +60,12 @@ import org.tetrabox.minijava.xtext.miniJava.StringTypeRef
 import org.tetrabox.minijava.dynamic.minijavadynamicdata.NullValue
 import java.util.Map
 import java.util.HashMap
+import org.tetrabox.minijava.dynamic.minijavadynamicdata.LongValue
+import org.tetrabox.minijava.dynamic.minijavadynamicdata.ShortValue
+import org.tetrabox.minijava.dynamic.minijavadynamicdata.ByteValue
+import org.tetrabox.minijava.dynamic.minijavadynamicdata.DoubleValue
+import org.tetrabox.minijava.dynamic.minijavadynamicdata.FloatValue
+import org.tetrabox.minijava.xtext.miniJava.DoubleConstant
 
 @Aspect(className=Expression)
 class ExpressionAspect {
@@ -73,8 +79,26 @@ class ExpressionAspect {
 class NegAspect extends ExpressionAspect {
 	@OverrideAspectMethod
 	def Value evaluateExpression(State state) {
-		val intabsvalue = (_self.expression.evaluateExpression(state) as IntegerValue).value
-		return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = -intabsvalue]
+		val evaluated = _self.expression.evaluateExpression(state)
+		
+		if(evaluated instanceof IntegerValue) {
+			return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = -evaluated.value]
+		} else if(evaluated instanceof LongValue) {
+			return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = -evaluated.value]
+		} else if(evaluated instanceof ShortValue) {
+			val short valShort = ((-evaluated.value) as short)
+			return MinijavadynamicdataFactory::eINSTANCE.createShortValue => [value = valShort]
+		} else if(evaluated instanceof ByteValue) {
+			val byte valByte = ((-evaluated.value) as byte)
+			return MinijavadynamicdataFactory::eINSTANCE.createByteValue => [value = valByte]
+		} else if (evaluated instanceof DoubleValue) {
+			return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = -evaluated.value]
+		} else if (evaluated instanceof FloatValue) {
+			return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = -evaluated.value]
+		} else {
+			throw new RuntimeException("Unrecognized value type: " + evaluated.getClass().name)
+		}
+		
 	}
 }
 
@@ -90,9 +114,110 @@ class NullAspect extends ExpressionAspect {
 class MinusAspect extends ExpressionAspect {
 	@OverrideAspectMethod
 	def Value evaluateExpression(State state) {
-		val left = (_self.left.evaluateExpression(state) as IntegerValue).value
-		val right = (_self.right.evaluateExpression(state) as IntegerValue).value
-		return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left - right]
+		val left = _self.left.evaluateExpression(state)
+		val right = _self.right.evaluateExpression(state)
+		
+		if(left instanceof DoubleValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value - right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value - right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value - right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value - right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value - right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value - right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof FloatValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value - right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value - right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value - right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value - right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value - right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value - right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof LongValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value - right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value - right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value - right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value - right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value - right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value - right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof IntegerValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value - right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value - right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value - right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value - right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value - right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value - right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof ShortValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value - right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value - right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value - right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value - right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createShortValue => [value = ((left.value - right.value) as short)]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createShortValue => [value = ((left.value - right.value) as short)]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof ByteValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value - right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value - right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value - right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value - right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createShortValue => [value = ((left.value - right.value) as short)]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createByteValue => [value = ((left.value - right.value) as byte)]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else {
+			throw new RuntimeException("Unrecognized value type: " + left.getClass().name)
+		}
+		
+		
 	}
 }
 
@@ -100,9 +225,108 @@ class MinusAspect extends ExpressionAspect {
 class MultiplicationAspect extends ExpressionAspect {
 	@OverrideAspectMethod
 	def Value evaluateExpression(State state) {
-		val left = (_self.left.evaluateExpression(state) as IntegerValue).value
-		val right = (_self.right.evaluateExpression(state) as IntegerValue).value
-		return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left * right]
+		val left = _self.left.evaluateExpression(state)
+		val right = _self.right.evaluateExpression(state)
+		
+		if(left instanceof DoubleValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value * right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value * right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value * right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value * right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value * right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value * right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof FloatValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value * right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value * right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value * right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value * right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value * right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value * right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof LongValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value * right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value * right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value * right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value * right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value * right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value * right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof IntegerValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value * right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value * right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value * right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value * right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value * right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value * right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof ShortValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value * right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value * right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value * right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value * right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createShortValue => [value = ((left.value * right.value) as short)]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createShortValue => [value = ((left.value * right.value) as short)]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof ByteValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value * right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value * right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value * right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value * right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createShortValue => [value = ((left.value * right.value) as short)]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createByteValue => [value = ((left.value * right.value) as byte)]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else {
+			throw new RuntimeException("Unrecognized value type: " + left.getClass().name)
+		}
 	}
 }
 
@@ -110,9 +334,108 @@ class MultiplicationAspect extends ExpressionAspect {
 class DivisionAspect extends ExpressionAspect {
 	@OverrideAspectMethod
 	def Value evaluateExpression(State state) {
-		val left = (_self.left.evaluateExpression(state) as IntegerValue).value
-		val right = (_self.right.evaluateExpression(state) as IntegerValue).value
-		return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left / right]
+		val left = _self.left.evaluateExpression(state)
+		val right = _self.right.evaluateExpression(state)
+		
+		if(left instanceof DoubleValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value / right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value / right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value / right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value / right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value / right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value / right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof FloatValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value / right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value / right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value / right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value / right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value / right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value / right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof LongValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value / right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value / right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value / right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value / right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value / right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value / right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof IntegerValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value / right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value / right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value / right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value / right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value / right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value / right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof ShortValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value / right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value / right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value / right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value / right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createShortValue => [value = ((left.value / right.value) as short)]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createShortValue => [value = ((left.value / right.value) as short)]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof ByteValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value / right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value / right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value / right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value / right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createShortValue => [value = ((left.value / right.value) as short)]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createByteValue => [value = ((left.value / right.value) as byte)]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else {
+			throw new RuntimeException("Unrecognized value type: " + left.getClass().name)
+		}
 	}
 }
 
@@ -126,14 +449,105 @@ class PlusAspect extends ExpressionAspect {
 			return MinijavadynamicdataFactory::eINSTANCE.createStringValue => [
 				value = left.customToString + right.customToString
 			]
-		} else if (left instanceof IntegerValue) {
-			if (right instanceof IntegerValue) {
-				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [
-					value = left.value + right.value
-				]
+		} else if(left instanceof DoubleValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value + right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value + right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value + right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value + right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value + right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value + right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
 			}
+		} else if(left instanceof FloatValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value + right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value + right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value + right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value + right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value + right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value + right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof LongValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value + right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value + right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value + right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value + right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value + right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value + right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof IntegerValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value + right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value + right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value + right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value + right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value + right.value]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value + right.value]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof ShortValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value + right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value + right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value + right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value + right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createShortValue => [value = ((left.value + right.value) as short)]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createShortValue => [value = ((left.value + right.value) as short)]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else if(left instanceof ByteValue) {
+			if(right instanceof DoubleValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [value = left.value + right.value]
+			} else if(right instanceof FloatValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createFloatValue => [value = left.value + right.value]
+			} else if(right instanceof IntegerValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [value = left.value + right.value]
+			} else if(right instanceof LongValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createLongValue => [value = left.value + right.value]
+			} else if(right instanceof ShortValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createShortValue => [value = ((left.value + right.value) as short)]
+			} else if(right instanceof ByteValue) {
+				return MinijavadynamicdataFactory::eINSTANCE.createByteValue => [value = ((left.value + right.value) as byte)]
+			} else {
+				throw new RuntimeException("Unrecognized value type: " + right.getClass().name)
+			}
+		} else {
+			throw new RuntimeException("Unrecognized value type: " + left.getClass().name)
 		}
-		throw new RuntimeException('''Unsupported plus operands: «left» + «right».''')
 	}
 }
 
@@ -313,7 +727,7 @@ class ParameterAspect {
 @Aspect(className=Method)
 class MethodAspect {
 
-	private Map<Class, Method> cache = new HashMap
+	Map<Class, Method> cache = new HashMap
 
 	def Method findOverride(Class c) {
 
@@ -493,6 +907,16 @@ class IntConstantAspect extends ExpressionAspect {
 	def Value evaluateExpression(State state) {
 		return MinijavadynamicdataFactory::eINSTANCE.createIntegerValue => [
 			value = (_self.value as int)
+		]
+	}
+}
+
+@Aspect(className=DoubleConstant)
+class DoubleConstantAspect extends ExpressionAspect {
+	@OverrideAspectMethod
+	def Value evaluateExpression(State state) {		
+		return MinijavadynamicdataFactory::eINSTANCE.createDoubleValue => [
+			value = (_self.value as double)
 		]
 	}
 }

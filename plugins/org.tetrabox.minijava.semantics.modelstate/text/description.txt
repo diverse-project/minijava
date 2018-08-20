@@ -74,3 +74,15 @@ Package minijavadynamicdata <minijavadynamicdata>
 
   Class DoubleValue -> Value
     Attribute value : EDouble
+
+  Class LongValue -> Value
+    Attribute value : ELong
+
+  Class ShortValue -> Value
+    Attribute value : EShort
+
+  Class ByteValue -> Value
+    Attribute value : EByte
+
+  Class FloatValue -> Value
+    Attribute value : EFloat

@@ -184,6 +184,42 @@ public interface MinijavadynamicdataFactory extends EFactory {
 	DoubleValue createDoubleValue();
 
 	/**
+	 * Returns a new object of class '<em>Long Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Long Value</em>'.
+	 * @generated
+	 */
+	LongValue createLongValue();
+
+	/**
+	 * Returns a new object of class '<em>Short Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Short Value</em>'.
+	 * @generated
+	 */
+	ShortValue createShortValue();
+
+	/**
+	 * Returns a new object of class '<em>Byte Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Byte Value</em>'.
+	 * @generated
+	 */
+	ByteValue createByteValue();
+
+	/**
+	 * Returns a new object of class '<em>Float Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Float Value</em>'.
+	 * @generated
+	 */
+	FloatValue createFloatValue();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

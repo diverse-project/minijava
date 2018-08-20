@@ -73,5 +73,17 @@
     <genClasses ecoreClass="MiniJavaDynamicData.ecore#//DoubleValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MiniJavaDynamicData.ecore#//DoubleValue/value"/>
     </genClasses>
+    <genClasses ecoreClass="MiniJavaDynamicData.ecore#//LongValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MiniJavaDynamicData.ecore#//LongValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MiniJavaDynamicData.ecore#//ShortValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MiniJavaDynamicData.ecore#//ShortValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MiniJavaDynamicData.ecore#//ByteValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MiniJavaDynamicData.ecore#//ByteValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="MiniJavaDynamicData.ecore#//FloatValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MiniJavaDynamicData.ecore#//FloatValue/value"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

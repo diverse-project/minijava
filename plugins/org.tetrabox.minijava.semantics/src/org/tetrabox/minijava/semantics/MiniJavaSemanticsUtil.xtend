@@ -26,7 +26,7 @@ import static extension org.tetrabox.minijava.semantics.FrameAspect.*
 @Aspect(className=Context)
 class ContextAspect {
 
-	private val Map<Symbol, SymbolBinding> cache = new HashMap
+	val Map<Symbol, SymbolBinding> cache = new HashMap
 
 	def Context createChildContext() {
 		return MinijavadynamicdataFactory::eINSTANCE.createContext => [
@@ -62,8 +62,8 @@ class ContextAspect {
 @Aspect(className=State)
 class StateAspect {
 
-	private var Frame frameCache
-	private var Context contextCache
+	var Frame frameCache
+	var Context contextCache
 
 	def Frame findCurrentFrame() {
 		if (_self.frameCache === null) {

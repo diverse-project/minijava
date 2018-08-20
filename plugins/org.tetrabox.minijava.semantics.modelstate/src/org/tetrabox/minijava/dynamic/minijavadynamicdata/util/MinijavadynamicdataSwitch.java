@@ -189,6 +189,34 @@ public class MinijavadynamicdataSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case MinijavadynamicdataPackage.LONG_VALUE: {
+				LongValue longValue = (LongValue)theEObject;
+				T result = caseLongValue(longValue);
+				if (result == null) result = caseValue(longValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MinijavadynamicdataPackage.SHORT_VALUE: {
+				ShortValue shortValue = (ShortValue)theEObject;
+				T result = caseShortValue(shortValue);
+				if (result == null) result = caseValue(shortValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MinijavadynamicdataPackage.BYTE_VALUE: {
+				ByteValue byteValue = (ByteValue)theEObject;
+				T result = caseByteValue(byteValue);
+				if (result == null) result = caseValue(byteValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MinijavadynamicdataPackage.FLOAT_VALUE: {
+				FloatValue floatValue = (FloatValue)theEObject;
+				T result = caseFloatValue(floatValue);
+				if (result == null) result = caseValue(floatValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -475,6 +503,66 @@ public class MinijavadynamicdataSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseDoubleValue(DoubleValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Long Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Long Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLongValue(LongValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Short Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Short Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseShortValue(ShortValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Byte Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Byte Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseByteValue(ByteValue object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Float Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Float Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFloatValue(FloatValue object) {
 		return null;
 	}
 
