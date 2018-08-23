@@ -22,6 +22,7 @@ import org.tetrabox.minijava.xtext.miniJava.Symbol
 
 import static extension org.tetrabox.minijava.semantics.ContextAspect.*
 import static extension org.tetrabox.minijava.semantics.FrameAspect.*
+import java.io.OutputStream
 
 @Aspect(className=Context)
 class ContextAspect {
@@ -64,11 +65,13 @@ class StateAspect {
 
 	var Frame frameCache
 	var Context contextCache
+	
 
 	def Frame findCurrentFrame() {
 		if (_self.frameCache === null) {
 			_self.frameCache = _self.rootFrame.findCurrentFrame
 		}
+
 		return _self.frameCache
 	}
 
