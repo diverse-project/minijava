@@ -248,7 +248,7 @@ public class TypeDeclarationImpl extends NamedElementImpl implements TypeDeclara
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (accessLevel: ");
 		result.append(accessLevel);
 		result.append(')');

@@ -212,7 +212,7 @@ public class ClassImpl extends TypeDeclarationImpl implements org.tetrabox.minij
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
+		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (abstract: ");
 		result.append(abstract_);
 		result.append(')');

@@ -1,5 +1,6 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: org.tetrabox.minijava.xminijava;singleton:=true
+Automatic-Module-Name: org.tetrabox.minijava.xminijava
 Export-Package: org.tetrabox.minijava.xminijava.miniJava,
  org.tetrabox.minijava.xminijava.miniJava.impl,
  org.tetrabox.minijava.xminijava.miniJava.util
@@ -8,7 +9,7 @@ Bundle-Version: 0.1.0
 Bundle-ClassPath: .
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:="reexport",
+ org.eclipse.emf.ecore;visibility:=reexport,
  fr.inria.diverse.k3.al.annotationprocessor.plugin,
  org.eclipse.xtext.xbase.lib,
  com.google.guava,

@@ -664,7 +664,7 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
 
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>This method is used to initialize {@link MiniJavaPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
@@ -678,7 +678,8 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
 		if (isInited) return (MiniJavaPackage)EPackage.Registry.INSTANCE.getEPackage(MiniJavaPackage.eNS_URI);
 
 		// Obtain or create and register package
-		MiniJavaPackageImpl theMiniJavaPackage = (MiniJavaPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof MiniJavaPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new MiniJavaPackageImpl());
+		Object registeredMiniJavaPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		MiniJavaPackageImpl theMiniJavaPackage = registeredMiniJavaPackage instanceof MiniJavaPackageImpl ? (MiniJavaPackageImpl)registeredMiniJavaPackage : new MiniJavaPackageImpl();
 
 		isInited = true;
 
@@ -691,7 +692,6 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
 		// Mark meta-data to indicate it can't be changed
 		theMiniJavaPackage.freeze();
 
-  
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(MiniJavaPackage.eNS_URI, theMiniJavaPackage);
 		return theMiniJavaPackage;
@@ -3180,445 +3180,445 @@ public class MiniJavaPackageImpl extends EPackageImpl implements MiniJavaPackage
 	 * @generated
 	 */
 	protected void createAspectAnnotations() {
-		String source = "aspect";	
+		String source = "aspect";
 		addAnnotation
-		  (programEClass.getEOperations().get(0), 
-		   source, 
+		  (programEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (programEClass.getEOperations().get(1), 
-		   source, 
+		  (programEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (programEClass.getEOperations().get(2), 
-		   source, 
+		  (programEClass.getEOperations().get(2),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (getProgram_State(), 
-		   source, 
+		  (getProgram_State(),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (methodEClass.getEOperations().get(0), 
-		   source, 
+		  (methodEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (methodEClass.getEOperations().get(1), 
-		   source, 
+		  (methodEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (parameterEClass.getEOperations().get(0), 
-		   source, 
+		  (parameterEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (blockEClass.getEOperations().get(0), 
-		   source, 
+		  (blockEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (blockEClass.getEOperations().get(1), 
-		   source, 
+		  (blockEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (statementEClass.getEOperations().get(0), 
-		   source, 
+		  (statementEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (printStatementEClass.getEOperations().get(0), 
-		   source, 
+		  (printStatementEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (returnEClass.getEOperations().get(0), 
-		   source, 
+		  (returnEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (ifStatementEClass.getEOperations().get(0), 
-		   source, 
+		  (ifStatementEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (whileStatementEClass.getEOperations().get(0), 
-		   source, 
+		  (whileStatementEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (forStatementEClass.getEOperations().get(0), 
-		   source, 
+		  (forStatementEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (typeRefEClass.getEOperations().get(0), 
-		   source, 
+		  (typeRefEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (classRefEClass.getEOperations().get(0), 
-		   source, 
+		  (classRefEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (assignmentEClass.getEOperations().get(0), 
-		   source, 
+		  (assignmentEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (expressionEClass.getEOperations().get(0), 
-		   source, 
+		  (expressionEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (expressionEClass.getEOperations().get(1), 
-		   source, 
+		  (expressionEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (orEClass.getEOperations().get(0), 
-		   source, 
+		  (orEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (andEClass.getEOperations().get(0), 
-		   source, 
+		  (andEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (equalityEClass.getEOperations().get(0), 
-		   source, 
+		  (equalityEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (inequalityEClass.getEOperations().get(0), 
-		   source, 
+		  (inequalityEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (superiorOrEqualEClass.getEOperations().get(0), 
-		   source, 
+		  (superiorOrEqualEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (inferiorOrEqualEClass.getEOperations().get(0), 
-		   source, 
+		  (inferiorOrEqualEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (superiorEClass.getEOperations().get(0), 
-		   source, 
+		  (superiorEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (inferiorEClass.getEOperations().get(0), 
-		   source, 
+		  (inferiorEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (plusEClass.getEOperations().get(0), 
-		   source, 
+		  (plusEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (minusEClass.getEOperations().get(0), 
-		   source, 
+		  (minusEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (multiplicationEClass.getEOperations().get(0), 
-		   source, 
+		  (multiplicationEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (divisionEClass.getEOperations().get(0), 
-		   source, 
+		  (divisionEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (arrayAccessEClass.getEOperations().get(0), 
-		   source, 
+		  (arrayAccessEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (arrayLengthEClass.getEOperations().get(0), 
-		   source, 
+		  (arrayLengthEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (notEClass.getEOperations().get(0), 
-		   source, 
+		  (notEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (negEClass.getEOperations().get(0), 
-		   source, 
+		  (negEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (fieldAccessEClass.getEOperations().get(0), 
-		   source, 
+		  (fieldAccessEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (methodCallEClass.getEOperations().get(0), 
-		   source, 
+		  (methodCallEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (stringConstantEClass.getEOperations().get(0), 
-		   source, 
+		  (stringConstantEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (intConstantEClass.getEOperations().get(0), 
-		   source, 
+		  (intConstantEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (boolConstantEClass.getEOperations().get(0), 
-		   source, 
+		  (boolConstantEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (thisEClass.getEOperations().get(0), 
-		   source, 
+		  (thisEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (nullEClass.getEOperations().get(0), 
-		   source, 
+		  (nullEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (newObjectEClass.getEOperations().get(0), 
-		   source, 
+		  (newObjectEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (newArrayEClass.getEOperations().get(0), 
-		   source, 
+		  (newArrayEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (symbolRefEClass.getEOperations().get(0), 
-		   source, 
+		  (symbolRefEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (contextEClass, 
-		   source, 
+		  (contextEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (contextEClass.getEOperations().get(0), 
-		   source, 
+		  (contextEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (contextEClass.getEOperations().get(1), 
-		   source, 
+		  (contextEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (contextEClass.getEOperations().get(2), 
-		   source, 
+		  (contextEClass.getEOperations().get(2),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (valueEClass, 
-		   source, 
+		  (valueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (valueEClass.getEOperations().get(0), 
-		   source, 
+		  (valueEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (valueEClass.getEOperations().get(1), 
-		   source, 
+		  (valueEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (integerValueEClass, 
-		   source, 
+		  (integerValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (integerValueEClass.getEOperations().get(0), 
-		   source, 
+		  (integerValueEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (integerValueEClass.getEOperations().get(1), 
-		   source, 
+		  (integerValueEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (symbolBindingEClass, 
-		   source, 
+		  (symbolBindingEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (fieldBindingEClass, 
-		   source, 
+		  (fieldBindingEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (stringValueEClass, 
-		   source, 
+		  (stringValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (stringValueEClass.getEOperations().get(0), 
-		   source, 
+		  (stringValueEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (stringValueEClass.getEOperations().get(1), 
-		   source, 
+		  (stringValueEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (booleanValueEClass, 
-		   source, 
+		  (booleanValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (booleanValueEClass.getEOperations().get(0), 
-		   source, 
+		  (booleanValueEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (booleanValueEClass.getEOperations().get(1), 
-		   source, 
+		  (booleanValueEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (outputStreamEClass, 
-		   source, 
+		  (outputStreamEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (stateEClass, 
-		   source, 
+		  (stateEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (stateEClass.getEOperations().get(0), 
-		   source, 
+		  (stateEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (stateEClass.getEOperations().get(1), 
-		   source, 
+		  (stateEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (stateEClass.getEOperations().get(2), 
-		   source, 
+		  (stateEClass.getEOperations().get(2),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (stateEClass.getEOperations().get(3), 
-		   source, 
+		  (stateEClass.getEOperations().get(3),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (stateEClass.getEOperations().get(4), 
-		   source, 
+		  (stateEClass.getEOperations().get(4),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (stateEClass.getEOperations().get(5), 
-		   source, 
+		  (stateEClass.getEOperations().get(5),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (stateEClass.getEOperations().get(6), 
-		   source, 
+		  (stateEClass.getEOperations().get(6),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (frameEClass, 
-		   source, 
+		  (frameEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (frameEClass.getEOperations().get(0), 
-		   source, 
+		  (frameEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (frameEClass.getEOperations().get(1), 
-		   source, 
+		  (frameEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (nullValueEClass, 
-		   source, 
+		  (nullValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (nullValueEClass.getEOperations().get(0), 
-		   source, 
+		  (nullValueEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (callEClass, 
-		   source, 
+		  (callEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (newCallEClass, 
-		   source, 
+		  (newCallEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (methodCall2EClass, 
-		   source, 
+		  (methodCall2EClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (objectInstanceEClass, 
-		   source, 
+		  (objectInstanceEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (arrayInstanceEClass, 
-		   source, 
+		  (arrayInstanceEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (objectRefValueEClass, 
-		   source, 
+		  (objectRefValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (objectRefValueEClass.getEOperations().get(0), 
-		   source, 
+		  (objectRefValueEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (objectRefValueEClass.getEOperations().get(1), 
-		   source, 
+		  (objectRefValueEClass.getEOperations().get(1),
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (arrayRefValueEClass, 
-		   source, 
+		  (arrayRefValueEClass,
+		   source,
 		   new String[] {
-		   });	
+		   });
 		addAnnotation
-		  (arrayRefValueEClass.getEOperations().get(0), 
-		   source, 
+		  (arrayRefValueEClass.getEOperations().get(0),
+		   source,
 		   new String[] {
 		   });
 	}
