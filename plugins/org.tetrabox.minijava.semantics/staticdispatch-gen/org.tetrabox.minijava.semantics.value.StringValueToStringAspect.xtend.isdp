@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.value.ValueToStringAspect#String customToString() from org.tetrabox.minijava.semantics.value.StringValueToStringAspect
+		if (_self instanceof org.tetrabox.minijava.dynamic.minijavadynamicdata.StringValue){
+			result = org.tetrabox.minijava.semantics.value.StringValueToStringAspect.customToString((org.tetrabox.minijava.dynamic.minijavadynamicdata.StringValue)_self);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.value.ValueToStringAspect#String customToString() from org.tetrabox.minijava.semantics.value.StringValueToStringAspect

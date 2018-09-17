@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.statements.StatementAspect#void evaluateStatement(State) from org.tetrabox.minijava.semantics.statements.IfStatementAspect
+		if (_self instanceof org.tetrabox.minijava.xtext.miniJava.IfStatement){
+			org.tetrabox.minijava.semantics.statements.IfStatementAspect.evaluateStatement((org.tetrabox.minijava.xtext.miniJava.IfStatement)_self,state);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.statements.StatementAspect#void evaluateStatement(State) from org.tetrabox.minijava.semantics.statements.IfStatementAspect

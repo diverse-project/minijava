@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.utils.ValueAspect#Value copy() from org.tetrabox.minijava.semantics.utils.BooleanValueAspect
+		if (_self instanceof org.tetrabox.minijava.dynamic.minijavadynamicdata.BooleanValue){
+			result = org.tetrabox.minijava.semantics.utils.BooleanValueAspect.copy((org.tetrabox.minijava.dynamic.minijavadynamicdata.BooleanValue)_self);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.utils.ValueAspect#Value copy() from org.tetrabox.minijava.semantics.utils.BooleanValueAspect

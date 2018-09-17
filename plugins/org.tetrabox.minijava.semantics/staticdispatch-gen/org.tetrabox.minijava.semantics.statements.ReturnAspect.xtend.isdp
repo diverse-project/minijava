@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.statements.StatementAspect#void evaluateStatement(State) from org.tetrabox.minijava.semantics.statements.ReturnAspect
+		if (_self instanceof org.tetrabox.minijava.xtext.miniJava.Return){
+			org.tetrabox.minijava.semantics.statements.ReturnAspect.evaluateStatement((org.tetrabox.minijava.xtext.miniJava.Return)_self,state);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.statements.StatementAspect#void evaluateStatement(State) from org.tetrabox.minijava.semantics.statements.ReturnAspect

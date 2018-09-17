@@ -8,7 +8,7 @@ import org.tetrabox.minijava.dynamic.minijavadynamicdata.State
 import org.tetrabox.minijava.xtext.miniJava.Method
 import org.tetrabox.minijava.xtext.miniJava.Program
 
-import static extension org.tetrabox.minijava.semantics.BlockAspect.*
+import static extension org.tetrabox.minijava.semantics.statements.BlockAspect.*
 import java.util.List
 import org.tetrabox.minijava.xtext.miniJava.ArrayTypeRef
 import org.tetrabox.minijava.xtext.miniJava.StringTypeRef

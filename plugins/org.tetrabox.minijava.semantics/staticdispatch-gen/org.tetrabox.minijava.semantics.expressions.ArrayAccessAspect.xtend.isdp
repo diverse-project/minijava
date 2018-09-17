@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.expressions.ExpressionAspect#Value evaluateExpression(State) from org.tetrabox.minijava.semantics.expressions.ArrayAccessAspect
+		if (_self instanceof org.tetrabox.minijava.xtext.miniJava.ArrayAccess){
+			result = org.tetrabox.minijava.semantics.expressions.ArrayAccessAspect.evaluateExpression((org.tetrabox.minijava.xtext.miniJava.ArrayAccess)_self,state);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.expressions.ExpressionAspect#Value evaluateExpression(State) from org.tetrabox.minijava.semantics.expressions.ArrayAccessAspect

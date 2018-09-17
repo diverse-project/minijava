@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.expressions.TypeRefAspect#boolean compare(TypeRef) from org.tetrabox.minijava.semantics.expressions.ClassRefAspect
+		if (_self instanceof org.tetrabox.minijava.xtext.miniJava.ClassRef){
+			result = org.tetrabox.minijava.semantics.expressions.ClassRefAspect.compare((org.tetrabox.minijava.xtext.miniJava.ClassRef)_self,other);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.expressions.TypeRefAspect#boolean compare(TypeRef) from org.tetrabox.minijava.semantics.expressions.ClassRefAspect

@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.expressions.ExpressionAspect#Value evaluateExpression(State) from org.tetrabox.minijava.semantics.expressions.InferiorOrEqualAspect
+		if (_self instanceof org.tetrabox.minijava.xtext.miniJava.InferiorOrEqual){
+			result = org.tetrabox.minijava.semantics.expressions.InferiorOrEqualAspect.evaluateExpression((org.tetrabox.minijava.xtext.miniJava.InferiorOrEqual)_self,state);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.expressions.ExpressionAspect#Value evaluateExpression(State) from org.tetrabox.minijava.semantics.expressions.InferiorOrEqualAspect

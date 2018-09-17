@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.expressions.ExpressionAspect#Value evaluateExpression(State) from org.tetrabox.minijava.semantics.expressions.BoolConstantAspect
+		if (_self instanceof org.tetrabox.minijava.xtext.miniJava.BoolConstant){
+			result = org.tetrabox.minijava.semantics.expressions.BoolConstantAspect.evaluateExpression((org.tetrabox.minijava.xtext.miniJava.BoolConstant)_self,state);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.expressions.ExpressionAspect#Value evaluateExpression(State) from org.tetrabox.minijava.semantics.expressions.BoolConstantAspect

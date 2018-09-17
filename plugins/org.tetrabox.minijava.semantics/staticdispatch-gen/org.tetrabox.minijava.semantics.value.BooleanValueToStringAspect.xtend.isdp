@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.value.ValueToStringAspect#String customToString() from org.tetrabox.minijava.semantics.value.BooleanValueToStringAspect
+		if (_self instanceof org.tetrabox.minijava.dynamic.minijavadynamicdata.BooleanValue){
+			result = org.tetrabox.minijava.semantics.value.BooleanValueToStringAspect.customToString((org.tetrabox.minijava.dynamic.minijavadynamicdata.BooleanValue)_self);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.value.ValueToStringAspect#String customToString() from org.tetrabox.minijava.semantics.value.BooleanValueToStringAspect

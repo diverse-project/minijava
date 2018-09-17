@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.utils.ValueAspect#Value copy() from org.tetrabox.minijava.semantics.utils.NullValueAspect
+		if (_self instanceof org.tetrabox.minijava.dynamic.minijavadynamicdata.NullValue){
+			result = org.tetrabox.minijava.semantics.utils.NullValueAspect.copy((org.tetrabox.minijava.dynamic.minijavadynamicdata.NullValue)_self);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.utils.ValueAspect#Value copy() from org.tetrabox.minijava.semantics.utils.NullValueAspect

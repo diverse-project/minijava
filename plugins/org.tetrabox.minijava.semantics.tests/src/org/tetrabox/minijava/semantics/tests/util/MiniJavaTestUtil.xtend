@@ -17,7 +17,7 @@ import org.tetrabox.minijava.xtext.miniJava.Program
 import org.tetrabox.minijava.xtext.tests.MiniJavaInjectorProvider
 
 import static extension org.tetrabox.minijava.semantics.ProgramAspect.*
-import static extension org.tetrabox.minijava.semantics.StateAspect.*
+import static extension org.tetrabox.minijava.semantics.utils.StateAspect.*
 import java.util.List
 
 @InjectWith(MiniJavaInjectorProvider)

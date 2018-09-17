@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.expressions.ExpressionAspect#Value evaluateExpression(State) from org.tetrabox.minijava.semantics.expressions.NewObjectAspect
+		if (_self instanceof org.tetrabox.minijava.xtext.miniJava.NewObject){
+			result = org.tetrabox.minijava.semantics.expressions.NewObjectAspect.evaluateExpression((org.tetrabox.minijava.xtext.miniJava.NewObject)_self,state);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.expressions.ExpressionAspect#Value evaluateExpression(State) from org.tetrabox.minijava.semantics.expressions.NewObjectAspect

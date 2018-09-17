@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.expressions.ExpressionAspect#Value evaluateExpression(State) from org.tetrabox.minijava.semantics.expressions.ArrayLengthAspect
+		if (_self instanceof org.tetrabox.minijava.xtext.miniJava.ArrayLength){
+			result = org.tetrabox.minijava.semantics.expressions.ArrayLengthAspect.evaluateExpression((org.tetrabox.minijava.xtext.miniJava.ArrayLength)_self,state);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.expressions.ExpressionAspect#Value evaluateExpression(State) from org.tetrabox.minijava.semantics.expressions.ArrayLengthAspect

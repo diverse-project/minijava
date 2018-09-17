@@ -1,7 +1,10 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: org.tetrabox.minijava.semantics;singleton:=true
 Export-Package: org.tetrabox.minijava.semantics,
- org.tetrabox.minijava.semantics
+ org.tetrabox.minijava.semantics.expressions,
+ org.tetrabox.minijava.semantics.statements,
+ org.tetrabox.minijava.semantics.utils,
+ org.tetrabox.minijava.semantics.value
 Bundle-Name: %pluginName
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .

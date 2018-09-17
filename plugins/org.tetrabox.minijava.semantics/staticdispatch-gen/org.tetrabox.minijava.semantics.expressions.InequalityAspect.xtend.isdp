@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.expressions.ExpressionAspect#Value evaluateExpression(State) from org.tetrabox.minijava.semantics.expressions.InequalityAspect
+		if (_self instanceof org.tetrabox.minijava.xtext.miniJava.Inequality){
+			result = org.tetrabox.minijava.semantics.expressions.InequalityAspect.evaluateExpression((org.tetrabox.minijava.xtext.miniJava.Inequality)_self,state);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.expressions.ExpressionAspect#Value evaluateExpression(State) from org.tetrabox.minijava.semantics.expressions.InequalityAspect

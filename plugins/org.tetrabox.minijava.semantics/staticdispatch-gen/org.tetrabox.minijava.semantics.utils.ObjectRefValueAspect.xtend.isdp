@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.utils.ValueAspect#Value copy() from org.tetrabox.minijava.semantics.utils.ObjectRefValueAspect
+		if (_self instanceof org.tetrabox.minijava.dynamic.minijavadynamicdata.ObjectRefValue){
+			result = org.tetrabox.minijava.semantics.utils.ObjectRefValueAspect.copy((org.tetrabox.minijava.dynamic.minijavadynamicdata.ObjectRefValue)_self);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.utils.ValueAspect#Value copy() from org.tetrabox.minijava.semantics.utils.ObjectRefValueAspect

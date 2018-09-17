@@ -1,0 +1,5 @@
+	// BeginInjectInto org.tetrabox.minijava.semantics.expressions.ExpressionAspect#Value evaluateExpression(State) from org.tetrabox.minijava.semantics.expressions.SymbolRefAspect
+		if (_self instanceof org.tetrabox.minijava.xtext.miniJava.SymbolRef){
+			result = org.tetrabox.minijava.semantics.expressions.SymbolRefAspect.evaluateExpression((org.tetrabox.minijava.xtext.miniJava.SymbolRef)_self,state);
+		} else
+		// EndInjectInto org.tetrabox.minijava.semantics.expressions.ExpressionAspect#Value evaluateExpression(State) from org.tetrabox.minijava.semantics.expressions.SymbolRefAspect
